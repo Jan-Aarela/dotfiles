@@ -1,1 +1,1 @@
-** Dotfiles & such for i3wm **
+# Dotfiles & such for i3wm #
