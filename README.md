@@ -1,1 +1,1 @@
-## Personal .dotfiles for archlinux ##
+## Personal .dotfiles for archlinux
