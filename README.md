@@ -1,1 +1,1 @@
-## _My dotfiles for archlinux_
+## _My Archlinux .files_
