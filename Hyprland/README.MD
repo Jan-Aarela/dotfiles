@@ -1,1 +1,1 @@
-# Dotfiles and such for Hyprland #
+## _Dotfiles and such for Hyprland_ ##
