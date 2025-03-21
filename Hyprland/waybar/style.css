@@ -1,1 +1,199 @@
+/* Keyframes */
+
+@keyframes blink-critical {
+	to {
+		/*color: @white;*/
+		background-color: @critical;
+	}
+}
+
+
+/* Styles */
+
+@define-color white	   #FFFFFF;
+@define-color warning  #CC66FF;
+@define-color indigo1  #4d4c9f;
+@define-color	indigo2  #222146;
+
+/* Reset all styles */
+* {
+	border: none;
+	border-radius: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+	text-shadow: none;
+/*	icon-shadow: none;*/
+}
+
+/* The whole bar */
+#waybar {
+	background: rgba(00, 00, 00, 0.8784313725); /* #282828e0 */
+	color: @white;
+	font-family: JetBrains Mono Nerd Font;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+/* Each module */
+#battery,
+#clock,
+#cpu,
+#language,
+#memory,
+#submap,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#backlight,
+#idle_inhibitor,
+#disk,
+#user,
+#mpris {
+	padding-left: 8pt;
+	padding-right: 8pt;
+}
+
+/* Each critical module */
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#battery.critical.discharging {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-name: blink-critical;
+	animation-duration: 1s;
+}
+
+/* Each warning */
+#network.disconnected,
+#memory.warning,
+#cpu.warning,
+#temperature.warning,   
+#battery.warning.discharging {
+	color: @warning;
+}
+
+/* And now modules themselves in their respective order */
+
+/* current mode (resize etc) */
+#submap {
+	color: @white;
+	background: @indigo2;
+}
+
+/* Workspaces stuff */
+#workspaces button {
+	/*font-weight: bold;*/
+	padding-left: 2pt;
+	padding-right: 2pt;
+	color: #7F7F7F;
+	background: @indigo2;
+}
+
+/* Inactive (on unfocused output) */
+#workspaces button.visible {
+	color: #e4f3fa;
+	background: @indigo1;
+}
+
+/* Active (on focused output) */
+#workspaces button.focused {
+	color: #e4f3fa;
+	background: @indigo1;
+}
+
+/* Contains an urgent window */
+#workspaces button.urgent {
+	color: #FFFFFF;
+	background: @warning;
+}
+
+/* Style when cursor is on the button */
+#workspaces button:hover {
+	background: @indigo1;
+	color: @white;
+}
+
+#window {
+	margin-right: 35pt;
+	margin-left: 35pt;
+}
+
+#pulseaudio {
+	background: @indigo1;
+	color: @white;
+}
+
+#network {
+	background: @indigo2;
+	color: @white;
+}
+
+#memory {
+	background: @indigo1;
+	color: @white;
+}
+
+#cpu {
+	background: @indigo2;
+	color: @white;
+}
+
+#temperature {
+	background: @indigo1;
+	color: @white;
+}
+
+#language {
+	background: @indigo1;
+	color: @white;
+}
+
+#battery {
+	background: @indigo2;
+	color: @white;
+}
+
+#tray {
+	background: @indigo2;
+}
+
+#clock.date {
+	background: @indigo2;
+	color: @white;
+}
+
+#clock.time {
+	background: @indigo1;
+	color: @white;
+}
+
+#custom-arrow1 {
+	font-size: 11pt;
+	color: @indigo1;
+	background: @indigo2;
+}
+
+#custom-arrow2 {
+	font-size: 11pt;
+	color: @indigo2;
+	background: @indigo1;
+}
+
+#custom-arrow3 {
+	font-size: 11pt;
+	color: @indigo1;
+	background: transparent;
+}
+
+#custom-arrow4 {
+	font-size: 11pt;
+	color: @indigo2;
+	background: transparent;
+}
+
 
