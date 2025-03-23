@@ -2,7 +2,7 @@
 
 Waybar style forked from [mxkrsv](https://github.com/mxkrsv/dotfiles-old/tree/master/.config/waybar).
 
-Wallpaper [sources](https://x.com/punsbymann/status/1860315813032427662/photo/1)
+Wallpaper [sources](https://raw.githubusercontent.com/Jan-Aarela/.dotfiles/refs/heads/main/images/hyprland-desktop.png)
 
 List of some packages used: pfetch, NvChad.
 
