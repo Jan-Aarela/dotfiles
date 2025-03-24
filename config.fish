@@ -26,8 +26,6 @@ export SHELL="fish"
 
 export PF_INFO="ascii title kernel uptime pkgs shell palette"
 
-export PF_ASCII="arch"
-
 # Aliasses
 alias cls='clear'
 alias ls='lsd -F -1'
