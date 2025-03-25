@@ -1,19 +1,21 @@
+/* Colors */
+@define-color grey     #e4f3fa;
+@define-color darkgrey #7F7F7F;
+@define-color white	   #FFFFFF;
+@define-color warning  #FF7070;
+@define-color critical #FF4040;
+@define-color indigo1  #4d4c9f;
+@define-color	indigo2  #222146;
+
 /* Keyframes */
 
-@keyframes blink-critical {
+@keyframes blink-critical-text {
 	to {
 		/*color: @white;*/
-		background-color: @critical;
+		color: @warning;
 	}
 }
 
-
-/* Styles */
-
-@define-color white	   #FFFFFF;
-@define-color warning  #CC66FF;
-@define-color indigo1  #4d4c9f;
-@define-color	indigo2  #222146;
 
 /* Reset all styles */
 * {
@@ -29,11 +31,17 @@
 
 /* The whole bar */
 #waybar {
-	background: rgba(00, 00, 00, 0.8784313725); /* #282828e0 */
+	background: rgba(00, 00, 00, 00);
 	color: @white;
 	font-family: JetBrains Mono Nerd Font;
 	font-size: 12pt;
 	font-weight: bold;
+}
+
+#waybar button {
+  font-family: JetBrains Mono Nerd Font;
+  font-size: 12pt;
+  font-weight: bold;
 }
 
 /* Each module */
@@ -57,60 +65,58 @@
 }
 
 /* Each critical module */
+#workspaces button.urgent, 
+#workspaces button.special, 
+#submap.RESIZE,
 #memory.critical,
 #cpu.critical,
 #temperature.critical,
 #battery.critical.discharging {
-	animation-timing-function: linear;
+	color: @white;
+  animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-	animation-name: blink-critical;
+	animation-name: blink-critical-text;
 	animation-duration: 1s;
 }
 
-/* Each warning */
-#network.disconnected,
-#memory.warning,
-#cpu.warning,
-#temperature.warning,   
+
+/* Each warning */ 
+#pulseaudio.muted,
 #battery.warning.discharging {
 	color: @warning;
 }
+
 
 /* And now modules themselves in their respective order */
 
 /* current mode (resize etc) */
 #submap {
-	color: @white;
+	color: @darkgrey;
 	background: @indigo2;
 }
 
 /* Workspaces stuff */
 #workspaces button {
 	/*font-weight: bold;*/
-	padding-left: 2pt;
-	padding-right: 2pt;
-	color: #7F7F7F;
+	padding-left: 4pt;
+	padding-right: 4pt;
+	color: @darkgrey;
 	background: @indigo2;
 }
 
 /* Inactive (on unfocused output) */
 #workspaces button.visible {
-	color: #e4f3fa;
+	color: @grey;
 	background: @indigo1;
 }
 
 /* Active (on focused output) */
 #workspaces button.focused {
-	color: #e4f3fa;
+	color: @grey;
 	background: @indigo1;
 }
 
-/* Contains an urgent window */
-#workspaces button.urgent {
-	color: #FFFFFF;
-	background: @warning;
-}
 
 /* Style when cursor is on the button */
 #workspaces button:hover {
@@ -118,6 +124,10 @@
 	color: @white;
 }
 
+#workspaces button.special {
+    background: @indigo2;
+    color: @white; /* Adjust text color for contrast */
+}
 #window {
 	margin-right: 35pt;
 	margin-left: 35pt;
@@ -126,6 +136,7 @@
 #pulseaudio {
 	background: @indigo1;
 	color: @white;
+  transition: opacity 0.3s ease-in-out;
 }
 
 #network {
@@ -173,27 +184,31 @@
 }
 
 #custom-arrow1 {
-	font-size: 11pt;
+	font-size: 12pt;
 	color: @indigo1;
 	background: @indigo2;
 }
 
 #custom-arrow2 {
-	font-size: 11pt;
+	font-size: 12pt;
 	color: @indigo2;
 	background: @indigo1;
 }
 
 #custom-arrow3 {
-	font-size: 11pt;
+	font-size: 12pt;
 	color: @indigo1;
 	background: transparent;
 }
 
 #custom-arrow4 {
-	font-size: 11pt;
+	font-size: 12pt;
 	color: @indigo2;
 	background: transparent;
 }
 
-
+#custom-icon {
+	font-size: 12pt;
+	color: @darkgrey;
+	background: @indigo2;
+}
