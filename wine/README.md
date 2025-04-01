@@ -8,4 +8,4 @@
 
 5. Done. 
 
-![alt_text](https://raw.githubusercontent.com/Jan-Aarela/wine-dark-theme/refs/heads/main/2025-04-01-042407_hyprshot.png)
+![alt_text](https://raw.githubusercontent.com/Jan-Aarela/.dotfiles/refs/heads/main/wine/Preview.png)
