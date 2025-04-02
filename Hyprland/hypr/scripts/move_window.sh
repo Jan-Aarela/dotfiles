@@ -16,22 +16,16 @@ TYPE=$(hyprctl activewindow -j | jq '.floating')
 if [[ "$TYPE" == "false" ]]; then
   hyprctl dispatch movewindow $DIRECTION  
 
-elif [[ "$DIRECTION" == "l" ]]; then
-  hyprctl dispatch moveactive -$BIG 0
-elif [[ "$DIRECTION" == "r" ]]; then
-  hyprctl dispatch moveactive $BIG 0
-elif [[ "$DIRECTION" == "u" ]]; then
-  hyprctl dispatch moveactive 0 -$BIG
-elif [[ "$DIRECTION" == "d" ]]; then
-  hyprctl dispatch moveactive 0 $BIG
-
-elif [[ "$DIRECTION" == "sl" ]]; then
-  hyprctl dispatch moveactive -$SMALL 0
-elif [[ "$DIRECTION" == "sr" ]]; then
-  hyprctl dispatch moveactive $SMALL 0
-elif [[ "$DIRECTION" == "su" ]]; then
-  hyprctl dispatch moveactive 0 -$SMALL
-elif [[ "$DIRECTION" == "sd" ]]; then
-  hyprctl dispatch moveactive 0 $SMALL
+else
+  case $DIRECTION in
+     l)  hyprctl dispatch moveactive -$BIG 0 ;;
+     r)  hyprctl dispatch moveactive $BIG 0 ;;
+     u)  hyprctl dispatch moveactive 0 -$BIG ;;
+     d)  hyprctl dispatch moveactive 0 $BIG ;;
+     sl) hyprctl dispatch moveactive -$SMALL 0 ;;
+     sr) hyprctl dispatch moveactive $SMALL 0 ;;
+     su) hyprctl dispatch moveactive 0 -$SMALL ;;
+     sd) hyprctl dispatch moveactive 0 $SMALL ;;
+  esac
 fi  
 
