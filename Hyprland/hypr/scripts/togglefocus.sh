@@ -1,5 +1,4 @@
-# Checks currently focused window's type,
-# then focuses to another window type.
+# Toggle switch for tiled/floating window type.
 
 MODE=$(hyprctl activewindow -j | jq '.floating')
 
