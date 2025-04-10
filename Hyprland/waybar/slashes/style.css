@@ -4,7 +4,7 @@
 @define-color indigo1  #4c539f;
 @define-color indigo2  rgba(9, 7, 31, 0.5);
 @define-color	indigo3  rgba(9, 7, 31, 1.0);
-@define-color green     #10aa70;
+@define-color resize   #10aa70;
 
 
 /* Reset all styles */
@@ -18,9 +18,9 @@
 	text-shadow: none;
 }
 
-  /*----------*/
- /* MAIN BAR */
-/*----------*/
+   /*----------*/
+  /* MAIN BAR */
+ /*----------*/
 
 /* Keyframes for 1st bar criticals */
 @keyframes blink-critical-text {
@@ -32,7 +32,7 @@
 /* Keyframes for 1st bar modifiers */
 @keyframes blink-modifier-text {
 	to {
-		color: @green;
+		color: @resize;
 	}
 }
 
@@ -73,22 +73,14 @@
 	color: @white;
 }
 
-#waybar.first #window {
-  color: @white;
-}
-
 #waybar.first #network.info {
   padding-right: 10px;
   padding-left: 10px;
   color: @warning;
 }
 
+#waybar.first #network.info.wifi,
 #waybar.first #network.info.ethernet {
-  color: @white;
-  padding-right: 15px;
-}
-
-#waybar.first #network.info.wifi {
   color: @white;
   padding-right: 15px;
 }
@@ -115,8 +107,7 @@
   animation-timing-function: steps(15);
 }
 
-#waybar.first #submap.RESIZE,
-#waybar.first #submap.GROUP {
+#waybar.first #submap.RESIZE {
 	color: @white;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
@@ -134,42 +125,30 @@
 
 /* And now modules themselves in their respective order */
 
-/* Workspaces stuff */
+/* Default workspace settings */
 #waybar.first #workspaces button {
+  color: @darkgrey;
+  background: transparent;
   font-size: 18px;
 	padding-left: 3pt;
 	padding-right: 2pt;
-	color: @darkgrey;
-	background: transparent;
   border-radius: 20px;
   margin-bottom: 3px;
   margin-top: 3px;
   margin-left: 3px;
   margin-right: 3px;
   transition: 0.25s ease;
-
 }
 
-/* Inactive (on unfocused output) */
+/* Inactive (on unfocused output) & Active (on focused output) */
 #waybar.first #workspaces button.visible {
 	color: @white;
-	background: @indigo1;
-}
-
-/* Active (on focused output) */
-#waybar.first #workspaces button.focused {
-	color: @grey;
 	background: @indigo1;
 }
 
 /* Style when cursor is on the button */
 #waybar.first #workspaces button:hover {
 	color: @white;
-}
-
-#waybar.first #workspaces button.special {
-    background: transparent;
-    color: @white; /* Adjust text color for contrast */
 }
 
 /* Custom slashes as spacers */
@@ -181,40 +160,32 @@
 	background: transparent;
 }
 
+/* Tooltip recolor */
 tooltip {
   background: @indigo3;
   border: 3px solid @indigo1;
   border-radius: 10px;
 }
 
-
-  /*------------- -*/
- /* INDICATOR BAR */
-/*---------------*/
-
-@keyframes blink-critical-indicator {
-	to {
-		background: @warning;
-	}
-}
+   /*------------- -*/
+  /* INDICATOR BAR */
+ /*---------------*/
 
 #waybar.second {
-  font-size: 2px;
+  font-size: 2px;         /* This makes indicator thicker */
   color: rgba(0,0,0,0);
   background: @indigo1;
 }
 
-#waybar.second #submap,
-#waybar.second #battery {
-}
-
+/* For margins, use your monitor's h.resolution, */
+/* Or fraction resolution, eg. if scaling is 1.25 */
+/* 2880px / 1.25 = 2304px */
 #waybar.second #battery.critical.discharging {
-  margin-right: -2305px;
-	background: @warning;
+  margin-right: -2305px;  /* Try h.resolution +-1 */
+  background: @warning;
 }
 
 #waybar.second #submap.RESIZE {
-  background: @green;
-  margin-left: -2305px;
+  margin-left: -2305px;   /* Try h.resolution +-1 */
+  background: @resize;
 }
-
