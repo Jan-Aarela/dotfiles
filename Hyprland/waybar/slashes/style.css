@@ -1,0 +1,220 @@
+@define-color darkgrey #606060;
+@define-color white	   #FFFFFF;
+@define-color warning  #FF7070;
+@define-color indigo1  #4c539f;
+@define-color indigo2  rgba(9, 7, 31, 0.5);
+@define-color	indigo3  rgba(9, 7, 31, 1.0);
+@define-color green     #10aa70;
+
+
+/* Reset all styles */
+* {
+	border: none;
+	border-radius: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+  /*----------*/
+ /* MAIN BAR */
+/*----------*/
+
+/* Keyframes for 1st bar criticals */
+@keyframes blink-critical-text {
+	to {
+		color: @warning;
+	}
+}
+
+/* Keyframes for 1st bar modifiers */
+@keyframes blink-modifier-text {
+	to {
+		color: @green;
+	}
+}
+
+/* The Main bar */
+#waybar.first {
+  background: @indigo2;
+	color: @white;
+	font-family: JetBrains Mono Nerd Font;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+#waybar.first button {
+  font-family: JetBrains Mono Nerd Font;
+  font-size: 12pt;
+  font-weight: bold;
+  transition: all 0.15s ease-in-out;
+}
+
+/* Each Main bar module */
+#waybar.first #battery,
+#waybar.first #backlight,
+#waybar.first #clock,
+#waybar.first #cpu,
+#waybar.first #language,
+#waybar.first #memory.swap,
+#waybar.first #memory.ram,
+#waybar.first #submap,
+#waybar.first #pulseaudio,
+#waybar.first #temperature,
+#waybar.first #tray,
+#waybar.first #disk,
+#waybar.first #window {
+	padding-left: 8pt;
+	padding-right: 8pt;
+  margin-bottom: 3px;
+  background: transparent;
+	color: @white;
+}
+
+#waybar.first #window {
+  color: @white;
+}
+
+#waybar.first #network.info {
+  padding-right: 10px;
+  padding-left: 10px;
+  color: @warning;
+}
+
+#waybar.first #network.info.ethernet {
+  color: @white;
+  padding-right: 15px;
+}
+
+#waybar.first #network.info.wifi {
+  color: @white;
+  padding-right: 15px;
+}
+
+#waybar.first #network.info.wifi.normal {
+  color: @warning;
+  padding-right: 15px;
+}
+
+
+/* Each Main bar critical module */
+#waybar.first #workspaces button.urgent,
+#waybar.first #workspaces button.special, 
+#waybar.first #memory.swap.critical,
+#waybar.first #memory.ram.critical,
+#waybar.first #cpu.critical,
+#waybar.first #temperature.critical,
+#waybar.first #battery.critical.discharging {
+	color: @white;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-name: blink-critical-text;
+	animation-duration: 1s;
+  animation-timing-function: steps(15);
+}
+
+#waybar.first #submap.RESIZE,
+#waybar.first #submap.GROUP {
+	color: @white;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-name: blink-modifier-text;
+	animation-duration: 1s;
+  animation-timing-function: steps(15);
+}
+
+/* Each Main bar warning */
+#waybar.first #pulseaudio.output.muted,
+#waybar.first #pulseaudio.input.source-muted,
+#waybar.first #battery.warning.discharging {
+	color: @warning;
+}
+
+/* And now modules themselves in their respective order */
+
+/* Workspaces stuff */
+#waybar.first #workspaces button {
+  font-size: 18px;
+	padding-left: 3pt;
+	padding-right: 2pt;
+	color: @darkgrey;
+	background: transparent;
+  border-radius: 20px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+  transition: 0.25s ease;
+
+}
+
+/* Inactive (on unfocused output) */
+#waybar.first #workspaces button.visible {
+	color: @white;
+	background: @indigo1;
+}
+
+/* Active (on focused output) */
+#waybar.first #workspaces button.focused {
+	color: @grey;
+	background: @indigo1;
+}
+
+/* Style when cursor is on the button */
+#waybar.first #workspaces button:hover {
+	color: @white;
+}
+
+#waybar.first #workspaces button.special {
+    background: transparent;
+    color: @white; /* Adjust text color for contrast */
+}
+
+/* Custom slashes as spacers */
+#waybar.first #custom-spacer1,
+#waybar.first #custom-spacer2,
+#waybar.first #custom-spacer3 {
+	font-size: 12pt;
+	color: @darkgrey;
+	background: transparent;
+}
+
+tooltip {
+  background: @indigo3;
+  border: 3px solid @indigo1;
+  border-radius: 10px;
+}
+
+
+  /*------------- -*/
+ /* INDICATOR BAR */
+/*---------------*/
+
+@keyframes blink-critical-indicator {
+	to {
+		background: @warning;
+	}
+}
+
+#waybar.second {
+  font-size: 2px;
+  color: rgba(0,0,0,0);
+  background: @indigo1;
+}
+
+#waybar.second #submap,
+#waybar.second #battery {
+}
+
+#waybar.second #battery.critical.discharging {
+  margin-right: -2305px;
+	background: @warning;
+}
+
+#waybar.second #submap.RESIZE {
+  background: @green;
+  margin-left: -2305px;
+}
+
