@@ -1,9 +1,9 @@
 ## _Dotfiles and such for Hyprland_ ##
 
-Waybar style forked from [mxkrsv](https://github.com/mxkrsv/dotfiles-old/tree/master/.config/waybar).
-
 Wallpaper [sources](https://github.com/Jan-Aarela/.dotfiles/tree/main/images)
 
-List of some packages used: pfetch, NvChad.
+List of some packages used: pfetch, NvChad, zathura.
 
-![alt_text](https://raw.githubusercontent.com/Jan-Aarela/.dotfiles/refs/heads/main/images/hyprland-desktop.png)
+![alt_text](https://raw.githubusercontent.com/Jan-Aarela/.dotfiles/refs/heads/main/images/10-4-25-1.png)
+
+![alt_text](https://raw.githubusercontent.com/Jan-Aarela/.dotfiles/refs/heads/main/images/10-4-25-2.png)
