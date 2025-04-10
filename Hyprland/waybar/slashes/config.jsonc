@@ -1,4 +1,6 @@
 [{
+  // MAIN BAR //
+
   "layer": "top",
 	"position": "top",
   "name": "first",
@@ -44,7 +46,9 @@
 	// Modules
 	"disk":{
 		"interval": 10,
-		"format": " {percentage_used}%"
+		"format": " {percentage_used}%",
+    "tooltip": "{}",
+    "tooltip-format": "Free {free}"
 	},
 
   "backlight": {
@@ -59,7 +63,7 @@
 		"interval": 10,
 		"states": {
 			"warning": 20,
-			"critical": 90
+			"critical": 10
 		},
 		/*"format-time": "{H}:{M:02}",*/
 		"format": "{icon} {capacity}%",
@@ -80,28 +84,28 @@
 	"clock": {
 		"interval": 10,
 		"format": " {:%H:%M}",
-		"tooltip-format": "                     Current date: {:%d.%m.%Y} \n\n<tt><small>{calendar}</small></tt>",
+		"tooltip-format": "Current date: {:%d.%m.%Y} \n\n<tt><small>{calendar}</small></tt>",
     "calendar": {
-                "mode"          : "year",
-                "mode-mon-col"  : 3,
-                "weeks-pos"     : "right",
-                "on-scroll"     : 1,
-                "on-click-right": "mode",
-                "format": {
-                          "months":     "<span color='#cba6f7'><b>{}</b></span>",
-                          "days":       "<span color='#cdd6f4'><b>{}</b></span>",
-                          "weeks":      "<span color='#94e2d5'> W{}</span>",
-                          "weekdays":   "<span color='#f9e2af'><b>{}</b></span>",
-                          "today":      "<span color='#f5e0dc'><b><u>{}</u></b></span>"
-                          }
-                },
-                "actions":  {
-                    "on-click-right": "mode",
-                    "on-click-forward": "tz_up",
-                    "on-click-backward": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
-                    }
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "on-click-right": "mode",
+      "format": {
+        "months":     "<span color='#cba6f7'><b>{}</b></span>",
+        "days":       "<span color='#cdd6f4'><b>{}</b></span>",
+        "weeks":      "<span color='#94e2d5'> W{}</span>",
+        "weekdays":   "<span color='#f9e2af'><b>{}</b></span>",
+        "today":      "<span color='#f5e0dc'><b><u>{}</u></b></span>"
+        }
+      },
+      "actions":  {
+        "on-click-right": "mode",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+          }
 	},
 
 	"cpu": {
@@ -109,8 +113,8 @@
 		"tooltip": " {load}",
 		"format": " {usage}%",
 		"states": {
-			"warning": 70,
-			"critical": 90
+			"warning": 80,
+			"critical": 95
 		}
 	},
 
@@ -128,26 +132,22 @@
 		"interval": 5,
 		"format": " {percentage}%",
     "states": {
-			"warning": 85,
+			"warning": 80,
 			"critical": 95
 		},
-		"tooltip": false
+		"tooltip": "{}",
+    "tooltip-format":"{used}/{total} GiB"
 	},
 
 	"memory#swap": {
 		"interval": 5,
-		/*"format": " {used:0.1f}G/{total:0.1f}G",*/
 		"format": "󰾵 {swapPercentage}%",
-    "states": {
-			"warning": 60,
-			"critical": 80
-		},
-		"tooltip": false
+		"tooltip": "{}",
+    "tooltip-format":"{swapUsed}/{swapTotal}GiB"
 	},
 
 	"network#info": {
 		"interval": 5,
-		/*"format-wifi": "  {essid} ({signalStrength}%)",*/
 		"format": "󱘖  Offline",
     "format-wifi": "{icon} {bandwidthDownBits}",
     "format-ethernet": "󰈀 {bandwidthDownBits}",
@@ -236,7 +236,6 @@
     "format": " {format_source}%",
     "format-source": "{volume}",
     "format-source-muted": "{volume}",
-    //"on-scroll-up":	"pactl set-source-volume @DEFAULT_SOURCE@ +5%",
     "on-scroll-up": "sh -c 'vol=$(pactl get-source-volume @DEFAULT_SOURCE@ | grep -oP \"\\d+(?=%)\" | head -1); if [ \"$vol\" -lt 100 ]; then pactl set-source-volume @DEFAULT_SOURCE@ +5%; fi'",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
     "max-volume": "100",
@@ -280,8 +279,10 @@
 },
 
 {
+  // INDICATOR //
+
   "layer": "top",
-	"position": "top",
+  "position": "top",
   "name": "second",
   "width": 2304,  
 
@@ -293,6 +294,7 @@
     "hyprland/submap"
   ],
 
+  // Modules
 	"hyprland/submap": {
 		"always-on": true,
     "format": "",
@@ -304,7 +306,7 @@
     "format": "{} ",
 		"format-critical": " ",
     "states": {
-			"critical": 90
+			"critical": 10
 		}
   }
 }]
