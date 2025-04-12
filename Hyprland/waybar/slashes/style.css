@@ -79,17 +79,16 @@
   color: @warning;
 }
 
-#waybar.first #network.info.wifi,
+#waybar.first #network.info.wifi.normal,
 #waybar.first #network.info.ethernet {
   color: @white;
   padding-right: 15px;
 }
 
-#waybar.first #network.info.wifi.normal {
+#waybar.first #network.info.wifi {
   color: @warning;
   padding-right: 15px;
 }
-
 
 /* Each Main bar critical module */
 #waybar.first #workspaces button.urgent,
