@@ -88,7 +88,7 @@
     "calendar": {
       "mode"          : "year",
       "mode-mon-col"  : 3,
-      "weeks-pos"     : "right",
+      "weeks-pos"     : "right",    // Nicked from Archttila
       "on-scroll"     : 1,
       "on-click-right": "mode",
       "format": {
@@ -147,7 +147,7 @@
 	},
 
 	"network#info": {
-		"interval": 5,
+		"interval": 1,
 		"format": "󱘖  Offline",
     "format-wifi": "{icon} {bandwidthDownBits}",
     "format-ethernet": "󰈀 {bandwidthDownBits}",
@@ -163,10 +163,10 @@
 			"󰤥",
 			"󰤨"
     ],
-    "states": {
-      "normal": 20
+	  "states": {
+      "normal": 25
     }
-	},
+  },
   
   "network#up": {
     "interval": 5,
@@ -311,4 +311,3 @@
   }
 }]
 
-// vi:ft=jsonc
