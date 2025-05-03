@@ -16,3 +16,13 @@ map("n", "<C-up>", "<C-w>k", { desc = "switch window up" })
 
 map('v', '<C-c>', '"+y', { desc = 'Copy to system clipboard' })
 map('v', '<C-v>', 'p', { desc = 'paste' })
+
+-- Resize window mappings using Ctrl+Shift+Arrows
+map("n", "<A-Left>", "<C-w>5<", { desc = "Reduce window width" })
+map("n", "<A-Right>", "<C-w>5>", { desc = "Increase window width" })
+map("n", "<A-Down>", "<C-w>5-", { desc = "Reduce window heigth" })
+map("n", "<A-Up>", "<C-w>5+", { desc = "Increase window height" })
+
+-- Terminal --> Nterminal switch
+map('t', '<Esc>', "<C-\\><C-n>",{silent = true})
+
