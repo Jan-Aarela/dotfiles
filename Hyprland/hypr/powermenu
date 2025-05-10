@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Start wofi with selections
+SELECTED=$(echo -e "  Shutdown\n  Reboot\n  Logout" | wofi -dmenu -i -W 240 -H 191 -w 1 -p "Power" -s ~/.config/wofi/power.css)
+
+# Checks if a selection is valid
+if [[ $SELECTED ==  "  Shutdown" || $SELECTED ==  "  Reboot" || $SELECTED == "  Logout" ]]; then
+  
+  # Ask confimation
+  CONFIRMATION=$(echo -e " Yes\n No" | wofi -dmenu -i -W 240 -H 142 -w 1 -p "$SELECTED?" -s ~/.config/wofi/power.css)
+  
+  # Case matching
+  if [[ $CONFIRMATION == "Yes" || $CONFIRMATION == "yes" || $CONFIRMATION == "Y" || $CONFIRMATION == "y" || $CONFIRMATION == " Yes"  ]]; then
+    case "$SELECTED" in
+        "  Shutdown") systemctl poweroff ;;
+        "  Reboot")   systemctl reboot ;;
+        "  Logout")   hyprctl dispatch exit ;;
+    esac
+  fi
+fi
+
