@@ -274,20 +274,16 @@ tooltip {
   background: rgba(0, 0, 0, 0);
 }
 
-/* For margins, use your monitor's h.resolution, */
-/* Or fraction resolution, eg. if scaling is 1.25 */
-/* 2880px / 1.25 = 2304px */
-
 #waybar.second #battery {
   border: 2.5px solid @caution;
   background: @background;
   transition: all 0.15s ease-in-out;
   border-radius: 8pt;
   padding-left: 2238px;
+  /* Adjust this */
 }
 
 #waybar.second #battery.critical.discharging {
-  /* Try h.resolution +-1 */
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-name: blink-critical-battery;
@@ -297,7 +293,6 @@ tooltip {
 }
 
 #waybar.second #battery.charging {
-  /* Try h.resolution +-1 */
   animation-iteration-count: 2;
   animation-direction: alternate;
   animation-name: blink-charging-battery;
@@ -307,7 +302,6 @@ tooltip {
 }
 
 #waybar.second #battery.discharging {
-  /* Try h.resolution +-1 */
   animation-iteration-count: 2;
   animation-direction: alternate;
   animation-name: blink-critical-battery;
