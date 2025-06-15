@@ -1,21 +1,21 @@
 [
   {
     // INDICATOR BAR //
-
     "layer": "top",
     "position": "top",
-    "name": "second",
+    "name": "indicator",
 
     "margin-top": 24,
-    "margin-left": 22,
-    "margin-right": 22,
+    "margin-left": 24,
+    "margin-right": 24,
 
-    "modules-center": ["battery"],
+    "modules-right": ["battery"],
 
     "battery": {
       "interval": 5,
       "format": " ",
       "states": {
+        "full": 100,
         "critical": 10
       },
       "tooltip": false
@@ -26,7 +26,7 @@
     // MAIN BAR //
     "layer": "top",
     "position": "top",
-    "name": "first",
+    "name": "main",
 
     "margin-top": -39,
     "margin-left": 24,
@@ -75,72 +75,11 @@
       }
     },
 
-    "cava": {
-      //"cava_config": "~/.config/cava/config",
-      "framerate": 45,
-      "autosens": 1,
-      "bars": 24,
-      "lower_cutoff_freq": 50,
-      "higher_cutoff_freq": 20000,
-      "method": "pipewire",
-      "source": "auto",
-      "stereo": false,
-      "bar_delimiter": 0,
-      "noise_reduction": 0.25,
-      "input_delay": 0,
-      "hide_on_silence": true,
-      "format-icons": [
-        "▁",
-        "▂",
-        "▃",
-        "▄",
-        "▅",
-        "▆",
-        "▇",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█",
-        "█"
-      ],
-      "actions": {
-        "on-click-right": "mode"
-      }
-    },
-
     "backlight": {
       "device": "intel_backlight",
       "format": "{icon} {percent}%",
       "format-icons": ["󱩎", "󱩑", "󱩓", "󱩕", "󰛨"],
       "scroll-step": 5
-    },
-
-    "battery": {
-      "interval": 5,
-      "states": {
-        "warning": 20,
-        "critical": 10
-      },
-      /*"format-time": "{H}:{M:02}",*/
-      "format": "{icon} {capacity}%",
-      "format-charging": " {capacity}%",
-      "format-balanced": "balanced {capacity}%",
-      "format-charging-full": " {capacity}%",
-      "format-full": "{icon} {capacity}%",
-      "format-icons": ["", "", "", "", ""],
-      "tooltip": "{}",
-      "tooltip-format": " {power}W"
     },
 
     "custom/battery": {
@@ -248,8 +187,8 @@
     "hyprland/submap": {
       "always-on": true,
       "default-submap": "",
-      "format": "󰲏",
-      "format-RESIZE": "{}",
+      "format": "{}",
+      "format-RESIZE": "{}lol",
       "tooltip": false
     },
 
@@ -295,7 +234,7 @@
     },
 
     "pulseaudio#input": {
-      "format": " {format_source}%",
+      "format": " {icon} {format_source}%",
       "format-source": "{volume}",
       "format-source-muted": "{volume}",
       "on-scroll-up": "sh -c 'vol=$(pactl get-source-volume @DEFAULT_SOURCE@ | grep -oP \"\\d+(?=%)\" | head -1); if [ \"$vol\" -lt 100 ]; then pactl set-source-volume @DEFAULT_SOURCE@ +5%; fi'",
@@ -315,8 +254,8 @@
     },
 
     "tray": {
-      "icon-size": 18,
-      "spacing": 6
+      "icon-size": 17,
+      "spacing": 8
     },
 
     "custom/spacer1": {
