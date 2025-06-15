@@ -27,14 +27,14 @@
 } /* }}} */
 
 /* Keyframes */ /* {{{ */
-/* Keyframes for 1st bar criticals */
+/* Keyframes for main bar criticals */
 @keyframes blink-critical-text {
   to {
     color: @warning;
   }
 }
 
-/* Keyframes for 1st bar modifiers */
+/* Keyframes for main bar modifiers */
 @keyframes blink-modifier-text {
   to {
     color: @caution;
@@ -42,37 +42,37 @@
 } /* }}} */
 
 /* Main bar defaults */ /* {{{ */
-#waybar.first {
+#waybar.main {
   background: transparent;
   font-family: "JetBrains Mono Nerd Font";
   font-size: 10pt;
   font-weight: 500;
 }
 
-#waybar.first button {
+#waybar.main button {
   font-family: JetBrains Mono Nerd Font;
-  font-size: 12pt;
+  font-size: 10pt;
   font-weight: 500;
   transition: all 0.15s ease-in-out;
 } /* }}} */
 
 /* Each Main bar module */ /* {{{ */
-#waybar.first #custom-battery,
-#waybar.first #keyboard-state,
-#waybar.first #network,
-#waybar.first #battery,
-#waybar.first #backlight,
-#waybar.first #clock,
-#waybar.first #cpu,
-#waybar.first #language,
-#waybar.first #memory.swap,
-#waybar.first #memory.ram,
-#waybar.first #submap,
-#waybar.first #pulseaudio,
-#waybar.first #temperature,
-#waybar.first #tray,
-#waybar.first #window,
-#waybar.first #disk {
+#waybar.main #custom-battery,
+#waybar.main #keyboard-state,
+#waybar.main #network,
+#waybar.main #battery,
+#waybar.main #backlight,
+#waybar.main #clock,
+#waybar.main #cpu,
+#waybar.main #language,
+#waybar.main #memory.swap,
+#waybar.main #memory.ram,
+#waybar.main #submap,
+#waybar.main #pulseaudio,
+#waybar.main #temperature,
+#waybar.main #tray,
+#waybar.main #window,
+#waybar.main #disk {
   padding-left: 8pt;
   padding-right: 8pt;
   padding-bottom: 4px;
@@ -81,68 +81,68 @@
 } /* }}} */
 
 /* Module colors */ /* {{{ */
-#waybar.first #cava {
+#waybar.main #cava {
   font-size: 18pt;
   margin-bottom: -10px;
   color: @caution;
 }
 
-#waybar.first #cpu,
-#waybar.first #temperature,
-#waybar.first #memory.ram,
-#waybar.first #memory.swap,
-#waybar.first #disk,
-#waybar.first #network {
+#waybar.main #cpu,
+#waybar.main #temperature,
+#waybar.main #memory.ram,
+#waybar.main #memory.swap,
+#waybar.main #disk,
+#waybar.main #network {
   color: @performance;
 }
 
-#waybar.first #pulseaudio {
+#waybar.main #pulseaudio {
   color: @audio;
 }
 
-#waybar.first #custom-battery,
-#waybar.first #language,
-#waybar.first #backlight,
-#waybar.first #battery {
+#waybar.main #custom-battery,
+#waybar.main #language,
+#waybar.main #backlight,
+#waybar.main #battery {
   color: @misc;
 }
 
-#waybar.first #clock {
+#waybar.main #clock {
   color: @date;
 }
 
-#waybar.first #window {
+#waybar.main #window {
   color: @window;
   margin-top: -0px;
 }
 
-#waybar.first #network.info {
+#waybar.main #network.info {
   padding-right: 10px;
   padding-left: 10px;
   color: @caution;
   background: transparent;
 }
 
-#waybar.first #network.info.wifi.normal,
-#waybar.first #network.info.ethernet {
+#waybar.main #network.info.wifi.normal,
+#waybar.main #network.info.ethernet {
   color: @performance;
   padding-right: 15px;
 }
 
-#waybar.first #network.info.wifi {
+#waybar.main #network.info.wifi {
   color: @warning;
   padding-right: 15px;
 } /* }}} */
 
 /* Each Main bar critical module */ /* {{{ */
-#waybar.first #custom-battery.critical,
-#waybar.first #workspaces button.urgent,
-#waybar.first #workspaces button.special.urgent,
-#waybar.first #memory.swap.critical,
-#waybar.first #memory.ram.critical,
-#waybar.first #cpu.critical,
-#waybar.first #temperature.critical,
-#waybar.first #battery.critical.discharging {
+#waybar.main #custom-battery.critical,
+#waybar.main #workspaces button.urgent,
+#waybar.main #workspaces button.special.urgent,
+#waybar.main #memory.swap.critical,
+#waybar.main #memory.ram.critical,
+#waybar.main #cpu.critical,
+#waybar.main #temperature.critical,
+#waybar.main #battery.critical.discharging {
   color: @caution;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -152,18 +152,28 @@
 } /* }}} */
 
 /* Submap */ /* {{{ */
-#waybar.first #submap.RESIZE {
+#waybar.main #submap.󰲏 {
   color: @resize;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-name: blink-modifier-text;
   animation-duration: 1s;
   animation-timing-function: steps(15);
-} /* }}} */
+}
+
+#waybar.main #submap. {
+  color: @date;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: blink-modifier-text;
+  animation-duration: 1s;
+  animation-timing-function: steps(15);
+}
+/* }}} */
 
 /* Battery chargin */ /* {{{ */
-#waybar.first #custom-battery.charging,
-#waybar.first #battery.charging {
+#waybar.main #custom-battery.charging,
+#waybar.main #battery.charging {
   color: @misc;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -173,23 +183,22 @@
 } /* }}} */
 
 /* Each Main bar warning */ /* {{{ */
-#waybar.first #pulseaudio.output.muted,
-#waybar.first #pulseaudio.input.source-muted {
+#waybar.main #pulseaudio.output.muted,
+#waybar.main #pulseaudio.input.source-muted {
   color: @caution;
 }
 
-#waybar.first #custom-battery.warning,
-#waybar.first #battery.warning.discharging {
+#waybar.main #custom-battery.warning,
+#waybar.main #battery.warning.discharging {
   color: @warning;
 } /* }}} */
 
 /* Workspace */ /* {{{ */
 /* Default workspace settings */
-#waybar.first #workspaces button {
+#waybar.main #workspaces button {
   color: @caution;
   background: transparent;
   border: 1.5px solid transparent;
-  font-size: 10pt;
   padding-left: 2pt;
   padding-right: 2pt;
   border-radius: 16px;
@@ -201,23 +210,23 @@
 }
 
 /* Focused workspace */
-#waybar.first #workspaces button.visible {
+#waybar.main #workspaces button.visible {
   color: @window;
 }
 
 /* Focused workspace & monitor */
-#waybar.first #workspaces button.active {
+#waybar.main #workspaces button.active {
   color: @window;
   border: 1.5px solid @caution;
 }
 
 /* Style when cursor is on the button */
-#waybar.first #workspaces button:hover {
+#waybar.main #workspaces button:hover {
   color: @window;
 }
 
 /* Special workplace animation */
-#waybar.first #workspaces button.special.active {
+#waybar.main #workspaces button.special.active {
   border: 1.5px solid transparent;
   color: @window;
   transition: all 0s ease;
@@ -229,9 +238,9 @@
 } /* }}} */
 
 /* Custom slashes as spacers */ /* {{{ */
-#waybar.first #custom-spacer1,
-#waybar.first #custom-spacer2,
-#waybar.first #custom-spacer3 {
+#waybar.main #custom-spacer1,
+#waybar.main #custom-spacer2,
+#waybar.main #custom-spacer3 {
   font-size: 10pt;
   font-weight: bold;
   color: @caution;
@@ -246,7 +255,7 @@ tooltip {
   border-radius: 8px;
 }
 
-#waybar.first #tray menu {
+#waybar.main #tray menu {
   background: @background;
   border: 3px solid @caution;
   border-radius: 8px;
@@ -266,24 +275,28 @@ tooltip {
   }
 }
 
-#waybar.second,
-#waybar.third {
+/* Set defaults for indicator bar */
+#waybar.indicator {
   font-size: 27px;
   /* This makes indicator thicker */
   color: rgba(0, 0, 0, 0);
   background: rgba(0, 0, 0, 0);
 }
 
-#waybar.second #battery {
+/* Set "battery bar" style */
+#waybar.indicator #battery {
   border: 2.5px solid @caution;
   background: @background;
   transition: all 0.15s ease-in-out;
   border-radius: 8pt;
-  padding-left: 2238px;
-  /* Adjust this */
+  padding-left: 2237.5px;
+  /* Use this for padding:  */
+  /* (H_rez / scaling) - L_margin -R_margin - 2 * border (font-size / 2)*/
+  /* For example: (2880px / 1.25) - 24 - 24 - 2 * 2.5 (27 / 2) = 2237.5px */
 }
 
-#waybar.second #battery.critical.discharging {
+/* Blink red when discharging and critical */
+#waybar.indicator #battery.critical.discharging {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-name: blink-critical-battery;
@@ -292,22 +305,33 @@ tooltip {
   transition: all 0.15s ease-in-out;
 }
 
-#waybar.second #battery.charging {
+/* Blink once cyan when plugged to AC */
+#waybar.indicator #battery.charging {
   animation-iteration-count: 2;
   animation-direction: alternate;
   animation-name: blink-charging-battery;
-  animation-duration: 0.35s;
+  animation-duration: 0.3s;
   animation-timing-function: steps(15);
   transition: all 0.15s ease-in-out;
 }
 
-#waybar.second #battery.discharging {
+/* Blink cyan twice when battery is full */
+#waybar.indicator #battery.full {
+  animation-iteration-count: 4;
+  animation-direction: alternate;
+  animation-name: blink-charging-battery;
+  animation-duration: 0.2s;
+  animation-timing-function: steps(15);
+  transition: all 0.15s ease-in-out;
+}
+
+/* Blink once red when unplugged from AC */
+#waybar.indicator #battery.discharging {
   animation-iteration-count: 2;
   animation-direction: alternate;
   animation-name: blink-critical-battery;
-  animation-duration: 0.35s;
+  animation-duration: 0.3s;
   animation-timing-function: steps(15);
   transition: all 0.15s ease-in-out;
 }
-
 /* }}} */
