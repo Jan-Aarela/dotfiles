@@ -18,11 +18,6 @@ fi
 # Refreshes the whole module.
 if [[ $MODE == "refresh" ]];then
 
-    # Delay, so that powerprofile switches first.
-    # Increase if doesn't update on click.
-    # sleep 0.25
-
-    # Get battery information.
     BATTERY=$(upower -e | grep 'BAT')
     PERCENT=$(upower -i "$BATTERY" | awk '/percentage/ {print $2}' | tr -d '%')
     STATE=$(upower -i "$BATTERY" | awk '/state/ {print $2}' | tr -d '%')
@@ -45,6 +40,17 @@ if [[ $MODE == "refresh" ]];then
     else
         TOOLTIP=$"-$RATE"
     fi
+
+    while true; do
+        CHECK=$(pgrep -x "powerprofiles")
+        if [[ $CHECK != "" ]]; then
+            sleep 1
+            notify-send "process found"
+        else
+            notify-send "no process"
+            break
+        fi
+    done
 
     # Get power profile and format icon.
     # Nerd font used in this case.

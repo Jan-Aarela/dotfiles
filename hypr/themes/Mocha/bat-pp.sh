@@ -4,19 +4,19 @@
 MODE=$1
 
 # Power profile switcher
-if [[ $MODE == "toggle" ]];then
+if [[ $MODE == "toggle" ]]; then
     PROFILE=$(powerprofilesctl get)
     if [[ $PROFILE == "power-saver" ]]; then
-        powerprofilesctl set balanced &
-    elif [[ $PROFILE == "balanced" ]]; then
         powerprofilesctl set performance &
-    else
+    elif [[ $PROFILE == "balanced" ]]; then
         powerprofilesctl set power-saver &
+    else
+        powerprofilesctl set balanced &
     fi
 fi
 
 # Refreshes the whole module.
-if [[ $MODE == "refresh" ]];then
+if [[ $MODE == "refresh" ]]; then
 
     # Delay, so that powerprofile switches first.
     # Increase if doesn't update on click.
@@ -29,18 +29,19 @@ if [[ $MODE == "refresh" ]];then
     RATE=$(upower -i "$BATTERY" | awk '/energy-rate/ {print $2}' | tr -d '%')
 
     # Set class for styling.
-    if [[ $STATE == "charging" ]];then
+    if [[ $STATE == "charging" ]]; then
         CLASS=$"charging"
-    elif [[ $PERCENT -le 10  ]]; then
+    elif [[ $PERCENT -le 10 ]]; then
         CLASS=$"critical"
     elif [[ $PERCENT -le 20 ]]; then
         CLASS=$"warning"
+        aplay ~/.config/sounds/alarm.wav
     else
-        CLASS=$""
+        CLASS=$"normal"
     fi
 
     # Set energy rate polarity.
-    if [[ $STATE == "charging" ]];then
+    if [[ $STATE == "charging" ]]; then
         TOOLTIP="+$RATE"
     else
         TOOLTIP=$"-$RATE"
@@ -60,4 +61,27 @@ if [[ $MODE == "refresh" ]];then
 
     # Export as json.
     printf '{"text": "%s", "class": "%s", "alt": "%s"}\n' "$PROFILE $PERCENT" "$CLASS" "$TOOLTIP"
+fi
+
+# Indicator bar
+if [[ $MODE == "bar" ]]; then
+    BATTERY=$(upower -e | grep 'BAT')
+    PERCENT=$(upower -i "$BATTERY" | awk '/percentage/ {print $2}' | tr -d '%')
+    STATE=$(upower -i "$BATTERY" | awk '/state/ {print $2}' | tr -d '%')
+
+    # Set class for styling.
+    if [[ $STATE == "fully-charged" ]]; then
+        CLASS=$"full"
+    elif [[ $STATE == "charging" ]]; then
+        CLASS=$"charging"
+    elif [[ $PERCENT -le 10 ]]; then
+        CLASS=$"critical"
+    elif [[ $PERCENT -le 20 ]]; then
+        CLASS=$"warning"
+    else
+        CLASS=$"discharging"
+    fi
+
+    # Export as json.
+    printf '{"class": "%s"}\n' "$CLASS"
 fi

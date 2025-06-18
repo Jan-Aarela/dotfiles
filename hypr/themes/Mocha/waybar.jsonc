@@ -9,16 +9,13 @@
     "margin-left": 24,
     "margin-right": 24,
 
-    "modules-right": ["battery"],
+    "modules-right": ["custom/batteryindicator"],
 
-    "battery": {
-      "interval": 5,
+    "custom/batteryindicator": {
+      "interval": 4,
+      "return-type": "json",
       "format": " ",
-      "states": {
-        "full": 100,
-        "critical": 10
-      },
-      "tooltip": false
+      "exec": "~/.config/hypr/themes/Mocha/bat-pp.sh bar"
     }
   },
 
@@ -28,12 +25,12 @@
     "position": "top",
     "name": "main",
 
-    "margin-top": -39,
+    "margin-top": -41,
     "margin-left": 24,
     "margin-right": 24,
 
     "modules-left": [
-      "tray",
+      "group/tray",
       "custom/spacer3",
       "custom/spacer2",
       "hyprland/workspaces",
@@ -47,9 +44,11 @@
       "custom/spacer1",
       "cpu",
       "temperature",
-      "memory#ram",
-      "memory#swap",
-      "disk",
+      "custom/nvidia",
+      // "memory#ram",
+      "group/storage",
+      // "memory#swap",
+      // "disk",
       "network#info",
       "custom/spacer1",
       "pulseaudio#input",
@@ -59,12 +58,13 @@
       "backlight",
       "custom/battery",
       "custom/spacer1",
+      "custom/weather",
       "clock"
     ],
 
     // Modules
     "disk": {
-      "interval": 10,
+      "interval": 16,
       "format": " {percentage_used}%",
       "tooltip": "{}",
       "tooltip-format": "Free {free}",
@@ -75,6 +75,36 @@
       }
     },
 
+    "custom/weather": {
+      "format": "{}°",
+      "tooltip": true,
+      "interval": 1800,
+      "exec": "wttrbar --nerd --location Inari",
+      "return-type": "json"
+    },
+
+    "group/tray": {
+      "orientation": "horizontal",
+      "drawer": {
+        "transition-duration": "500",
+        "transition-left-to-right": "true",
+        "children-class": "drawer-child"
+        //"click-to-reveal": "false"
+      },
+      "modules": ["custom/trayicon", "tray"]
+    },
+
+    "group/storage": {
+      "orientation": "horizontal",
+      "drawer": {
+        "transition-duration": "500",
+        "transition-left-to-right": "true",
+        "children-class": "drawer-child"
+        //"click-to-reveal": "false"
+      },
+      "modules": ["memory#ram", "memory#swap", "disk"]
+    },
+
     "backlight": {
       "device": "intel_backlight",
       "format": "{icon} {percent}%",
@@ -82,8 +112,17 @@
       "scroll-step": 5
     },
 
+    "custom/nvidia": {
+      "interval": 4,
+      "return-type": "json",
+      "exec": "~/.config/hypr/themes/Mocha/nvidia.sh",
+      "format": "<span size='x-large' rise='-2500'>󰢮</span>{text}",
+      "tooltip": "true",
+      "tooltip-format": "{alt}"
+    },
+
     "custom/battery": {
-      "interval": 5,
+      "interval": 4,
       "return-type": "json",
       "exec": "~/.config/hypr/themes/Mocha/bat-pp.sh refresh",
       "exec-on-event": true,
@@ -95,7 +134,7 @@
 
     "clock": {
       "interval": 1,
-      "format": " {:%H:%M:%S   %d.%m}",
+      "format": " {:%H:%M:%S    %d.%m}",
       "tooltip-format": "{:%d.%m.%Y   Week %W}\n\n<tt><small>{calendar}</small></tt>",
       "calendar": {
         "mode": "month",
@@ -115,7 +154,6 @@
 
     "cpu": {
       "interval": 4,
-      "tooltip": " {load}",
       "format": " {usage}%",
       "states": {
         "warning": 80,
@@ -145,7 +183,7 @@
     },
 
     "memory#swap": {
-      "interval": 6,
+      "interval": 16,
       "format": "󰾵 {swapPercentage}%",
       "tooltip": "{}",
       "tooltip-format": "{swapUsed}/{swapTotal}GiB"
@@ -271,6 +309,15 @@
     "custom/spacer3": {
       "format": " // ",
       "tooltip": false
+    },
+
+    "custom/trayicon": {
+      // "format": "",
+      // "format": "Zäni",
+      // "format": "󰣇",
+      "format": "",
+      "tooltip": false,
+      "on-click": "aplay /home/jan-aarela/.config/sounds/pacman.wav> /dev/null 2>/dev/null & kitty --title Pacman fish -c '~/.config/fish/Pacman.sh & sudo pacman -Syu'"
     }
   }
 ]
