@@ -332,8 +332,8 @@ tooltip {
   border-radius: 8pt;
   padding-left: 2237.5px;
   /* Use this for padding:  */
-  /* (H_rez / scaling) - L_margin -R_margin - 2 * border (font-size / 2)*/
-  /* For example: (2880px / 1.25) - 24 - 24 - 2 * 2.5 (27 / 2) = 2237.5px */
+  /* (H_rez / scaling) - L_margin -R_margin - 2 * border - (font-size / 2)*/
+  /* For example: (2880px / 1.25) - 24 - 24 - 2 * 2.5 - (27 / 2) = 2237.5px */
 }
 
 /* Blink red when battery is very low */
