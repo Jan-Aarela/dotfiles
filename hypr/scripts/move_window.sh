@@ -15,7 +15,6 @@ TYPE=$(hyprctl activewindow -j | jq '.floating')
 
 if [[ "$TYPE" == "false" ]]; then
   hyprctl dispatch movewindow $DIRECTION  
-
 else
   case $DIRECTION in
      l)  hyprctl dispatch moveactive -$BIG 0 ;;

@@ -22,7 +22,7 @@ echo "Matched: $BEST"
 # If a selection was made
 if [[ -z "$BEST" ]]; then
   echo "No matches"
-elif [[ $COUNT2 -ge 3 ]]; then
+elif [[ $COUNT2 -ge 2 ]]; then
   echo "Too many matches ($COUNT2) / Exit"
 else
   # Find the corresponding line and extract address

@@ -9,15 +9,16 @@ SELECTED=$( echo "$IMAGES" | wofi -dmenu -p "Wallpaper Switch" -W 300 -H 300 -w 
 SELECTED=$(echo "$IMAGES" | fzf --filter="$SELECTED" --select-1 --exit-0)
 echo "matched $SELECTED"
 COUNT=$(echo "$SELECTED" | wc -l)
+SELECTED=$(echo $SELECTED | awk '{print $1}')
 
 # If a selection was made
 if [[ -z "$SELECTED" ]]; then
-  echo "No matches"
-elif [[ $COUNT -ge 3 ]]; then
-  echo "Too many matches ($COUNT) / Exit"
+    echo "No matches"
+elif [[ $COUNT -ge 6 ]]; then
+    echo "Too many matches ($COUNT) / Exit"
 else
-  swww img $IMAGE_DIR/$SELECTED -t grow --transition-duration 0.5 --transition-fps 90
-  notify-send "   $SELECTED" & aplay ~/.config/sounds/theme_switch.wav
+    swww img "$IMAGE_DIR/$SELECTED" -t grow --transition-duration 0.5 --transition-fps 90
+    notify-send "   $SELECTED" & aplay ~/.config/sounds/theme_switch.wav
 fi
 
 
@@ -25,4 +26,3 @@ fi
 #   swww img $IMAGE_DIR/$SELECTED -t grow --transition-duration 0.5 --transition-fps 90
 #   notify-send "   $SELECTED" & aplay ~/.config/sounds/theme_switch.wav
 # fi
-

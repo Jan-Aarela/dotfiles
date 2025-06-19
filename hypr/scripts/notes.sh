@@ -10,21 +10,12 @@ COUNT=$(echo "$SELECTED" | wc -l)
 
 # If a selection was made
 if [[ -z "$SELECTED" ]]; then
-  echo "No matches"
+    echo "No matches"
 elif [[ "$SELECTED" == "Add+" ]]; then
-  kitty -e nvim ~/notes/Add\+
+    kitty -e nvim ~/notes/Add\+
 elif [[ $COUNT -ge 3 ]]; then
-  echo "Too many matches ($COUNT) / Exit"
+    echo "Too many matches ($COUNT) / Exit"
 else
-  echo "$DIR/$SELECTED"
-  kitty --title='Dummy manual' -e less "$DIR/$SELECTED"
+    echo "$DIR/$SELECTED"
+    kitty --title='Dummy manual' -e nvim "$DIR/$SELECTED"
 fi
-
-# # Output what was selected
-# if [ -n "$SELECTED" ]; then
-#   echo $DIR/$SELECTED
-#   kitty --title='Dummy manual' -e less $DIR/$SELECTED".txt"
-# else
-#   echo "No file selected."
-# fi
-
