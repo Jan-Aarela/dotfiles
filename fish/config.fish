@@ -6,50 +6,69 @@ if status is-interactive
 end
 
 set -g fish_greeting
-
+set fish_color_command cad3f5
 # }}}
+
+function _is_git_repo
+    git rev-parse --is-inside-work-tree >/dev/null 2>&1
+end
+
+if _is_git_repo
+    set_color ee99a0
+    echo -n "" $PWD
+else
+    set_color blue
+    echo -n "" $PWD
+end
 
 # Fish prompt{{{
 function fish_prompt
-	echo ""
-  set_color brblack  & echo -n " ╭─"
-	set_color brblack   & echo -n "// "
-	set_color brgreen & echo -n  " "(date +%H:%M)
-	set_color brblack   & echo -n " // "
-  set PWD_NEW (string replace --regex "^$HOME" "~" $PWD)
-	set_color blue & echo -n "" $PWD_NEW
-	set_color brblack  & echo -n " //"
-  set PWD_LEN (string length $PWD_NEW)
+    echo ""
+    set_color brblack & echo -n " ╭─"
+    set_color brblack & echo -n "// "
+    set_color brgreen & echo -n " "(date +%H:%M)
+    set_color brblack & echo -n " // "
+    set PWD_NEW (string replace --regex "^$HOME" "~" $PWD)
 
-  set FILL_LEN (math (tput cols) - $PWD_LEN - 23)
-  if test $FILL_LEN -lt 0
-    set FILL_LEN 0
-  end
+    if _is_git_repo
+        set_color f5a97f & echo -n "" $PWD_NEW
+    else
+        set_color blue & echo -n "" $PWD_NEW
+    end
 
-  set_color brblack & printf '%*s' $FILL_LEN '' | sed 's/ /·/g'; echo
-	set_color brblack  & echo -n " ╰───"
-	set_color brblack  & echo -n "["
+    set_color brblack & echo -n " //"
+    set PWD_LEN (string length $PWD_NEW)
 
-  switch $fish_bind_mode
-    case default
-      set_color brblue
-      echo -n 'Normal'
-    case insert
-      set_color "#C7A0DC"
-      echo -n 'Insert'
-    case replace_one
-      set_color yellow
-      echo -n 'Replace'
-    case visual
-      set_color brcyan
-      echo -n 'Visual'
-    case '*'
-      set_color red
-      echo -n '?'
-  end
+    set FILL_LEN (math (tput cols) - $PWD_LEN - 23)
+    if test $FILL_LEN -lt 0
+        set FILL_LEN 0
+    end
 
-	set_color brblack  & echo -n "]"
-	set_color brmagenta   & echo    " >> "
+    set_color brblack & printf '%*s' $FILL_LEN '' | sed 's/ /·/g'
+    echo
+    set_color brblack & echo -n " ╰───"
+    set_color brblack & echo -n "["
+
+    switch $fish_bind_mode
+        case default
+            set_color brblue
+            echo -n NOR
+        case insert
+            set_color "#C7A0DC"
+            echo -n INS
+        case replace_one
+            set_color yellow
+            echo -n REP
+        case visual
+            set_color brcyan
+            echo -n VIS
+        case '*'
+            set_color red
+            echo -n REP
+    end
+
+    set_color brblack & echo -n "]"
+    set_color brmagenta & echo " >> "
 end
 
 # }}}
@@ -115,4 +134,5 @@ alias fzf="fzf --preview 'test -f {}; and bat --color=always {}; or ls --color=a
 
 alias Pacman='aplay /home/jan-aarela/.config/sounds/pacman.wav> /dev/null 2>/dev/null & sudo pacman -Syu'
 
+set -x MANPAGER "nvim +Man!"
 # }}}
