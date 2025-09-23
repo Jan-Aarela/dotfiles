@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Start wofi with selections
+SELECTED=$(echo -e " 󱀚 Performance\n    Balanced\n  Power Saver" | wofi -dmenu -W 320 -H 191 -w 1 -p "Power Profiles" -s ~/.config/wofi/power.css -i )
+
+case "$SELECTED" in
+    " 󱀚 Performance")  powerprofilesctl set performance & aplay ~/.config/sounds/theme_switch.wav ;;
+    "    Balanced")   powerprofilesctl set balanced & aplay ~/.config/sounds/theme_switch.wav  ;;     # Thin spaces used
+    "  Power Saver")  powerprofilesctl set power-saver & aplay ~/.config/sounds/theme_switch.wav  ;;
+esac

@@ -1,0 +1,301 @@
+/* vim:fileencoding=utf-8:foldmethod=marker
+*/
+
+/* Define colors */ /* {{{ */
+@define-color background  rgba(21, 21, 32, 0.75);
+/* @define-color background  #151520; */
+@define-color warning     #f38ba8;
+@define-color caution     #45475a;
+@define-color performance #f5c2e7;
+@define-color audio       #cba6f7;
+@define-color misc        #94e2d5;
+@define-color date        #a6e3a1;
+@define-color work        #b4befe;
+@define-color window      #b4befe;
+/* }}} */
+
+/* Reset all styles */ /* {{{ */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  text-shadow: none;
+} /* }}} */
+
+/* Keyframes */ /* {{{ */
+/* Keyframes for 1st bar criticals */
+@keyframes blink-critical-text {
+  to {
+    color: @warning;
+  }
+}
+
+/* Keyframes for 1st bar modifiers */
+@keyframes blink-modifier-text {
+  to {
+    color: @caution;
+  }
+} /* }}} */
+
+/* Main bar defaults */ /* {{{ */
+#waybar.first {
+  background: @background;
+  font-family: "JetBrains Mono Nerd Font";
+  font-size: 10pt;
+  font-weight: 500;
+  border-radius: 8pt;
+  border: 2px solid @caution;
+}
+
+#waybar.first button {
+  font-family: JetBrains Mono Nerd Font;
+  font-size: 12pt;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+} /* }}} */
+
+/* Each Main bar module */ /* {{{ */
+#waybar.first #custom-battery,
+#waybar.first #keyboard-state,
+#waybar.first #network,
+#waybar.first #battery,
+#waybar.first #backlight,
+#waybar.first #clock,
+#waybar.first #cpu,
+#waybar.first #language,
+#waybar.first #memory.swap,
+#waybar.first #memory.ram,
+#waybar.first #submap,
+#waybar.first #pulseaudio,
+#waybar.first #temperature,
+#waybar.first #tray,
+#waybar.first #window,
+#waybar.first #disk {
+  padding-left: 8pt;
+  padding-right: 8pt;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  background: transparent;
+} /* }}} */
+
+/* Module colors */ /* {{{ */
+#waybar.first #cava {
+  font-size: 18pt;
+  margin-bottom: -10px;
+  color: @caution;
+}
+
+#waybar.first #cpu,
+#waybar.first #temperature,
+#waybar.first #memory.ram,
+#waybar.first #memory.swap,
+#waybar.first #disk,
+#waybar.first #network {
+  color: @performance;
+}
+
+#waybar.first #pulseaudio {
+  color: @audio;
+}
+
+#waybar.first #custom-battery,
+#waybar.first #language,
+#waybar.first #backlight,
+#waybar.first #battery {
+  color: @misc;
+}
+
+#waybar.first #clock {
+  color: @date;
+}
+
+#waybar.first #window {
+  color: @window;
+  margin-top: -0px;
+}
+
+#waybar.first #network.info {
+  padding-right: 10px;
+  padding-left: 10px;
+  color: @caution;
+  background: transparent;
+}
+
+#waybar.first #network.info.wifi.normal,
+#waybar.first #network.info.ethernet {
+  color: @performance;
+  padding-right: 15px;
+}
+
+#waybar.first #network.info.wifi {
+  color: @warning;
+  padding-right: 15px;
+} /* }}} */
+
+/* Each Main bar critical module */ /* {{{ */
+#waybar.first #custom-battery.critical,
+#waybar.first #workspaces button.urgent,
+#waybar.first #workspaces button.special.urgent,
+#waybar.first #memory.swap.critical,
+#waybar.first #memory.ram.critical,
+#waybar.first #cpu.critical,
+#waybar.first #temperature.critical,
+#waybar.first #battery.critical.discharging {
+  color: @caution;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: blink-critical-text;
+  animation-duration: 1s;
+  animation-timing-function: steps(15);
+} /* }}} */
+
+/* Submap */ /* {{{ */
+#waybar.first #submap.RESIZE {
+  color: @window;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: blink-modifier-text;
+  animation-duration: 1s;
+  animation-timing-function: steps(15);
+} /* }}} */
+
+/* Battery chargin */ /* {{{ */
+#waybar.first #custom-battery.charging,
+#waybar.first #battery.charging {
+  color: @misc;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: blink-modifier-text;
+  animation-duration: 1s;
+  animation-timing-function: steps(15);
+} /* }}} */
+
+/* Each Main bar warning */ /* {{{ */
+#waybar.first #pulseaudio.output.muted,
+#waybar.first #pulseaudio.input.source-muted {
+  color: @caution;
+}
+
+#waybar.first #custom-battery.warning,
+#waybar.first #battery.warning.discharging {
+  color: @warning;
+} /* }}} */
+
+/* Workspace */ /* {{{ */
+/* Default workspace settings */
+#waybar.first #workspaces button {
+  color: @caution;
+  background: transparent;
+  border: 1.5px solid transparent;
+  font-size: 10pt;
+  padding-left: 2pt;
+  padding-right: 2pt;
+  border-radius: 16px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  margin-left: 4px;
+  margin-right: 4px;
+  transition: all 0.25s ease;
+}
+
+/* Focused workspace */
+#waybar.first #workspaces button.visible {
+  color: @window;
+}
+
+/* Focused workspace & monitor */
+#waybar.first #workspaces button.active {
+  color: @window;
+  border: 1.5px solid @caution;
+}
+
+/* Style when cursor is on the button */
+#waybar.first #workspaces button:hover {
+  color: @window;
+}
+
+/* Special workplace animation */
+#waybar.first #workspaces button.special.active {
+  border: 1.5px solid transparent;
+  color: @window;
+  transition: all 0s ease;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: blink-modifier-text;
+  animation-duration: 1s;
+  animation-timing-function: steps(15);
+} /* }}} */
+
+/* Custom slashes as spacers */ /* {{{ */
+#waybar.first #custom-spacer1,
+#waybar.first #custom-spacer2,
+#waybar.first #custom-spacer3 {
+  font-size: 10pt;
+  font-weight: bold;
+  color: @caution;
+  background: transparent;
+}
+/* }}} */
+
+/* Tooltip */ /* {{{ */
+tooltip {
+  background: @background;
+  border: 3px solid @caution;
+  border-radius: 8px;
+}
+
+#waybar.first #tray menu {
+  background: @background;
+  border: 3px solid @caution;
+  border-radius: 8px;
+}
+/* }}} */
+
+/* Indicator bars */ /* {{{ */
+@keyframes blink-critical-battery {
+  to {
+    background: @warning;
+  }
+}
+
+#waybar.second,
+#waybar.third {
+  font-size: 4px;
+  /* This makes indicator thicker */
+  color: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0);
+}
+
+/* For margins, use your monitor's h.resolution, */
+/* Or fraction resolution, eg. if scaling is 1.25 */
+/* 2880px / 1.25 = 2304px */
+#waybar.second #battery.critical.discharging {
+  padding-left: 2050px;
+  /* Try h.resolution +-1 */
+  background: transparent;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: blink-critical-battery;
+  animation-duration: 1s;
+  animation-timing-function: steps(15);
+  border-radius: 12px 12px 0px 0px;
+  transition: all 0.15s ease-in-out;
+}
+
+#waybar.third #battery.critical.discharging {
+  padding-left: 2050px;
+  /* Try h.resolution +-1 */
+  background: transparent;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: blink-critical-battery;
+  animation-duration: 1s;
+  animation-timing-function: steps(15);
+  border-radius: 0px 0px 12px 12px;
+  transition: all 0.15s ease-in-out;
+}
+
+/* }}} */
