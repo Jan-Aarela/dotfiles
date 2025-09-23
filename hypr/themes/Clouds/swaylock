@@ -1,1 +1,0 @@
-swaylock -i ~/.config/hypr/themes/Clouds/wallpaper.jpg --clock --indicator --inside-color 07071f --ring-color 4c539f --key-hl-color 5294e2 --text-color ffffff --timestr %H:%M --datestr %d.%m.%Y --ring-wrong-color ff7070 --inside-wrong-color 09071f --text-wrong-color ff7070 --inside-ver-color 09071f --ring-ver-color 5294e2 --text-ver-color ffffff -e
