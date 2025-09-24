@@ -18,7 +18,7 @@ autosens = 1
 
 # Manual sensitivity in %. If autosens is enabled, this will only be the initial value.
 # 200 means double height. Accepts only non-negative values.
-; sensitivity = 100
+sensitivity = 150
 
 # The number of bars (0-512). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
@@ -296,7 +296,7 @@ gradient_color_3 = '#f38ba8'
 # Set gravity percentage for "drop off". Higher values means bars will drop faster.
 # Accepts only non-negative values. 50 means half gravity, 200 means double. Set to 0 to disable "drop off".
 # DEPRECATED as of 0.8.0, use noise_reduction instead
-gravity = 200
+gravity = 10
 
 
 # In bar height, bars that would have been lower that this will not be drawn.
@@ -306,7 +306,7 @@ gravity = 200
 # Noise reduction, int 0 - 100. default 77
 # the raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth
 # 100 will be very slow and smooth, 0 will be fast but noisy.
-noise_reduction = 40
+noise_reduction = 30
 
 
 [eq]
