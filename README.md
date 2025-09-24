@@ -2,6 +2,7 @@
 ```
 cd ~/.config
 git clone https://github.com/Jan-Aarela/dotfiles.git
+cd dotfiles
 chmod +x malware.sh
 ./malware.sh
 ```
