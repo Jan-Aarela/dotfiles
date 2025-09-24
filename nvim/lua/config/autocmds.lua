@@ -38,3 +38,9 @@ vim.api.nvim_create_autocmd("FileType", {
     end
   end,
 }) -- }}}
+
+-- Autofold when opening a file
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*", -- Apply to all file types
+  command = "normal zM",
+})
