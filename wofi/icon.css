@@ -1,0 +1,12 @@
+#inner-box {
+  padding: 0px;
+  margin: 0px;
+}
+
+#entry {
+  padding: 10px 60px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 128px;
+  transition: all 0.2s ease-in-out;
+}

@@ -13,11 +13,11 @@ if [[ "$MODE" == "switch" ]]; then
   HEIGHT=$(("$COUNT" * 51))
 
   # Prompt wofi menu
-  SELECTED=$(echo "$THEMES" | wofi -dmenu -p "Switch to" -W 300 -H "$HEIGHT" -w 1 -c ~/.config/wofi/config -O alphabetical -i)
+  SELECTED=$(echo "$THEMES" | wofi -dmenu -p "Switch to" -W 300 -H "$HEIGHT" -w 1 -c ~/.config/wofi/default -s ~/.config/wofi/default.css -O alphabetical -i)
 
   # If a theme was selected, run the switcher
   if [ "$SELECTED" != "" ]; then
-    sh "$THEME_DIR/$SELECTED/init" "$THEME_DIR/$SELECTED"
+    sh "$THEME_DIR/$SELECTED/init.sh" "$THEME_DIR/$SELECTED"
     echo "$SELECTED" >"$THEME_DIR/current_theme"
     notify-send " $SELECTED Theme" &
     aplay ~/.config/sounds/theme_switch.wav
@@ -28,7 +28,7 @@ fi
 if [[ "$MODE" == "previous" ]]; then
   PREVIOUS=$(cat "$THEME_DIR/current_theme")
   echo "$PREVIOUS"
-  sh "$THEME_DIR/$PREVIOUS/init" "$THEME_DIR/$PREVIOUS"
+  sh "$THEME_DIR/$PREVIOUS/init.sh" "$THEME_DIR/$PREVIOUS"
   notify-send " $PREVIOUS Theme"
   sleep 1
   aplay ~/.config/sounds/startup.wav

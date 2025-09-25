@@ -1,0 +1,9 @@
+orientation=horizontal
+hide_search=true
+halign=center
+valign=center
+hide_scroll=true
+lines=1
+width=1040
+cache_file=/dev/null
+close_on_focus_loss=true
