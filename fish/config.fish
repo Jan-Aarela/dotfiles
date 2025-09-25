@@ -1,6 +1,6 @@
 # vim:foldmethod=marker
 
-# Default settings{{{
+# Default settings {{{
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
@@ -9,19 +9,14 @@ set -g fish_greeting
 set fish_color_command cad3f5
 # }}}
 
+# Custom functions {{{
+# Git repo indicator 
 function _is_git_repo
     git rev-parse --is-inside-work-tree >/dev/null 2>&1
 end
+# }}}
 
-if _is_git_repo
-    set_color ee99a0
-    echo -n "" $PWD
-else
-    set_color blue
-    echo -n "" $PWD
-end
-
-# Fish prompt{{{
+# Fish prompt {{{
 function fish_prompt
     echo ""
     set_color brblack & echo -n " ╭─"
@@ -31,7 +26,7 @@ function fish_prompt
     set PWD_NEW (string replace --regex "^$HOME" "~" $PWD)
 
     if _is_git_repo
-        set_color f5a97f & echo -n "" $PWD_NEW
+        set_color red & echo -n "" $PWD_NEW
     else
         set_color blue & echo -n "" $PWD_NEW
     end
@@ -73,22 +68,7 @@ end
 
 # }}}
 
-# Fish prompt old{{{
-# function fish_prompt
-# 	set_color white  & echo -n " ╭─"
-# 	set_color cyan   & echo -n "[ "
-# 	set_color white & echo -n (date +%H:%M)
-# 	set_color cyan   & echo -n ""
-# 	set_color cyan  & echo -n " ] "
-# 	set_color cyan   & echo -n ""
-# 	# set_color white & echo -n (whoami)
-# 	set_color white & echo "~"(pwd)
-# 	set_color white  & echo -n " ╰──"
-# 	set_color cyan   & echo    "I> "
-# end
-# }}}
-
-# Fish keybinds{{{
+# Fish keybinds {{{
 function fish_user_key_bindings
     # Execute this once per mode that emacs bindings should be used in
     fish_default_key_bindings -M insert
@@ -110,14 +90,14 @@ function fzf_command_history
 end
 # }}}
 
-# Exports{{{
+# Exports {{{
 export EDITOR="nvim"
 export SHELL="/bin/fish"
 export PF_INFO="ascii title kernel uptime pkgs shell palette"
 
 # }}}
 
-# Aliasses{{{
+# Aliasses {{{
 alias cls='clear'
 alias CLS='clear'
 alias CLEAR='clear'
