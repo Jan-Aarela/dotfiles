@@ -1,25 +1,27 @@
 /* vim:fileencoding=utf-8:foldmethod=marker
 */
 
-/* Define colors */ /* {{{ */
-@define-color background1  rgba(32, 32, 48, 1);
+/* Define colors */
+/* {{{ */
+@define-color background1 rgba(32, 32, 48, 1);
 @define-color background2 rgba(21, 21, 32, 1);
 /* @define-color background  #151520; */
-@define-color sepepator   #313244;
-@define-color warning     #f38ba8;
-@define-color caution     #45475a;
+@define-color sepepator #313244;
+@define-color warning #f38ba8;
+@define-color caution #45475a;
 @define-color performance #f5c2e7;
-@define-color audio       #cba6f7;
-@define-color misc        #94e2d5;
-@define-color date        #a6e3a1;
-@define-color work        #b4befe;
-@define-color window      #b4befe;
-@define-color resize      #eba0ac;
-@define-color process     #89b4fa;
-@define-color text        #000000;
+@define-color audio #cba6f7;
+@define-color misc #94e2d5;
+@define-color date #a6e3a1;
+@define-color work #b4befe;
+@define-color window #b4befe;
+@define-color resize #eba0ac;
+@define-color process #89b4fa;
+@define-color text #000000;
 /* }}} */
 
-/* Reset all styles */ /* {{{ */
+/* Reset all styles */
+/* {{{ */
 * {
   border: none;
   border-radius: 0;
@@ -28,9 +30,12 @@
   padding: 0;
   box-shadow: none;
   text-shadow: none;
-} /* }}} */
+}
 
-/* Main bar keyframes */ /* {{{ */
+/* }}} */
+
+/* Main bar keyframes */
+/* {{{ */
 
 /* Keyframes for main bar criticals */
 
@@ -68,7 +73,8 @@
 
 /* }}} */
 
-/* Main bar defaults */ /* {{{ */
+/* Main bar defaults */
+/* {{{ */
 #waybar.main {
   background: @background2;
   font-family: "JetBrains Mono Nerd Font";
@@ -86,9 +92,12 @@
   font-size: 10pt;
   font-weight: 600;
   color: @text;
-} /* }}} */
+}
 
-/* Main bar modules */ /* {{{ */
+/* }}} */
+
+/* Main bar modules */
+/* {{{ */
 #waybar.main #custom-nvidia,
 #waybar.main #custom-weather,
 #waybar.main #custom-weather,
@@ -128,7 +137,8 @@
 
 /* }}} */
 
-/* Module colors */ /* {{{ */
+/* Module colors */
+/* {{{ */
 #waybar.main #custom-nvidia,
 #waybar.main #cpu,
 #waybar.main #temperature,
@@ -184,9 +194,12 @@
 #waybar.main #network.info.wifi {
   color: @warning;
   padding-right: 15px;
-} /* }}} */
+}
 
-/* Submap */ /* {{{ */
+/* }}} */
+
+/* Submap */
+/* {{{ */
 #waybar.main #submap.󰲏 {
   color: @resize;
   animation-iteration-count: infinite;
@@ -206,9 +219,11 @@
   animation-timing-function: steps(15);
   box-shadow: none;
 }
+
 /* }}} */
 
-/* Main bar criticals */ /* {{{ */
+/* Main bar criticals */
+/* {{{ */
 #waybar.main #custom-nvidia.critical,
 /* #waybar.main #custom-battery.critical, */
 #waybar.main #memory.swap.critical,
@@ -226,22 +241,22 @@
 #waybar.main #workspaces button.urgent,
 #waybar.main #workspaces button.special.urgent {
   transition: all 0s ease;
-  background-image: linear-gradient(
-    -63.435deg,
-    transparent 25%,
-    @background2 25%,
-    @background2 75%,
-    transparent 75%
-  );
+  background-image: linear-gradient(-63.435deg,
+      transparent 25%,
+      @background2 25%,
+      @background2 75%,
+      transparent 75%);
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-name: blink-urgent-workspace;
   animation-duration: 1s;
   animation-timing-function: steps(15);
 }
+
 /* }}} */
 
-/* Main bar warnings */ /* {{{ */
+/* Main bar warnings */
+/* {{{ */
 #waybar.main #pulseaudio.output.muted,
 #waybar.main #pulseaudio.input.source-muted {
   color: @sepepator;
@@ -251,9 +266,11 @@
 #waybar.main #custom-battery.critical {
   color: @warning;
 }
+
 /* }}} */
 
-/* Battery chargin */ /* {{{ */
+/* Battery chargin */
+/* {{{ */
 #waybar.main #custom-battery.charging {
   color: @misc;
   animation-iteration-count: infinite;
@@ -261,9 +278,12 @@
   animation-name: blink-modifier-text;
   animation-duration: 1s;
   animation-timing-function: steps(15);
-} /* }}} */
+}
 
-/* Workspaces */ /* {{{ */
+/* }}} */
+
+/* Workspaces */
+/* {{{ */
 /* Default workspace settings */
 
 #waybar.main #workspaces {
@@ -272,17 +292,15 @@
   padding-right: 4px;
   margin-top: -6px;
   margin-bottom: -6px;
-  background-image: linear-gradient(
-    -243.435deg,
-    @background2 18px,
-    @sepepator 18px,
-    @sepepator 21px,
-    transparent 21px,
-    transparent calc(100% -21px),
-    @sepepator calc(100% -21px),
-    @sepepator calc(100% - 19px),
-    transparent calc(100% - 19px)
-  );
+  background-image: linear-gradient(-243.435deg,
+      @background2 18px,
+      @sepepator 18px,
+      @sepepator 21px,
+      transparent 21px,
+      transparent calc(100% -21px),
+      @sepepator calc(100% -21px),
+      @sepepator calc(100% - 19px),
+      transparent calc(100% - 19px));
 }
 
 #waybar.main #workspaces button {
@@ -298,41 +316,35 @@
   margin-left: -17px;
   padding-top: 6px;
   padding-bottom: 6px;
-  background-image: linear-gradient(
-    -63.435deg,
-    transparent 25%,
-    @background2 25%,
-    @background2 75%,
-    transparent 75%
-  );
+  background-image: linear-gradient(-63.435deg,
+      transparent 25%,
+      @background2 25%,
+      @background2 75%,
+      transparent 75%);
 }
 
 /* Focused workspace */
 #waybar.main #workspaces button.visible {
   color: @text;
-  background-image: linear-gradient(
-    -63.435deg,
-    transparent 25%,
-    @caution 25%,
-    @caution 75%,
-    transparent 75%
-  );
+  background-image: linear-gradient(-63.435deg,
+      transparent 25%,
+      @caution 25%,
+      @caution 75%,
+      transparent 75%);
 }
 
 /* Focused workspace & monitor */
 #waybar.main #workspaces button.active {
   color: @window;
-  background-image: linear-gradient(
-    -63.435deg,
-    transparent 24%,
-    @sepepator 24%,
-    @sepepator 28%,
-    @background1 28%,
-    @background1 73%,
-    @sepepator 73%,
-    @sepepator 76%,
-    transparent 76%
-  );
+  background-image: linear-gradient(-63.435deg,
+      transparent 24%,
+      @sepepator 24%,
+      @sepepator 28%,
+      @background1 28%,
+      @background1 73%,
+      @sepepator 73%,
+      @sepepator 76%,
+      transparent 76%);
 }
 
 /* Style when cursor is on the button */
@@ -365,9 +377,12 @@
   animation-name: blink-special-workspace;
   animation-duration: 1s;
   animation-timing-function: steps(15);
-} /* }}} */
+}
 
-/* Custom icons as spacers */ /* {{{ */
+/* }}} */
+
+/* Custom icons as spacers */
+/* {{{ */
 #waybar.main #custom-spacer1,
 #waybar.main #custom-spacer2,
 #waybar.main #custom-spacer3,
@@ -384,67 +399,57 @@
 }
 
 #waybar.main #custom-spacer1 {
-  background-image: linear-gradient(
-    63.435deg,
-    @transparent 47.5%,
-    @sepepator 47.6%,
-    @sepepator 52.4%,
-    @background1 52.5%
-  );
+  background-image: linear-gradient(63.435deg,
+      @transparent 47.5%,
+      @sepepator 47.6%,
+      @sepepator 52.4%,
+      @background1 52.5%);
 }
 
 #waybar.main #custom-spacer2 {
-  background-image: linear-gradient(
-    63.435deg,
-    @background1 47.5%,
-    @sepepator 47.6%,
-    @sepepator 52.4%,
-    @background2 52.5%
-  );
+  background-image: linear-gradient(63.435deg,
+      @background1 47.5%,
+      @sepepator 47.6%,
+      @sepepator 52.4%,
+      @background2 52.5%);
 }
+
 #waybar.main #custom-spacer3 {
-  background-image: linear-gradient(
-    63.435deg,
-    @background2 47.5%,
-    @sepepator 47.6%,
-    @sepepator 52.4%,
-    @background1 52.5%
-  );
+  background-image: linear-gradient(63.435deg,
+      @background2 47.5%,
+      @sepepator 47.6%,
+      @sepepator 52.4%,
+      @background1 52.5%);
 }
 
 #waybar.main #custom-spacer4 {
-  background-image: linear-gradient(
-    63.435deg,
-    @background1 47.5%,
-    @sepepator 47.6%,
-    @sepepator 52.4%,
-    @background2 52.5%
-  );
+  background-image: linear-gradient(63.435deg,
+      @background1 47.5%,
+      @sepepator 47.6%,
+      @sepepator 52.4%,
+      @background2 52.5%);
 }
 
 #waybar.main #custom-spacer5 {
-  background-image: linear-gradient(
-    -63.435deg,
-    @transparent 47.5%,
-    @sepepator 47.6%,
-    @sepepator 52.4%,
-    transparent 52.5%
-  );
+  background-image: linear-gradient(-63.435deg,
+      @transparent 47.5%,
+      @sepepator 47.6%,
+      @sepepator 52.4%,
+      transparent 52.5%);
 }
 
 #waybar.main #custom-spacer6 {
-  background-image: linear-gradient(
-    -63.435deg,
-    @transparent 47.5%,
-    @sepepator 47.6%,
-    @sepepator 52.4%,
-    transparent 52.5%
-  );
+  background-image: linear-gradient(-63.435deg,
+      @transparent 47.5%,
+      @sepepator 47.6%,
+      @sepepator 52.4%,
+      transparent 52.5%);
 }
 
 /* }}} */
 
-/* Custom tray icon */ /* {{{ */
+/* Custom tray icon */
+/* {{{ */
 #waybar.main #traym {
   background: @background2;
   color: @process;
@@ -460,9 +465,11 @@
   padding-left: 2pt;
   border-radius: 6pt 0pt 0pt 6pt;
 }
+
 /* }}} */
 
-/* Tooltip */ /* {{{ */
+/* Tooltip */
+/* {{{ */
 tooltip {
   background: @background;
   border: 3px solid @caution;
@@ -475,9 +482,12 @@ tooltip {
   background: @background;
   border: 3px solid @caution;
   border-radius: 8px;
-} /* }}} */
+}
 
-/* Indicator bar keyframes */ /* {{{ */
+/* }}} */
+
+/* Indicator bar keyframes */
+/* {{{ */
 @keyframes blink-critical-battery {
   to {
     border-color: @warning;
@@ -521,9 +531,12 @@ tooltip {
       inset 0px 3px 4px -5px @misc,
       inset 0px -3px 4px -5px @misc;
   }
-} /* }}} */
+}
 
-/* indicator bar battery module */ /* {{{ */
+/* }}} */
+
+/* indicator bar battery module */
+/* {{{ */
 
 /* Set defaults for indicator bar */
 #waybar.indicator {
@@ -535,12 +548,12 @@ tooltip {
 
 /* Set "battery bar" style */
 #waybar.indicator #custom-batteryindicator {
-  border: 2px solid #313244;
+  border: 2.5px solid #313244;
   background: transparent;
   box-shadow:
     /* inset 0px 3px 4px -5px rgba(200, 200, 255, 0.33), */
-    inset 0px 4px 4px -5px rgba(0, 0, 0, 0.33),
-    inset 0px -4px 4px -5px rgba(0, 0, 0, 0.33);
+    inset 0px 4px 4px -5px rgba(0, 0, 0, 0.5),
+    inset 0px -4px 4px -5px rgba(0, 0, 0, 0.5);
 
   border-radius: 6pt;
   padding-left: 2247px;
@@ -592,4 +605,6 @@ tooltip {
   animation-name: blink-full-battery;
   animation-duration: 0.2s;
   animation-timing-function: steps(15);
-} /* }}} */
+}
+
+/* }}} */

@@ -2,15 +2,16 @@
 
 # Get list of clients with title and address. Adds eg. "1." prefix.
 CLIENTS=$(hyprctl clients -j | jq -r '.[] | select(has("address") and .address != null) | "\(.title):TämäEiOleErotinMerkki :D:\(.address // "null")"' | nl -w1 -s'. ')
+echo $CLIENTS
 # Strips addreses for fzf to fyzzy find.
-TITLES=$(echo "$CLIENTS" | awk -F ":TämäEiOleErotinMerkki :D:" '{print $1}') 
-
+TITLES=$(echo "$CLIENTS" | awk -F ":TämäEiOleErotinMerkki :D:" '{print $1}')
+echo $TITLES
 # Count total windows/clients
 COUNT=$(echo "$TITLES" | wc -l)
 echo "Windows: $COUNT"
 
 # Use wofi to let the user select a window by title
-SELECTED=$(echo "$CLIENTS" | awk -F ":TämäEiOleErotinMerkki :D:" '{print $1}' | wofi -dmen -W 768 -H 500 -p "[$COUNT] Fuzzy find a window" -i -k /dev/null)
+SELECTED=$(echo "$CLIENTS" | awk -F ":TämäEiOleErotinMerkki :D:" '{print $1}' | wofi -dmen -W 768 -H 500 -p "[$COUNT] Fuzzy find a window" -i -k /dev/null -s ~/.config/wofi/default.css)
 #SELECTED=$(echo "$CLIENTS" | awk -F ":TämäEiOleErotinMerkki :D:" '{print $1}' | rofi -dmenu -i )
 echo "Selected: $SELECTED"
 
@@ -33,4 +34,3 @@ else
   hyprctl dispatch focuswindow address:$ADDRESS
   aplay ~/.config/sounds/theme_switch.wav
 fi
-

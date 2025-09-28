@@ -10,7 +10,9 @@ if [[ $SELECTED == "" || $SELECTED == "" || $SELECTED == "" ]]; then
   CONFIRMATION=$(echo -e "$SELECTED Sure?" | wofi -dmenu -i -p "$SELECTED?" -s ~/.config/wofi/icon.css -c ~/.config/wofi/power)
 
   # Case matching
-  if [[ $CONFIRMATION == "Sure?" || $CONFIRMATION == "yes" || $CONFIRMATION == "Y" || $CONFIRMATION == "y" || $CONFIRMATION == " Yes" ]]; then
+  if [[ $CONFIRMATION == "$SELECTED Sure?" || $CONFIRMATION == "yes" || $CONFIRMATION == "Y" || $CONFIRMATION == "y" || $CONFIRMATION == " Yes" ]]; then
+    notify-send lol
+
     case "$SELECTED" in
     "") aplay ~/.config/sounds/shutdown.wav && systemctl poweroff ;;
     "") aplay ~/.config/sounds/shutdown.wav && systemctl reboot ;;
