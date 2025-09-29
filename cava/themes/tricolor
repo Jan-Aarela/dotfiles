@@ -1,3 +1,4 @@
+; vim:ft=ini
 [color]
 horizontal_gradient = 1
 horizontal_gradient_color_1 = '#c45161'

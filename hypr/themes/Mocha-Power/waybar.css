@@ -122,10 +122,6 @@
   background: @module_bg;
 }
 
-#waybar.main #tray {
-  padding-right: 6pt;
-}
-
 #waybar.main #custom-weather {
   padding-right: 3pt;
 }
@@ -450,20 +446,22 @@
 
 /* Custom tray icon */
 /* {{{ */
-#waybar.main #traym {
+#waybar.main #tray {
   background: @background2;
   color: @process;
   border-radius: 6pt 0pt 0pt 6pt;
+  padding-left: 4pt;
+  /* padding-right: 4pt; */
 }
 
 #waybar.main #custom-trayicon {
   font-size: 11pt;
-  font-weight: bold;
+  color: @process;
+  /* font-weight: bold; */
   font-style: italic;
   background: transparent;
-  padding-right: 6pt;
+  padding-right: 0pt;
   padding-left: 2pt;
-  border-radius: 6pt 0pt 0pt 6pt;
 }
 
 /* }}} */

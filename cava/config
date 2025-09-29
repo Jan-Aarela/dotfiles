@@ -157,7 +157,7 @@ higher_cutoff_freq = 15000
 # 'sdl' uses the Simple DirectMedia Layer to render in a graphical context.
 # 'sdl_glsl' uses SDL to create an OpenGL context. Write your own shaders or
 # use one of the predefined ones.
-; method = noncurses
+method = noncurses
 
 # Orientation of the visualization. Can be 'bottom', 'top', 'left', 'right' or
 # 'horizontal'. Default is 'bottom'. 'left and 'right' are only supported on sdl
@@ -221,7 +221,7 @@ channels = mono
 
 # disable console blank (screen saver) in tty
 # (Not supported on FreeBSD)
-; disable_blanking = 0
+; disable_blanking = 1
 
 # show a flat bar at the bottom of the screen when idle, 1 = on, 0 = off
 ; show_idle_bar_heads = 1
@@ -246,10 +246,10 @@ channels = mono
 # Gradient mode, only hex defined colors are supported,
 # background must also be defined in hex or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
-gradient = 1
-gradient_color_1 = '#b4befe'
-gradient_color_2 = '#bac2de'
-gradient_color_3 = '#f38ba8'
+; gradient = 1
+; gradient_color_1 = '#b4befe'
+; gradient_color_2 = '#bac2de'
+; gradient_color_3 = '#f38ba8'
 ; gradient_color_4 = '#cccc33'
 ; gradient_color_5 = '#cca633'
 ; gradient_color_6 = '#cc8033'
@@ -259,7 +259,7 @@ gradient_color_3 = '#f38ba8'
 
 # Horizontal is only supported on noncurses output.
 # Only one color will be calculated per bar.
-; horizontal_gradient = 0
+; horizontal_gradient = 1
 ; horizontal_gradient_color_1 = '#c45161'
 ; horizontal_gradient_color_2 = '#e094a0'
 ; horizontal_gradient_color_3 = '#f2b6c0'
@@ -278,7 +278,7 @@ gradient_color_3 = '#f38ba8'
 
 # use theme file instead of defining colors in this file
 # themes are located in $HOME/.config/cava/themes
-; theme = 'none'
+theme = 'cava_theme'
 
 
 [smoothing]
@@ -289,7 +289,7 @@ gradient_color_3 = '#f38ba8'
 ; integral = 77
 
 # Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
-; monstercat = 0
+; monstercat = 1
 ; waves = 0
 
 # Set gravity percentage for "drop off". Higher values means bars will drop faster.
@@ -305,7 +305,7 @@ gravity = 10
 # Noise reduction, int 0 - 100. default 77
 # the raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth
 # 100 will be very slow and smooth, 0 will be fast but noisy.
-noise_reduction = 30
+noise_reduction = 40
 
 
 [eq]

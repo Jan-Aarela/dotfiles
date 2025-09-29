@@ -1,0 +1,1 @@
+/home/jan-aarela/.local/share/broot/launcher/fish/br.fish
