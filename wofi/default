@@ -1,3 +1,4 @@
+# vim:ft=ini
 width=400
 height=400
 close_on_focus_loss=true

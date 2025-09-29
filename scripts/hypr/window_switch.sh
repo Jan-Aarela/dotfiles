@@ -11,7 +11,7 @@ COUNT=$(echo "$TITLES" | wc -l)
 echo "Windows: $COUNT"
 
 # Use wofi to let the user select a window by title
-SELECTED=$(echo "$CLIENTS" | awk -F ":TämäEiOleErotinMerkki :D:" '{print $1}' | wofi -dmen -W 768 -H 500 -p "[$COUNT] Fuzzy find a window" -i -k /dev/null -s ~/.config/wofi/default.css)
+SELECTED=$(echo "$CLIENTS" | awk -F ":TämäEiOleErotinMerkki :D:" '{print $1}' | wofi -dmen -W 900 -H 600 -p "[$COUNT] Fuzzy find a window" -i -k /dev/null -s ~/.config/wofi/default.css -c ~/.config/wofi/window_switch)
 #SELECTED=$(echo "$CLIENTS" | awk -F ":TämäEiOleErotinMerkki :D:" '{print $1}' | rofi -dmenu -i )
 echo "Selected: $SELECTED"
 

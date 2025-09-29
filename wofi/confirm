@@ -1,10 +1,10 @@
 # vim:ft=ini
-orientation=horizontal
 hide_search=true
 halign=center
 valign=center
 hide_scroll=true
-lines=1
-width=1040
+height=220
+width=690
 cache_file=/dev/null
 close_on_focus_loss=true
+

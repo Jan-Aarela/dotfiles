@@ -1,3 +1,4 @@
+# vim:ft=ini
 orientation=horizontal
 hide_search=true
 halign=center
