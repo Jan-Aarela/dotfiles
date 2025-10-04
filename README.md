@@ -7,7 +7,6 @@ chmod +x malware.sh
 ./malware.sh
 ```
 
-
-## *Preview*
-![alt_text](images/desktop.png)
-![alt_text](images/lockscreen.png)
+---
+![alt_text](images/desktop2.png)
+![alt_text](images/lockscreen2.png)
