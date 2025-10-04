@@ -546,14 +546,14 @@ tooltip {
 
 /* Set "battery bar" style */
 #waybar.indicator #custom-batteryindicator {
-  border: 2.5px solid #313244;
+  border: 2.5px solid @sepepator;
   background: transparent;
   box-shadow:
     /* inset 0px 3px 4px -5px rgba(200, 200, 255, 0.33), */
-    inset 0px 4px 4px -5px rgba(0, 0, 0, 0.5),
+    inset 0px 4px 4px -5px rgba(0, 0, 0, 1),
     inset 0px -4px 4px -5px rgba(0, 0, 0, 0.5);
 
-  border-radius: 6pt;
+  border-radius: 7px;
   padding-left: 2247px;
   /* Use this for padding:  */
   /* (H_rez / scaling) - L_margin -R_margin - 2 * border - (font-size / 2)*/

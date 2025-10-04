@@ -30,6 +30,4 @@ if [[ "$MODE" == "previous" ]]; then
   echo "$PREVIOUS"
   sh "$THEME_DIR/$PREVIOUS/init.sh" "$THEME_DIR/$PREVIOUS"
   notify-send " $PREVIOUS Theme"
-  sleep 1
-  aplay ~/.config/sounds/startup.wav
 fi

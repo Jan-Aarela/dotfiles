@@ -2,36 +2,44 @@
 # And notifies if battery level is low or critical.
 
 BATTERY=$(upower -e | grep 'BAT')
-THRESHOLD=20
+LOW=15
 CRITICAL=10
 ALARM=5
 
+NOTIFY_LOW=TRUE
+NOTIFY_CRITICAL=TRUE
+
 while true; do
-    if [ -n "$BATTERY" ]; then
-        PERCENT=$(upower -i "$BATTERY" | awk '/percentage/ {print $2}' | tr -d '%')
-        echo $PERCENT
-        STATE=$(upower -i "$BATTERY" | awk '/state/ {print $2}')
-        echo $STATE
+  if [ -n "$BATTERY" ]; then
+    PERCENT=$(upower -i "$BATTERY" | awk '/percentage/ {print $2}' | tr -d '%')
+    echo "$PERCENT"
+    STATE=$(upower -i "$BATTERY" | awk '/state/ {print $2}')
+    echo "$STATE"
 
-        if [[ $PERCENT -le $ALARM && "$STATE" == "discharging" ]]; then
-            notify-send " " "Low battery!" -u critical -t 5000
-            aplay ~/.config/sounds/alarm.wav &
-            echo "< 5%"
-            sleep 3.85
+    if [[ $STATE == "charging" ]]; then
+      NOTIFY_LOW=TRUE
+      NOTIFY_CRITICAL=TRUE
+      sleep 60
 
-        elif [[ $PERCENT -le $CRITICAL && "$STATE" == "discharging" ]]; then
-            notify-send " " "Low battery!" -u critical -t 5000
-            echo "< 10%"
-            sleep 300
+    elif [[ $PERCENT -le $ALARM && "$STATE" == "discharging" ]]; then
+      notify-send " Low battery!" -u critical -t 5000
+      aplay ~/.config/sounds/alarm.wav &
+      sleep 3.85
 
-        elif [[ $PERCENT -le $THRESHOLD && "$STATE" == "discharging" ]]; then
-            notify-send " " "Low battery!" -t 5000
-            echo "< 20%"
-            sleep 600
+    elif [[ $PERCENT -le $CRITICAL && "$STATE" == "discharging" && $NOTIFY_CRITICAL == "TRUE" ]]; then
+      notify-send " Low battery!" -u critical -t 5000
+      NOTIFY_CRITICAL=FALSE
+      echo "< 10%"
+      sleep 60
 
-        else
-            echo "no tresholds"
-            sleep 300
-        fi
+    elif [[ $PERCENT -le $LOW && "$STATE" == "discharging" && $NOTIFY_LOW == "TRUE" ]]; then
+      notify-send " Low battery!" -t 5000 -u critical
+      NOTIFY_LOW=FALSE
+      sleep 60
+
+    else
+      echo "no tresholds"
+      sleep 60
     fi
+  fi
 done
