@@ -1,0 +1,15 @@
+#/bin/bash
+
+if pgrep -x swaylock > /dev/null; then
+    exit 0
+fi
+
+
+WS=$(hyprctl activeworkspace | grep "workspace ID" | awk '{print $3}')
+
+
+kitty --title swaylock_quarium -e asciiquarium -t &
+
+swaylock -c 00000000 --clock --inside-color 181826 --ring-color 313244 --key-hl-color B4BEFE --text-color ffffff --timestr %H:%M --datestr "" --ring-wrong-color f38ba8 --inside-wrong-color 181826 --text-wrong-color f38ba8 --inside-ver-color 181826 --ring-ver-color B4BEFE --text-ver-color ffffff -e --font "JetBrainsMonoNL Nerd Font Mono" --layout-bg-color 00000000 --ring-clear-color fab387 --inside-clear-color 181826 --text-clear-color ffffff --bs-hl-color fab387
+
+hyprctl dispatch killwindow title:swaylock_quarium

@@ -62,6 +62,8 @@ case "$SELECTION" in
     hyprctl dispatch moveworkspacetomonitor 9 HDMI-A-1
     hyprctl dispatch moveworkspacetomonitor 10 HDMI-A-1
 
+    swww restore
+
   else
     # If already extended, notify.
     notify-send "HDMI - Already extended"

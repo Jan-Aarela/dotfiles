@@ -12,34 +12,35 @@
     "margin-right": 24,
 
     "modules-left": [
-      "group/traym",
-      // "custom/spacer5",
-      "hyprland/workspaces",
-      // "custom/spacer2",
-      // "custom/spacer6",
-      "hyprland/submap",
-      "hyprland/window"
-    ],
-
-    "modules-right": [
-      "custom/spacer1",
       "cpu",
       "temperature",
       "custom/nvidia",
+      "custom/spacer1",
       "group/storage",
       "disk",
-      "network#info",
       "custom/spacer2",
+            "hyprland/window",
+      "custom/spacer5"
+    ],
+
+    "modules-right": [
+      "custom/spacer3",
       "pulseaudio#input",
       "pulseaudio#output",
-      "custom/spacer3",
       "hyprland/language",
       "backlight",
       "custom/battery",
+      "network#info" ,
+
       "custom/spacer4",
       "custom/weather",
       "clock"
     ],
+
+    "modules-center": [
+      "hyprland/workspaces",
+    ],
+
 
     // Modules
     "disk": {
@@ -228,7 +229,8 @@
 
     "hyprland/window": {
       "format": "{title}",
-      "max-length": 48,
+      "max-length": 50,
+
       "tooltip": false,
       "icon": true,
       "icon-size": 18,
@@ -332,10 +334,9 @@
       // "format": " ",
       // "format": "Zäni",
       // "format": "󰣇 ",
-      // "format": " ",
-      "format": "ᗧ ",
+      "format": " ",
       "tooltip": false,
-      "on-click": " bash ~/.config/scripts/pacman.sh"
+      "on-click": "aplay /home/jan-aarela/.config/sounds/pacman.wav> /dev/null 2>/dev/null & kitty --title Pacman fish -c '~/.config/fish/Pacman.sh & sudo pacman -Syu'"
     }
   },
 

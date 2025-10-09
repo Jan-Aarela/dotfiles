@@ -2,6 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Keybinds {{{
 local map = LazyVim.safe_keymap_set
 
 -- Window resize
@@ -26,8 +27,23 @@ map("n", "<C-u>", "<cmd>UndotreeToggle<cr>", { desc = "Toggle Undotree" })
 -- Next and previous buffer
 map("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+-- }}}
 
--- Which-key binds.
+-- LSP toggle {{{
+local function toggle_lsp()
+  local clients = vim.lsp.get_active_clients()
+  print(#clients)
+  if #clients > 0 then
+    print("LSP: OFF (LspStop)")
+    vim.cmd("LspStop")
+  else
+    print("LSP: ON (LspStart)")
+    vim.cmd("LspStart")
+  end
+end
+-- }}}
+
+-- Which-key binds {{{
 local wk = require("which-key")
 wk.add({
   {
@@ -40,3 +56,12 @@ wk.add({
     desc = "CWD Terminal",
   },
 })
+
+wk.add({
+  {
+    "<leader>l",
+    toggle_lsp,
+    desc = "Toggle LSP On/Off",
+  },
+})
+-- }}}

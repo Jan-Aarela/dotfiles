@@ -112,7 +112,9 @@ alias lsal='lsd -F -1 -a --group-directories-first --blocks permission --blocks 
 
 alias fzf="fzf --preview 'test -f {}; and bat --color=always {}; or ls --color=always {}'"
 
-alias Pacman='aplay /home/jan-aarela/.config/sounds/pacman.wav> /dev/null 2>/dev/null & sudo pacman -Syu'
+alias Pacman='bash ~/.config/scripts/pacman.sh'
+
+alias nsx="nsxiv -g 1500x1000"
 
 set -x MANPAGER "nvim +Man!"
 # }}}

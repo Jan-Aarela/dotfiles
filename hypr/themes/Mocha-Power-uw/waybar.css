@@ -8,15 +8,17 @@
 @define-color sepepator #313244;
 @define-color warning #f38ba8;
 @define-color caution #45475a;
-@define-color performance #f5c2e7;
+@define-color performance #f9e2af;
 @define-color audio #cba6f7;
-@define-color misc #94e2d5;
+@define-color misc #cba6f7;
 @define-color date #a6e3a1;
 @define-color work #b4befe;
 @define-color window #b4befe;
 @define-color resize #eba0ac;
 @define-color process #89b4fa;
 @define-color text #000000;
+@define-color disk #eba0ac;
+
 /* }}} */
 
 /* Reset all styles */
@@ -137,21 +139,26 @@
 #waybar.main #custom-nvidia,
 #waybar.main #cpu,
 #waybar.main #temperature,
-#waybar.main #memory.ram,
-#waybar.main #memory.swap,
-#waybar.main #disk,
 #waybar.main #network {
   color: @performance;
   background: @background1;
 }
 
-#waybar.main #pulseaudio {
-  color: @audio;
+#waybar.main #memory.ram,
+#waybar.main #memory.swap,
+#waybar.main #disk {
+  color: @disk;
   background: @background2;
 }
 
-#waybar.main #custom-battery,
+
 #waybar.main #language,
+#waybar.main #pulseaudio {
+  color: @audio;
+  background: @background1;
+}
+
+#waybar.main #custom-battery,
 #waybar.main #backlight,
 #waybar.main #battery {
   color: @misc;
@@ -254,7 +261,7 @@
 /* {{{ */
 #waybar.main #pulseaudio.output.muted,
 #waybar.main #pulseaudio.input.source-muted {
-  color: @sepepator;
+  color: @text;
 }
 
 #waybar.main #custom-battery.warning,
@@ -287,15 +294,6 @@
   padding-right: 4px;
   margin-top: -6px;
   margin-bottom: -6px;
-  background-image: linear-gradient(-243.435deg,
-      @background2 17px,
-      @sepepator 17px,
-      @sepepator 21px,
-      transparent 21px,
-      transparent calc(100% -22px),
-      @sepepator calc(100% -22px),
-      @sepepator calc(100% - 18px),
-      transparent calc(100% - 18px));
 }
 
 #waybar.main #workspaces button {
@@ -394,7 +392,7 @@
 }
 
 #waybar.main #custom-spacer1 {
-  background-image: linear-gradient(63.435deg,
+  background-image: linear-gradient(-63.435deg,
       @transparent 47.5%,
       @sepepator 47.6%,
       @sepepator 52.4%,
@@ -402,7 +400,7 @@
 }
 
 #waybar.main #custom-spacer2 {
-  background-image: linear-gradient(63.435deg,
+  background-image: linear-gradient(-63.435deg,
       @background1 47.5%,
       @sepepator 47.6%,
       @sepepator 52.4%,
@@ -427,10 +425,10 @@
 
 #waybar.main #custom-spacer5 {
   background-image: linear-gradient(-63.435deg,
-      @transparent 47.5%,
+      transparent 47.5%,
       @sepepator 47.6%,
       @sepepator 52.4%,
-      transparent 52.5%);
+      @background1 52.5%);
 }
 
 #waybar.main #custom-spacer6 {

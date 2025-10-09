@@ -440,6 +440,12 @@
     appname = "some_volume_notifiers"
     set_stack_tag = "volume"
 
+# [play_sound]
+#   # Play sound
+#   summary = "*"
+#   script = "/home/jan-aarela/.config/dunst/sound.sh"
+#
+#
 # vim: ft=cfg
 
 
