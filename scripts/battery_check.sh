@@ -22,7 +22,6 @@ while true; do
       sleep 60
 
     elif [[ $PERCENT -le $ALARM && "$STATE" == "discharging" ]]; then
-      notify-send " Low battery!" -u critical -t 5000
       aplay ~/.config/sounds/alarm.wav &
       sleep 3.85
 

@@ -335,7 +335,9 @@
       // "format": " ",
       "format": "ᗧ ",
       "tooltip": false,
-      "on-click": " bash ~/.config/scripts/pacman.sh"
+      "on-click": " bash ~/.config/scripts/pacman.sh",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
     }
   },
 

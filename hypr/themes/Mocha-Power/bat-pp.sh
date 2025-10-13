@@ -84,7 +84,7 @@ if [[ $MODE == "bar" ]]; then
     CLASS=$"charging"
   elif [[ $PERCENT -le 10 ]]; then
     CLASS=$"critical"
-  elif [[ $PERCENT -le 20 ]]; then
+  elif [[ $PERCENT -le 15 ]]; then
     CLASS=$"warning"
   else
     CLASS=$"discharging"

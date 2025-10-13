@@ -445,22 +445,18 @@
 
 /* Custom tray icon */
 /* {{{ */
-#waybar.main #tray {
-  background: @background2;
-  color: @process;
-  border-radius: 6pt 0pt 0pt 6pt;
-  padding-left: 4pt;
-  /* padding-right: 4pt; */
-}
-
 #waybar.main #custom-trayicon {
   font-size: 11pt;
-  color: @process;
+  color: transparent;
   /* font-weight: bold; */
   font-style: italic;
   background: transparent;
   padding-right: 0pt;
   padding-left: 2pt;
+  background-size: 16px;
+  background-position: 2px, 0px;
+  background-repeat: no-repeat;
+  background-image: url("/home/jan-aarela/.config/hypr/themes/Mocha-Power/pacman.png");
 }
 
 /* }}} */

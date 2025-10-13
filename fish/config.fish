@@ -101,6 +101,11 @@ export PF_INFO="ascii title kernel uptime pkgs shell palette"
 alias cls='clear'
 alias CLS='clear'
 alias CLEAR='clear'
+alias c.='clear'
+alias C.='clear'
+
+alias rm="rm -i"
+
 alias tree="tree -C"
 alias kys="killall"
 
