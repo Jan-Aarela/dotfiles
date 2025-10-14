@@ -161,7 +161,7 @@
       "format": " {}",
       "format-fi": "Vittu",
       "format-ru": "Блять",
-      "min-length": 7,
+      "min-length": 8,
       "on-click": "hyprctl switchxkblayout current next & aplay ~/.config/sounds/interact.wav",
       "tooltip": false,
       "class": "language"
@@ -250,7 +250,7 @@
     },
 
     "pulseaudio#output": {
-      "format": "{icon}  {volume}%",
+      "format": "{icon} {volume}%",
       "format-bluetooth": "{icon} {volume}%",
       "format-source-muted": "{volume}",
       "format-icons": {

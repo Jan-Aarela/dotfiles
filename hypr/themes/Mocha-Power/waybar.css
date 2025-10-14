@@ -76,8 +76,8 @@
 /* {{{ */
 #waybar.main {
   background: @background2;
-  font-family: "JetBrains Mono Nerd Font";
-  font-size: 10pt;
+  font-family: "JetBrainsMono Nerd Font propo";
+  font-size: 12pt;
   font-weight: 600;
   color: @text;
   border-radius: 6pt;
@@ -88,7 +88,7 @@
 
 #waybar.main button {
   font-family: JetBrains Mono Nerd Font;
-  font-size: 10pt;
+  font-size: 12pt;
   font-weight: 600;
   color: @text;
 }

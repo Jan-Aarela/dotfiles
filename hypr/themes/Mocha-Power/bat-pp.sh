@@ -57,13 +57,13 @@ if [[ $MODE == "refresh" ]]; then
   PROFILE=$(powerprofilesctl get)
   case "$PROFILE" in
   performance)
-    PROFILE=$" 󱀚"
+    PROFILE=$"󱀚"
     ;;
   balanced)
-    PROFILE=$" "
+    PROFILE=$""
     ;;
   power-saver)
-    PROFILE=$" "
+    PROFILE=$""
     ;;
   esac
 
