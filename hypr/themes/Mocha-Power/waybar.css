@@ -87,7 +87,7 @@
 }
 
 #waybar.main button {
-  font-family: JetBrains Mono Nerd Font;
+  font-family: "JetBrains Mono Nerd Font propo";
   font-size: 12pt;
   font-weight: 600;
   color: @text;

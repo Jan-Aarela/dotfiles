@@ -6,6 +6,7 @@
     "name": "main",
     "height": 28,
     "reload_style_on_change": true,
+    "output": "eDP-1",
 
     "margin-top": 24,
     "margin-left": 24,
@@ -243,8 +244,8 @@
       "show-special": true,
       "special-visible-only": false,
       "format-icons": {
-        "magic": " ",
-        "10": "󰊴 ",
+        "magic": "",
+        "10": "󰊴",
         "lock": ""
       }
     },
@@ -348,7 +349,7 @@
     "name": "indicator",
     "passthrough": true,
     "reload_style_on_change": true,
-
+    "output": "eDP-1",
 
     "height": 30,
 

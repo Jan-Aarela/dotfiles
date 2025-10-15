@@ -6,10 +6,14 @@
 local map = LazyVim.safe_keymap_set
 
 -- Window resize
-map("n", "<A-Left>", "<C-w>5<", { desc = "Reduce window width" })
-map("n", "<A-Right>", "<C-w>5>", { desc = "Increase window width" })
-map("n", "<A-Down>", "<C-w>5-", { desc = "Reduce window heigth" })
-map("n", "<A-Up>", "<C-w>5+", { desc = "Increase window height" })
+map("n", "<A-Left>", "<C-w>12<", { desc = "Reduce window width" })
+map("n", "<S-A-Left>", "<C-w>4<", { desc = "Increase window height" })
+map("n", "<A-Right>", "<C-w>12>", { desc = "Increase window width" })
+map("n", "<S-A-Right>", "<C-w>4>", { desc = "Increase window height" })
+map("n", "<A-Down>", "<C-w>6-", { desc = "Reduce window heigth" })
+map("n", "<S-A-Down>", "<C-w>2-", { desc = "Increase window height" })
+map("n", "<A-Up>", "<C-w>6+", { desc = "Increase window height" })
+map("n", "<S-A-Up>", "<C-w>2+", { desc = "Increase window height" })
 
 -- Window movement
 map("n", "<C-left>", "<C-w>h", { desc = "switch window left" })
@@ -19,7 +23,7 @@ map("n", "<C-up>", "<C-w>k", { desc = "switch window up" })
 
 -- Copy and paste
 map("v", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
-map("v", "<C-v>", "p", { desc = "paste" })
+map("n", "<C-v>", "p", { desc = "paste" })
 
 -- Undotree toggle
 map("n", "<C-u>", "<cmd>UndotreeToggle<cr>", { desc = "Toggle Undotree" })

@@ -66,6 +66,9 @@ function fish_prompt
     set_color brmagenta & echo " >> "
 end
 
+function fish_mode_prompt
+end
+
 # }}}
 
 # Fish keybinds {{{
@@ -74,6 +77,8 @@ function fish_user_key_bindings
     fish_default_key_bindings -M insert
     bind -M default h fzf_command_history
     bind -M default ? "moar ~/.config/fish/shortcuts.txt"
+    # bind -M visual c fish_clipboard_copy
+    bind -M visual c 'fish_clipboard_copy; commandline -f end-selection; fish_vi_key_bindings default; commandline -f repaint'
 
     # Then execute the vi-bindings so they take precedence when there's a conflict.
     # Without --no-erase fish_vi_key_bindings will default to
@@ -119,7 +124,15 @@ alias fzf="fzf --preview 'test -f {}; and bat --color=always {}; or ls --color=a
 
 alias Pacman='bash ~/.config/scripts/pacman.sh'
 
-alias nsx="nsxiv -g 1500x1000"
+function nsx
+    if test (count $argv) -gt 1
+        nsxiv -to -g 1500x1000 $argv[1..-1]
+    else if test (count $argv) -eq 1
+        nsxiv -g 1500x1000 $argv[1]
+    else
+        nsxiv -to -g 1500x1000 *
+    end
+end
 
 set -x MANPAGER "nvim +Man!"
 # }}}
