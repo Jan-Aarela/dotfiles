@@ -1,9 +1,7 @@
-[
-    {
+{
     // MAIN BAR //
     "layer": "top",
     "position": "top",
-    "name": "main",
     "height": 28,
     "reload_style_on_change": true,
     // "output": "eDP-1",
@@ -340,31 +338,4 @@
       "on-scroll-up": "",
       "on-scroll-down": "",
     }
-  },
-
-  {
-    // INDICATOR BAR //
-    "layer": "top",
-    "position": "top",
-    "name": "indicator",
-    "passthrough": true,
-    "reload_style_on_change": true,
-    // "output": "eDP-1",
-
-    "height": 30,
-
-    "margin-top": -29,
-    // "margin-left": 10,
-    "margin-right": 24,
-
-    "modules-right": ["custom/batteryindicator"],
-
-    "custom/batteryindicator": {
-      "interval": 4,
-      "return-type": "json",
-      "tooltip": false,
-      "format": " ",
-      "exec": "~/.config/hypr/themes/Mocha-Power/bat-pp.sh bar"
-    }
   }
-]

@@ -1,0 +1,29 @@
+[
+  {
+    // Main BAR //
+    "include": "~/.config/hypr/themes/Mocha-Power-2/main.jsonc",
+    "output": "eDP-1",
+     "name": "main",
+  },
+
+  {
+    // INDICATOR BAR //
+    "include": "~/.config/hypr/themes/Mocha-Power-2/indicator.jsonc",
+    "output": "eDP-1",
+    "name": "indicator",
+  },
+
+  {
+    // Main BAR //
+    "include": "~/.config/hypr/themes/Mocha-Power-2/main.jsonc",
+    "output": "HDMI-A-1",
+     "name": "main",
+  },
+
+  {
+    // INDICATOR BAR //
+    "include": "~/.config/hypr/themes/Mocha-Power-2/indicator.jsonc",
+    "output": "HDMI-A-1",
+       "name": "indicator2",
+  },
+]

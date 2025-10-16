@@ -6,13 +6,13 @@
 local map = LazyVim.safe_keymap_set
 
 -- Window resize
-map("n", "<A-Left>", "<C-w>12<", { desc = "Reduce window width" })
+map("n", "<A-Left>", "<C-w>16<", { desc = "Reduce window width" })
 map("n", "<S-A-Left>", "<C-w>4<", { desc = "Increase window height" })
-map("n", "<A-Right>", "<C-w>12>", { desc = "Increase window width" })
+map("n", "<A-Right>", "<C-w>16>", { desc = "Increase window width" })
 map("n", "<S-A-Right>", "<C-w>4>", { desc = "Increase window height" })
-map("n", "<A-Down>", "<C-w>6-", { desc = "Reduce window heigth" })
+map("n", "<A-Down>", "<C-w>8-", { desc = "Reduce window heigth" })
 map("n", "<S-A-Down>", "<C-w>2-", { desc = "Increase window height" })
-map("n", "<A-Up>", "<C-w>6+", { desc = "Increase window height" })
+map("n", "<A-Up>", "<C-w>8+", { desc = "Increase window height" })
 map("n", "<S-A-Up>", "<C-w>2+", { desc = "Increase window height" })
 
 -- Window movement

@@ -5,6 +5,7 @@
 vim.opt.relativenumber = false
 
 vim.opt.swapfile = false
+-- vim.opt.clipboard = ""
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
