@@ -549,7 +549,7 @@ tooltip {
 
 
   border-radius: 7px;
-  padding-left: 2247px;
+  padding-left: 2502px;
   /* Use this for padding:  */
   /* (H_rez / scaling) - L_margin -R_margin - 2 * border - (font-size / 2)*/
   /* For example: (2880px / 1.25) - 24 - 24 - 2 * 2.5 - (27 / 2) = 2237.5px */

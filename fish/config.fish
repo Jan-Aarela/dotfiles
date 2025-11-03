@@ -110,6 +110,7 @@ alias c.='clear'
 alias C.='clear'
 
 alias rm="rm -i"
+alias rmd="rm -rf -I -v"
 
 alias tree="tree -C"
 alias kys="killall"
