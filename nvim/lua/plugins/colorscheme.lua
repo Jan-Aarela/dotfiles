@@ -6,6 +6,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "catppuccin-mocha",
+      -- colorscheme = "kanagawa",
     },
   },
 
@@ -33,5 +34,17 @@ return {
       },
     },
   },
+  -- }}}
+
+  -- kanagawa
+  {
+    "rebelot/kanagawa.nvim",
+    opts = {
+      transparent_background = true,
+      integrations = {
+        noice = true,
+        telescope = true,
+      },
+    },
+  },
 }
--- }}}

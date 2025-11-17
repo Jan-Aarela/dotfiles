@@ -3,17 +3,17 @@
 
 /* Define colors */
 /* {{{ */
-@define-color background1 rgba(32, 32, 48, 1);
-@define-color background2 rgba(21, 21, 32, 1);
-@define-color sepepator #313244;
-@define-color warning #f38ba8;
-@define-color caution #45475a;
-@define-color performance #f5c2e7;
-@define-color audio #cba6f7;
-@define-color misc #94e2d5;
-@define-color date #a6e3a1;
-@define-color work #b4befe;
-@define-color window #b4befe;
+@define-color background1 #27272D;
+@define-color background2 #1F1F28;
+@define-color sepepator #3B3A37;
+@define-color warning #E82524;
+@define-color caution #3B3A37;
+@define-color performance #D57D96;
+@define-color audio #957fb8;
+@define-color misc #7fb4ca;
+@define-color date #9ABB6C;
+@define-color work #9CABCA;
+@define-color window #C0A36E;
 @define-color resize #eba0ac;
 @define-color process #89b4fa;
 @define-color text #000000;
@@ -269,7 +269,6 @@
 #waybar.main #pulseaudio.input.source-muted {
   color: @sepepator;
 }
-#waybar.main #custom-headsetbattery.low,
 #waybar.main #custom-battery.warning,
 #waybar.main #custom-battery.critical {
   color: @warning;
@@ -314,7 +313,7 @@
 }
 
 #waybar.main #workspaces button {
-  color: #45475a;
+  color: @window;
   background: transparent;
   border: 1.5px solid transparent;
   padding-left: 4pt;
@@ -329,8 +328,8 @@
   background-image: linear-gradient(
     -63.435deg,
     transparent 25%,
-    @background2 25%,
-    @background2 75%,
+    @background1 25%,
+    @background1 75%,
     transparent 75%
   );
 }
@@ -355,8 +354,8 @@
     transparent 24%,
     @sepepator 24%,
     @sepepator 28%,
-    @background1 28%,
-    @background1 73%,
+    @background2 28%,
+    @background2 73%,
     @sepepator 73%,
     @sepepator 76%,
     transparent 76%
@@ -574,7 +573,7 @@ tooltip {
 
 /* Set "battery bar" style */
 #waybar.indicator #custom-batteryindicator {
-  border: 2.5px solid @sepepator;
+  border: 2px solid @sepepator;
   background: transparent;
   box-shadow:
     inset 0px 4px 4px -5px rgba(0, 0, 0, 0.5),
