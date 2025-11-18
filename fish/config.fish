@@ -153,9 +153,9 @@ function check_directory_for_new_repository
     set -gx last_repository $current_repository
 end
 
-funcsave cd
-funcsave check_directory_for_new_repository
+# funcsave cd
+# funcsave check_directory_for_new_repository
 
 # }}}
 
-clear
+# clear

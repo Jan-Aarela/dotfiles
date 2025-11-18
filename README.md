@@ -5,8 +5,9 @@ git clone https://github.com/Jan-Aarela/dotfiles.git
 cd dotfiles
 chmod +x malware.sh
 ./malware.sh
+yay -S $(cat package_list.txt)
 ```
 
 #
-![alt_text](images/desktop2.png)
-![alt_text](images/lockscreen2.png)
+![alt_text](images/desktop3.png)
+![alt_text](images/lockscreen3.png)
