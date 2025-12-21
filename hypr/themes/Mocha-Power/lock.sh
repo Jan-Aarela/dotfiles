@@ -4,9 +4,9 @@ if pgrep -x hyprlock >/dev/null; then
   exit 0
 fi
 
-# kitty --title swaylock_bg -e pipes -p 32 -r 0 &
-# kitty --title swaylock_bg -e cmatrix -C blue &
-# kitty --title swaylock_bg -e cbonsai --screensaver --wait 1 &
+# kitty --title lock_bg -e pipes -p 32 -r 0 &
+# kitty --title lock_bg -e cmatrix -C yellow &
+# kitty --title lock_bg -e cbonsai --screensaver --wait 1 &
 kitty --title lock_bg -e asciiquarium2 -t &
 
 sleep 0.33

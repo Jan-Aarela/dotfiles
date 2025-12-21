@@ -1,25 +1,23 @@
 #!/bin/bash
 
 # Get info
-STRING=$(headsetcontrol -b)
+STRING=$(headsetcontrol -o json)
 
-# Quit if no devices detected
-if [[ $STRING == "No supported device found" ]]; then
+# Get device count
+COUNT=$(echo "$STRING" | jq '.device_count')
+
+# Quit if no devices detected or more than 1
+if [[ $COUNT -eq 0 ]]; then
+  exit 0
+elif [[ $COUNT -gt 1 ]]; then
   exit 0
 fi
 
-# Quit if there's more than 1 registered devices
-COUNT=$(echo "$STRING" | awk '{print $2}')
-
-if [[ "$COUNT" -gt 1 ]]; then
-  exit 0
-fi
-
-# Grep battery level
-LEVEL=$(headsetcontrol -b | grep 'Level:' | awk '{print $2}' | sed 's/%//')
+# Get battery level
+LEVEL=$(echo "$STRING" | jq '.devices.[0].battery.level')
 
 # If devices is off, output off state.
-if [[ -z $LEVEL ]]; then
+if [[ $LEVEL -eq -1 ]]; then
   CLASS=off
   printf '{"text": "%s", "class": "%s", "alt": "%s"}\n' "󱘖 Off" "$CLASS" "Headset offline"
   exit 0

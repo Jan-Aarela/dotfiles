@@ -1,5 +1,7 @@
 # vim:ft=ini
-width=400
-height=400
+width=600
+height=600
 close_on_focus_loss=true
+allow_images=true
+normal_window=true
 

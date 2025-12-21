@@ -35,7 +35,7 @@ if [[ $MODE == "refresh" ]]; then
   fi
 
   # Set class for styling.
-  if [[ $STATE == "charging" ]]; then
+  if [[ $STATE == "charging" || $STATE == "pending-charge" ]]; then
     CLASS=$"charging"
   elif [[ $PERCENT -le 10 ]]; then
     CLASS=$"critical"
@@ -80,7 +80,7 @@ if [[ $MODE == "bar" ]]; then
   # Set class for styling.
   if [[ $STATE == "fully-charged" ]]; then
     CLASS=$"full"
-  elif [[ $STATE == "charging" ]]; then
+  elif [[ $STATE == "charging" || $STATE == "pending-charge" ]]; then
     CLASS=$"charging"
   elif [[ $PERCENT -le 10 ]]; then
     CLASS=$"critical"

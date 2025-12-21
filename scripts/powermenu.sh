@@ -13,9 +13,18 @@ if [[ $SELECTED == "" || $SELECTED == "" || $SELECTED == "" ]]; then
   if [[ $CONFIRMATION == "$SELECTED Sure?" || $CONFIRMATION == "yes" || $CONFIRMATION == "Y" || $CONFIRMATION == "y" || $CONFIRMATION == " Yes" ]]; then
 
     case "$SELECTED" in
-    "") aplay ~/.config/sounds/shutdown.wav && systemctl poweroff ;;
-    "") aplay ~/.config/sounds/shutdown.wav && systemctl reboot ;;
-    "") aplay ~/.config/sounds/shutdown.wav && hyprctl dispatch exit ;;
+    "")
+      notify-send "Shutting down!" &
+      aplay ~/.config/sounds/shutdown.wav && systemctl poweroff
+      ;;
+    "")
+      notify-send "Rebooting!" &
+      aplay ~/.config/sounds/shutdown.wav && systemctl reboot
+      ;;
+    "")
+      notify-send "Logging out!" &
+      aplay ~/.config/sounds/shutdown.wav && hyprctl dispatch exit
+      ;;
     esac
   fi
 fi

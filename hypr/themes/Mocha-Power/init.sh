@@ -1,11 +1,11 @@
 #!/bin/bash
 
-DIR=$1
-
+DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+echo $DIR
 #swww img $DIR/wallpaper.jpg -t grow --transition-duration 0.5 --transition-fps 90 &
 
 # Check lockscreen
-cp $DIR/lock.sh ~/.config/hypr/scripts/lock.sh
+cp $DIR/lock.sh ~/.config/scripts/hypr/lock.sh
 
 # Load waybar
 killall waybar

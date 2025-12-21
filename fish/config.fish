@@ -7,6 +7,7 @@ end
 
 set -g fish_greeting
 set fish_color_command cad3f5
+
 # }}}
 
 # Custom functions {{{
@@ -79,6 +80,8 @@ function fish_user_key_bindings
     bind -M default ? "moar ~/.config/fish/shortcuts.txt"
     # bind -M visual c fish_clipboard_copy
     bind -M visual c 'fish_clipboard_copy; commandline -f end-selection; fish_vi_key_bindings default; commandline -f repaint'
+    bind -M insert alt-c 'commandline -r ""; clear; commandline -f repaint'
+    bind -M default alt-c 'commandline -r ""; clear; commandline -f repaint'
 
     # Then execute the vi-bindings so they take precedence when there's a conflict.
     # Without --no-erase fish_vi_key_bindings will default to
@@ -106,8 +109,6 @@ export PF_INFO="ascii title kernel uptime pkgs shell palette"
 alias cls='clear'
 alias CLS='clear'
 alias CLEAR='clear'
-alias c.='clear'
-alias C.='clear'
 
 alias rm="rm -i"
 alias rmd="rm -rf -I -v"
@@ -117,6 +118,7 @@ alias kys="killall"
 
 alias ls='lsd -F  --group-directories-first'
 alias lsl='lsd -F -1 --group-directories-first --blocks date --blocks permission --blocks size --blocks name --date +%Y.%m.%d'
+alias sl='lsd -F  --group-directories-first'
 
 alias lsa='lsd -F -a --group-directories-first'
 alias lsal='lsd -F -1 -a --group-directories-first --blocks permission --blocks size --blocks name'

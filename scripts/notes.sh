@@ -12,7 +12,7 @@ COUNT=$(echo "$SELECTED" | wc -l)
 if [[ -z "$SELECTED" ]]; then
   echo "No matches"
 elif [[ "$SELECTED" == "Add+" ]]; then
-  kitty -e nvim ~/notes/Add\+
+  kitty --title='Dummy manual' -e nvim ~/notes/Add\+
 elif [[ $COUNT -ge 3 ]]; then
   echo "Too many matches ($COUNT) / Exit"
 else

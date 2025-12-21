@@ -42,8 +42,9 @@
       "backlight",
       "custom/battery",
       "custom/spacer4",
-      "custom/weather",
+      // "custom/weather",
       "clock",
+      "custom/weather",
     ],
 
     // Modules
@@ -95,7 +96,7 @@
 
 
     "custom/weather": {
-      "format": "{}° Oulu",
+      "format": "{}°",
       "tooltip": true,
       "interval": 60,
       "exec": "wttrbar --nerd --location Oulu",
