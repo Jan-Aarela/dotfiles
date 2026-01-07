@@ -21,9 +21,9 @@ end
 function fish_prompt
     echo ""
     set_color brblack & echo -n " ╭─"
-    set_color brblack & echo -n "// "
-    set_color brgreen & echo -n " "(date +%H:%M)
-    set_color brblack & echo -n " // "
+    # set_color brblack & echo -n "// "
+    # set_color brgreen & echo -n " "(date +%H:%M)
+    set_color brblack & echo -n "[ "
     set PWD_NEW (string replace --regex "^$HOME" "~" $PWD)
 
     if _is_git_repo
@@ -32,15 +32,19 @@ function fish_prompt
         set_color blue & echo -n "" $PWD_NEW
     end
 
-    set_color brblack & echo -n " //"
+    set_color brblack & echo -n " ]"
     set PWD_LEN (string length $PWD_NEW)
 
-    set FILL_LEN (math (tput cols) - $PWD_LEN - 23)
+    set FILL_LEN (math (tput cols) - $PWD_LEN - 21)
     if test $FILL_LEN -lt 0
         set FILL_LEN 0
     end
 
     set_color brblack & printf '%*s' $FILL_LEN '' | sed 's/ /·/g'
+    set_color brblack & echo -n "[ "
+    set_color brgreen & echo -n " "(date +%H:%M)
+    set_color brblack & echo -n " ]"
+
     echo
     set_color brblack & echo -n " ╰───"
     set_color brblack & echo -n "["
@@ -127,6 +131,8 @@ alias fzf="fzf --preview 'test -f {}; and bat --color=always {}; or ls --color=a
 
 alias Pacman='bash ~/.config/scripts/pacman.sh'
 
+# alias bat="bat --theme='Catppuccin Mocha'"
+
 function nsx
     if test (count $argv) -gt 1
         nsxiv -to -g 1500x1000 $argv[1..-1]
@@ -134,6 +140,14 @@ function nsx
         nsxiv -g 1500x1000 $argv[1]
     else
         nsxiv -to -g 1500x1000 *
+    end
+end
+
+function bat
+    if test (count $argv) -eq 0
+        echo "No args."
+    else
+        /bin/bat --theme="Catppuccin Mocha" $argv[1]
     end
 end
 

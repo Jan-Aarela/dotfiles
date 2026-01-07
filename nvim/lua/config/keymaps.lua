@@ -23,7 +23,7 @@ map("n", "<C-up>", "<C-w>k", { desc = "switch window up" })
 
 -- Copy and paste
 map("v", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
-map("n", "<C-v>", "p", { desc = "paste" })
+-- map("n", "<C-v>", "p", { desc = "paste" })
 
 -- Undotree toggle
 map("n", "<C-u>", "<cmd>UndotreeToggle<cr>", { desc = "Toggle Undotree" })

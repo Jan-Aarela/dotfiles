@@ -4,4 +4,4 @@ height=600
 close_on_focus_loss=true
 allow_images=true
 normal_window=true
-
+key_expand=Tab

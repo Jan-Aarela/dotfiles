@@ -99,7 +99,7 @@
       "format": "{}°",
       "tooltip": true,
       "interval": 60,
-      "exec": "wttrbar --nerd --location Oulu",
+      "exec": "wttrbar --nerd --location Inari",
       "return-type": "json"
     },
 
