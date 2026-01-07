@@ -7,7 +7,6 @@ end
 
 set -g fish_greeting
 set fish_color_command cad3f5
-
 # }}}
 
 # Custom functions {{{
@@ -15,14 +14,19 @@ set fish_color_command cad3f5
 function _is_git_repo
     git rev-parse --is-inside-work-tree >/dev/null 2>&1
 end
+
+# Save dir on exit
+function save_dir_on_exit --on-event fish_exit
+    set -U LAST_DIR $PWD
+end
 # }}}
 
 # Fish prompt {{{
 function fish_prompt
+    set -l last_status $status
+
     echo ""
     set_color brblack & echo -n " ╭─"
-    # set_color brblack & echo -n "// "
-    # set_color brgreen & echo -n " "(date +%H:%M)
     set_color brblack & echo -n "[ "
     set PWD_NEW (string replace --regex "^$HOME" "~" $PWD)
 
@@ -35,12 +39,30 @@ function fish_prompt
     set_color brblack & echo -n " ]"
     set PWD_LEN (string length $PWD_NEW)
 
-    set FILL_LEN (math (tput cols) - $PWD_LEN - 21)
+    # set STATUS_LEN (math (string length $last_status) +4 )
+    if test $last_status -gt 0
+        set STATUS_LEN (math (string length $last_status) +6 )
+    else
+        set STATUS_LEN 0
+    end
+
+    set FILL_LEN (math (tput cols) - $PWD_LEN - 21 - $STATUS_LEN)
     if test $FILL_LEN -lt 0
         set FILL_LEN 0
     end
 
     set_color brblack & printf '%*s' $FILL_LEN '' | sed 's/ /·/g'
+
+    if test $last_status -gt 0
+        set_color brblack & echo -n "[ "
+        if test $last_status -gt 128
+            set_color yellow & echo -n " $last_status"
+        else
+            set_color red & echo -n " $last_status"
+        end
+        set_color brblack & echo -n " ]"
+    end
+
     set_color brblack & echo -n "[ "
     set_color brgreen & echo -n " "(date +%H:%M)
     set_color brblack & echo -n " ]"
@@ -55,12 +77,14 @@ function fish_prompt
             echo -n NOR
         case insert
             set_color "#C7A0DC"
+            set_color magenta
             echo -n INS
         case replace_one
             set_color yellow
             echo -n REP
         case visual
             set_color brcyan
+            # set_color brmagenta
             echo -n VIS
         case '*'
             set_color red
@@ -84,7 +108,7 @@ function fish_user_key_bindings
     bind -M default ? "moar ~/.config/fish/shortcuts.txt"
     # bind -M visual c fish_clipboard_copy
     bind -M visual c 'fish_clipboard_copy; commandline -f end-selection; fish_vi_key_bindings default; commandline -f repaint'
-    bind -M insert alt-c 'commandline -r ""; clear; commandline -f repaint'
+    bind -M insert alt-c 'commandline -r ""; clear; commandline -f repaint;'
     bind -M default alt-c 'commandline -r ""; clear; commandline -f repaint'
 
     # Then execute the vi-bindings so they take precedence when there's a conflict.
@@ -131,7 +155,7 @@ alias fzf="fzf --preview 'test -f {}; and bat --color=always {}; or ls --color=a
 
 alias Pacman='bash ~/.config/scripts/pacman.sh'
 
-# alias bat="bat --theme='Catppuccin Mocha'"
+# alias cdp='cd $LAST_DIR'
 
 function nsx
     if test (count $argv) -gt 1
@@ -154,12 +178,68 @@ end
 set -x MANPAGER "nvim +Man!"
 # }}}
 
-# git repo ascii / onefetch {{{
-function cd -w='cd'
-    builtin cd $argv || return
+# CD {{{
+function cd --description 'Change directory'
+    set -l MAX_DIR_HIST 25
+
+    if set -q argv[2]; and begin
+            set -q argv[3]
+            or not test "$argv[1]" = --
+        end
+        printf "%s\n" (_ "Too many args for cd command") >&2
+        return 1
+    end
+
+    # Skip history in subshells.
+    if status --is-command-substitution
+        builtin cd $argv
+        return $status
+    end
+
+    # Avoid set completions.
+    set -l previous $PWD
+
+    if test "$argv" = -
+        if test "$__fish_cd_direction" = next
+            nextd
+        else
+            prevd
+        end
+        return $status
+    end
+
+    builtin cd $argv
+    set -l cd_status $status
+
+    if test $cd_status -eq 0 -a "$PWD" != "$previous"
+        set -q dirprev
+        or set -l dirprev
+        set -q dirprev[$MAX_DIR_HIST]
+        and set -e dirprev[1]
+
+        # If dirprev, dirnext, __fish_cd_direction
+        # are set as universal variables, honor their scope.
+
+        set -U -q dirprev
+        and set -U -a dirprev $previous
+        or set -g -a dirprev $previous
+
+        set -U -q dirnext
+        and set -U -e dirnext
+        or set -e dirnext
+
+        set -U -q __fish_cd_direction
+        and set -U __fish_cd_direction prev
+        or set -g __fish_cd_direction prev
+    end
+
     check_directory_for_new_repository
+    return $cd_status
 end
 
+# }}}
+
+# Onefetch  {{{
 function check_directory_for_new_repository
     set current_repository (git rev-parse --show-toplevel 2> /dev/null)
     if [ "$current_repository" ] && [ "$current_repository" != "$last_repository" ]
@@ -168,10 +248,6 @@ function check_directory_for_new_repository
     end
     set -gx last_repository $current_repository
 end
-
-# funcsave cd
-# funcsave check_directory_for_new_repository
-
 # }}}
 
 # clear
