@@ -287,6 +287,7 @@
       "special-visible-only": false,
       "format-icons": {
         "magic": "",
+        "zellij": "",
         "10": "󰊴",
         "lock": ""
       }

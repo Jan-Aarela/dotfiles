@@ -2,6 +2,7 @@
 
 # DELAY=0.01
 
+echo ""
 ONEFETCH_OUTPUT=$(onefetch --nerd-fonts)
 
 for ((i = 0; i < ${#ONEFETCH_OUTPUT}; i++)); do

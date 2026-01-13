@@ -4,8 +4,13 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-
+set -x FZF_DEFAULT_OPTS "--color=16 --bind 'alt-f:first,alt-l:last'"
 set -g fish_greeting
+
+# function fish_greeting
+#     fish_logo
+# end
+
 set fish_color_command cad3f5
 # }}}
 
@@ -17,7 +22,9 @@ end
 
 # Save dir on exit
 function save_dir_on_exit --on-event fish_exit
-    set -U LAST_DIR $PWD
+    if test $PWD != $HOME
+        set -U LAST_DIR $PWD
+    end
 end
 # }}}
 
@@ -108,7 +115,7 @@ function fish_user_key_bindings
     bind -M default ? "moar ~/.config/fish/shortcuts.txt"
     # bind -M visual c fish_clipboard_copy
     bind -M visual c 'fish_clipboard_copy; commandline -f end-selection; fish_vi_key_bindings default; commandline -f repaint'
-    bind -M insert alt-c 'commandline -r ""; clear; commandline -f repaint;'
+    bind -M insert alt-c 'commandline -r ""; clear; commandline -f repaint'
     bind -M default alt-c 'commandline -r ""; clear; commandline -f repaint'
 
     # Then execute the vi-bindings so they take precedence when there's a conflict.
@@ -119,18 +126,13 @@ function fish_user_key_bindings
 end
 
 function fzf_command_history
-    set selected (history | fzf --reverse --prompt="Command history: " --no-sort)
-    if test -n "$selected"
-        commandline --replace "$selected"
+    # set selected (history | fzf --reverse --prompt="Command history: " --no-sort --no-preview)
+    set -l selected (history --show-time="%y.%m.%d %H:%M:%S │ " | fzf  --reverse --prompt="Command history: " --no-preview )
+    set command_only (string sub -s 21 $selected)
+    if test -n "$command_only"
+        commandline --replace "$command_only"
     end
 end
-# }}}
-
-# Exports {{{
-export EDITOR="nvim"
-export SHELL="/bin/fish"
-export PF_INFO="ascii title kernel uptime pkgs shell palette"
-
 # }}}
 
 # Aliasses {{{
@@ -155,99 +157,19 @@ alias fzf="fzf --preview 'test -f {}; and bat --color=always {}; or ls --color=a
 
 alias Pacman='bash ~/.config/scripts/pacman.sh'
 
-# alias cdp='cd $LAST_DIR'
+alias icat='kitty +kitten icat'
 
-function nsx
-    if test (count $argv) -gt 1
-        nsxiv -to -g 1500x1000 $argv[1..-1]
-    else if test (count $argv) -eq 1
-        nsxiv -g 1500x1000 $argv[1]
-    else
-        nsxiv -to -g 1500x1000 *
-    end
-end
+alias drd='dragon-drop -s 256 -x -a'
 
-function bat
-    if test (count $argv) -eq 0
-        echo "No args."
-    else
-        /bin/bat --theme="Catppuccin Mocha" $argv[1]
-    end
-end
+alias cdp='cd $LAST_DIR'
+
+alias sm='sysmenu --app'
 
 set -x MANPAGER "nvim +Man!"
 # }}}
 
-# CD {{{
-function cd --description 'Change directory'
-    set -l MAX_DIR_HIST 25
-
-    if set -q argv[2]; and begin
-            set -q argv[3]
-            or not test "$argv[1]" = --
-        end
-        printf "%s\n" (_ "Too many args for cd command") >&2
-        return 1
-    end
-
-    # Skip history in subshells.
-    if status --is-command-substitution
-        builtin cd $argv
-        return $status
-    end
-
-    # Avoid set completions.
-    set -l previous $PWD
-
-    if test "$argv" = -
-        if test "$__fish_cd_direction" = next
-            nextd
-        else
-            prevd
-        end
-        return $status
-    end
-
-    builtin cd $argv
-    set -l cd_status $status
-
-    if test $cd_status -eq 0 -a "$PWD" != "$previous"
-        set -q dirprev
-        or set -l dirprev
-        set -q dirprev[$MAX_DIR_HIST]
-        and set -e dirprev[1]
-
-        # If dirprev, dirnext, __fish_cd_direction
-        # are set as universal variables, honor their scope.
-
-        set -U -q dirprev
-        and set -U -a dirprev $previous
-        or set -g -a dirprev $previous
-
-        set -U -q dirnext
-        and set -U -e dirnext
-        or set -e dirnext
-
-        set -U -q __fish_cd_direction
-        and set -U __fish_cd_direction prev
-        or set -g __fish_cd_direction prev
-    end
-
-    check_directory_for_new_repository
-    return $cd_status
-end
-
+# Exports {{{
+export EDITOR="nvim"
+export SHELL="/bin/fish"
+export PF_INFO="ascii title kernel uptime pkgs shell palette"
 # }}}
-
-# Onefetch  {{{
-function check_directory_for_new_repository
-    set current_repository (git rev-parse --show-toplevel 2> /dev/null)
-    if [ "$current_repository" ] && [ "$current_repository" != "$last_repository" ]
-        # onefetch --nerd-fonts
-        bash ~/.config/scripts/onefetch.sh
-    end
-    set -gx last_repository $current_repository
-end
-# }}}
-
-# clear

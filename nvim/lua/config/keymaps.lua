@@ -35,14 +35,22 @@ map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 
 -- LSP toggle {{{
 local function toggle_lsp()
-  local clients = vim.lsp.get_active_clients()
-  print(#clients)
-  if #clients > 0 then
-    print("LSP: OFF (LspStop)")
-    vim.cmd("LspStop")
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("a<Esc>", true, false, true), "n", false)
+
+  local bufnr = vim.api.nvim_get_current_buf()
+  local clients = vim.lsp.get_clients({ bufnr = bufnr })
+
+  if not lsp_hidden then
+    for _, client in ipairs(clients) do
+      vim.lsp.buf_detach_client(bufnr, client.id)
+    end
+    lsp_hidden = true
+    vim.notify("LSP Detached", vim.log.levels.WARN)
   else
-    print("LSP: ON (LspStart)")
     vim.cmd("LspStart")
+    vim.api.nvim_exec_autocmds("FileType", { buffer = bufnr })
+    lsp_hidden = false
+    vim.notify("LSP Re-attached", vim.log.levels.INFO)
   end
 end
 -- }}}
@@ -68,4 +76,15 @@ wk.add({
     desc = "Toggle LSP On/Off",
   },
 })
+
+wk.add({
+  {
+    "<leader>r",
+    "<cmd>set rnu!<CR>",
+    desc = "Toggle Relativenumber",
+  },
+})
+
+vim.keymap.set("n", "<leader>r", ":set relativenumber!<CR>", { desc = "Toggle Relative Numbers" })
+
 -- }}}
