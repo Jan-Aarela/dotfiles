@@ -33,6 +33,22 @@ map("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 -- }}}
 
+-- Smart Comment {{{
+-- TODO: perfile configs. eg for css.
+-- double sided comments
+
+vim.keymap.set("i", "<S-CR>", function()
+  local line = vim.api.nvim_get_current_line()
+  local comment_leader = line:match("^%s*([/%*%-#]+%s*)")
+
+  if comment_leader then
+    return "<CR>" .. comment_leader
+  else
+    return "<CR>"
+  end
+end, { expr = true, desc = "Force comment line with Shift+Enter" })
+-- }}}
+
 -- LSP toggle {{{
 local function toggle_lsp()
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("a<Esc>", true, false, true), "n", false)
@@ -55,19 +71,69 @@ local function toggle_lsp()
 end
 -- }}}
 
+-- Boolean toggle {{{
+local function toggle_bool()
+  local word = vim.fn.expand("<cword>")
+  local toggles = {
+    -- Classic Booleans
+    ["true"] = "false",
+    ["false"] = "true",
+    ["True"] = "False",
+    ["False"] = "True",
+    ["TRUE"] = "FALSE",
+    ["FALSE"] = "TRUE",
+
+    -- Binary/Bit
+    ["0"] = "1",
+    ["1"] = "0",
+
+    -- Logic/Status
+    ["yes"] = "no",
+    ["no"] = "yes",
+    ["YES"] = "NO",
+    ["NO"] = "YES",
+    ["Yes"] = "No",
+    ["No"] = "Yes",
+
+    ["on"] = "off",
+    ["off"] = "on",
+    ["On"] = "Off",
+    ["Off"] = "On",
+    ["ON"] = "OFF",
+    ["OFF"] = "ON",
+
+    -- Features
+    ["enabled"] = "disabled",
+    ["disabled"] = "enabled",
+    ["Enabled"] = "Disabled",
+    ["ENABLED"] = "DISABLED",
+    ["DISABLED"] = "ENABLED",
+    ["Disabled"] = "Enabled",
+
+    -- State
+    ["active"] = "inactive",
+    ["inactive"] = "active",
+    ["Active"] = "Inactive",
+    ["Inactive"] = "Active",
+    ["ACTIVE"] = "INACTIVE",
+    ["INACTIVE"] = "ACTIVE",
+
+    -- Null/Existence
+    -- ["nil"] = "not nil",
+    -- ["None"] = "Some",
+  }
+
+  if toggles[word] then
+    vim.cmd("normal! ciw" .. toggles[word])
+  else
+    vim.notify("Not a boolean!", vim.log.levels.WARN)
+  end
+end
+
+-- }}}
+
 -- Which-key binds {{{
 local wk = require("which-key")
-wk.add({
-  {
-    "<leader>t",
-    function()
-      Snacks.terminal.toggle(nil, {
-        cwd = vim.fn.getcwd(),
-      })
-    end,
-    desc = "CWD Terminal",
-  },
-})
 
 wk.add({
   {
@@ -85,6 +151,24 @@ wk.add({
   },
 })
 
-vim.keymap.set("n", "<leader>r", ":set relativenumber!<CR>", { desc = "Toggle Relative Numbers" })
+wk.add({
+  {
+    "<leader>T",
+    toggle_bool,
+    desc = "Toggle Boolean",
+  },
+})
+
+wk.add({
+  {
+    "<leader>t",
+    function()
+      Snacks.terminal.toggle(nil, {
+        cwd = vim.fn.getcwd(),
+      })
+    end,
+    desc = "Toggle CWD Terminal",
+  },
+})
 
 -- }}}

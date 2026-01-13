@@ -10,3 +10,6 @@ vim.opt.swapfile = false
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.cmd([[ set nofoldenable]])
+
+-- vim.opt.whichwrap:append("<,>,h,l,[,]")
+-- vim.opt.backspace = { "indent", "eol", "start" }

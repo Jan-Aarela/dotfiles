@@ -49,3 +49,16 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   pattern = "*", -- Apply to all file types
   command = "normal zM",
 })
+
+-- vim.api.nvim_create_autocmd("TextYankPost", {
+--   callback = function()
+-- -- vim.highlight.on_yank({ hlgroup = "IncSearch", timeout = 200 })
+--     vim.notify("Text Copied!", vim.log.levels.INFO)
+--   end,
+-- })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    vim.opt.formatoptions:remove({ "c", "r", "o" })
+  end,
+})
