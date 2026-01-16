@@ -193,6 +193,7 @@
 
     "cpu": {
       "interval": 4,
+      "min-length": 6,
       "format": " {usage}%",
       "states": {
         "warning": 80,
