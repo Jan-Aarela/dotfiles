@@ -1,4 +1,4 @@
-/* vim:fileencoding=utf-8:foldmethod=marker
+/* vim:fileencoding=utf-8:foldmethod=marker:ft=css
 */
 
 /* Define colors */
@@ -122,7 +122,6 @@
 #custom-timer {
   padding-left: 8pt;
   padding-right: 8pt;
-  background: @module_bg;
 }
 
 #waybar.main #custom-weather {

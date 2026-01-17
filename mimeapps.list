@@ -1,0 +1,31 @@
+[Default Applications]
+x-scheme-handler/mailto=userapp-Thunderbird-ICXR41.desktop
+message/rfc822=userapp-Thunderbird-ICXR41.desktop
+x-scheme-handler/mid=userapp-Thunderbird-ICXR41.desktop
+x-scheme-handler/betterdiscord=discord.desktop
+image/png=feh.desktop
+image/jpg=feh.desktop
+image/jpeg=feh.desktop
+image/gif=mpv.desktop
+inode/directory=thunar.desktop
+application/json=nvim.desktop
+application/jsonc=nvim.desktop
+text/plain=nvim.desktop
+application/octet-stream=nvim.desktop
+application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/discord=vesktop.desktop
+x-scheme-handler/terminal=kitty.desktop
+application/zip=org.gnome.FileRoller.desktop
+application/x-compressed-tar=org.gnome.FileRoller.desktop
+video/webm=mpv.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-ICXR41.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-ICXR41.desktop;
+text/x-csrc=org.kde.kate.desktop;
+image/jpeg=gimp.desktop;feh.desktop;
+application/pdf=firefox.desktop;
+application/octet-stream=nvim.desktop;
+application/zip=org.gnome.FileRoller.desktop;
+application/x-compressed-tar=org.gnome.FileRoller.desktop;
+application/x-mswinurl=nvim.desktop;

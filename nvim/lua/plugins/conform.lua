@@ -8,6 +8,8 @@ return {
       typescript = { "prettier" },
       css = { "prettier" },
       html = { "prettier" },
+      json = { "prettier" },
+      jsonc = { "prettier" },
 
       -- c family
       c = { "clang-format" },
