@@ -118,7 +118,8 @@
 #waybar.main #temperature,
 #waybar.main #traym,
 #waybar.main #window,
-#waybar.main #disk {
+#waybar.main #disk,
+#custom-timer {
   padding-left: 8pt;
   padding-right: 8pt;
   background: @module_bg;
@@ -168,7 +169,8 @@
 }
 
 #waybar.main #custom-weather,
-#waybar.main #clock {
+#waybar.main #clock,
+#custom-timer {
   color: @date;
   background: @background2;
 }

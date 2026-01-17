@@ -135,6 +135,7 @@ end
 -- Which-key binds {{{
 local wk = require("which-key")
 
+-- lps
 wk.add({
   {
     "<leader>l",
@@ -143,6 +144,7 @@ wk.add({
   },
 })
 
+-- relative number
 wk.add({
   {
     "<leader>r",
@@ -151,6 +153,7 @@ wk.add({
   },
 })
 
+-- boolean toggle
 wk.add({
   {
     "<leader>T",
@@ -159,6 +162,21 @@ wk.add({
   },
 })
 
+-- git
+wk.add({
+  {
+    "<leader>gP",
+    "<cmd>Gitsigns preview_hunk<CR>",
+    desc = "Preview hunk",
+  },
+  {
+    "<leader>gt",
+    "<cmd>Gitsigns toggle_current_line_blame<CR>",
+    desc = "Toggle line blame",
+  },
+})
+
+-- terminal toggle
 wk.add({
   {
     "<leader>t",

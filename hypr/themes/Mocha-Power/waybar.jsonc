@@ -43,6 +43,7 @@
       "custom/battery",
       "custom/spacer4",
       // "custom/weather",
+           "custom/timer",
       "clock",
       "custom/weather",
     ],
@@ -59,6 +60,21 @@
         "critical": 95
       }
     },
+
+"custom/timer": {
+    "exec": "~/.config/hypr/themes/Mocha-Power/timer.sh",
+    "return-type": "json",
+    "format": "{}",
+    "on-click": "~/.config/hypr/themes/Mocha-Power/timer.sh click",
+    "on-click-right": "~/.config/hypr/themes/Mocha-Power/timer.sh right",
+    "on-click-middle": "~/.config/hypr/themes/Mocha-Power/timer.sh middle",
+    "on-scroll-up": "~/.config/hypr/themes/Mocha-Power/timer.sh down",  // previously up
+    "on-scroll-down": "~/.config/hypr/themes/Mocha-Power/timer.sh up",  // previously down
+    "tooltip": true,
+    "escape": true,
+    "scroll-step": 100,
+
+},
 
     "cava": {
         // "cava_config": "~/.config/picom.conf",

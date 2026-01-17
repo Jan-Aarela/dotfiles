@@ -165,6 +165,8 @@ alias cdp='cd $LAST_DIR'
 
 alias sm='sysmenu --app'
 
+alias lg='lazygit'
+
 set -x MANPAGER "nvim +Man!"
 # }}}
 
