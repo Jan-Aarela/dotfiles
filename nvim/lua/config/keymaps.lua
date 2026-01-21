@@ -73,7 +73,16 @@ end
 
 -- Boolean toggle {{{
 local function toggle_bool()
-  local word = vim.fn.expand("<cword>")
+  local mode = vim.api.nvim_get_mode().mode
+  local word
+
+  if mode:find("[vV\22]") then
+    vim.cmd('normal! "vy')
+    word = vim.fn.getreg("v")
+  else
+    word = vim.fn.expand("<cword>")
+  end
+
   local toggles = {
     -- Classic Booleans
     ["true"] = "false",
@@ -125,8 +134,13 @@ local function toggle_bool()
 
   if toggles[word] then
     vim.cmd("normal! ciw" .. toggles[word])
-  else
-    vim.notify("Not a boolean!", vim.log.levels.WARN)
+    return
+  end
+
+  if word:match("^[01]+$") then
+    local flipped = word:gsub("0", "x"):gsub("1", "0"):gsub("x", "1")
+    vim.cmd("normal! gvdi" .. flipped)
+    return
   end
 end
 
@@ -159,6 +173,7 @@ wk.add({
     "<leader>T",
     toggle_bool,
     desc = "Toggle Boolean",
+    mode = { "n", "v" },
   },
 })
 

@@ -167,6 +167,8 @@ alias sm='sysmenu --app'
 
 alias lg='lazygit'
 
+# alias joel='icat --place 0x0@-60x20 ~/.config/fish/joel.gif && echo -e "\n\n                                      I am just a fish\n"'
+
 set -x MANPAGER "nvim +Man!"
 # }}}
 
