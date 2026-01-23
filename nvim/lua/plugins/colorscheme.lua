@@ -1,12 +1,10 @@
 -- vim:foldmethod=marker
 return {
-
   -- Set colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
-      -- colorscheme = "kanagawa",
+      colorscheme = vim.env.TERM == "linux" and "wildcharm" or "catppuccin-mocha",
     },
   },
 
@@ -36,7 +34,7 @@ return {
   },
   -- }}}
 
-  -- kanagawa
+  -- kanagawa {{{
   {
     "rebelot/kanagawa.nvim",
     opts = {
@@ -48,3 +46,4 @@ return {
     },
   },
 }
+-- }}}
