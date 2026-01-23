@@ -117,6 +117,8 @@ function fish_user_key_bindings
     bind -M visual c 'fish_clipboard_copy; commandline -f end-selection; fish_vi_key_bindings default; commandline -f repaint'
     bind -M insert alt-c 'commandline -r ""; clear; commandline -f repaint'
     bind -M default alt-c 'commandline -r ""; clear; commandline -f repaint'
+    bind -M default alt-q exit
+    bind -M insert alt-q exit
 
     # Then execute the vi-bindings so they take precedence when there's a conflict.
     # Without --no-erase fish_vi_key_bindings will default to

@@ -2,6 +2,11 @@ return {
   "snacks.nvim",
   opts = {
     scroll = { enabled = false },
+    notifier = {
+      enabled = true,
+      timeout = 5000,
+    },
+
     terminal = {
       win = {
         style = "float",

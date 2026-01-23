@@ -13,3 +13,5 @@ vim.cmd([[ set nofoldenable]])
 
 -- vim.opt.whichwrap:append("<,>,h,l,[,]")
 -- vim.opt.backspace = { "indent", "eol", "start" }
+
+local is_tty = vim.env.TERM == "linux"
