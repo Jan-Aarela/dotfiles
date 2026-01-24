@@ -4,7 +4,7 @@ return {
     scroll = { enabled = false },
     notifier = {
       enabled = true,
-      timeout = 5000,
+      timeout = 4000,
     },
 
     terminal = {

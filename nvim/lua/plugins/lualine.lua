@@ -14,8 +14,15 @@ return {
     opts.sections.lualine_c = {
       {
         function()
-          local path = vim.fn.expand("%:p:h")
-          return vim.fn.fnamemodify(path, ":t")
+          local git_dir = vim.fs.find(".git", {
+            path = vim.fn.expand("%:p:h"),
+            upward = true,
+          })[1]
+
+          if git_dir then
+            return vim.fn.fnamemodify(vim.fn.fnamemodify(git_dir, ":h"), ":t")
+          end
+          return ""
         end,
         icon = {
           "",
@@ -23,6 +30,9 @@ return {
         },
         color = { fg = theme.normal.c.fg },
         padding = { left = 1, right = 1 },
+        cond = function()
+          return vim.fs.find(".git", { path = vim.fn.expand("%:p:h"), upward = true })[1] ~= nil
+        end,
       },
       {
         "filetype",
@@ -32,7 +42,7 @@ return {
       },
       {
         "filename",
-        path = 0,
+        path = 3,
         symbols = { modified = "", readonly = "", unnamed = "" },
         padding = { left = 0, right = 1 },
 

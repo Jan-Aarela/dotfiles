@@ -1,4 +1,4 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR LAST_DIR:/etc/ly
+SETUVAR LAST_DIR:/home/jan\x2daarela/\x2econfig/dotfiles
 SETUVAR __fish_initialized:4300

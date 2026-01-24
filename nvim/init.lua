@@ -26,3 +26,5 @@ vim.diagnostic.config({
     source = "always",
   },
 })
+
+vim.opt.termguicolors = true

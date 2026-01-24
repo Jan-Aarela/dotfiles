@@ -61,12 +61,12 @@ local function toggle_lsp()
       vim.lsp.buf_detach_client(bufnr, client.id)
     end
     lsp_hidden = true
-    vim.notify("LSP Detached", vim.log.levels.WARN)
+    vim.notify("LSP killed.", vim.log.levels.WARN)
   else
-    vim.cmd("LspStart")
+    vim.cmd("LspRestart")
     vim.api.nvim_exec_autocmds("FileType", { buffer = bufnr })
     lsp_hidden = false
-    vim.notify("LSP Re-attached", vim.log.levels.INFO)
+    vim.notify("LSP Restarting...", vim.log.levels.INFO)
   end
 end
 -- }}}
