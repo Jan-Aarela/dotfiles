@@ -3,14 +3,17 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "folke/lazydev.nvim",
+      "saghen/blink.cmp",
       ft = "lua",
       opts = {},
     },
     config = function()
       local lspconfig = require("lspconfig")
+      -- local capabilities = require("blink.cmp").get_lsp_capabilities()
 
       -- Lua
       lspconfig.lua_ls.setup({
+        -- capabilities = capabilities, -- Pass capabilities to every setu
         settings = {
           Lua = {
             diagnostics = {
