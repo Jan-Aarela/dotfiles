@@ -20,12 +20,9 @@ return {
     -- Theming
     local dropbar_api = require("dropbar.api")
     vim.keymap.set("n", "<Leader>;", dropbar_api.pick, { desc = "Pick symbols in winbar" })
-    vim.keymap.set("n", "[;", dropbar_api.goto_context_start, { desc = "Go to start of current context" })
-    vim.keymap.set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
 
-    -- vim.api.nvim_set_hl(0, "WinBar", { bg = "#202030", fg = "", bold = true, underline = true, sp = "#45475a" })
-    vim.api.nvim_set_hl(0, "WinBar", { bg = "#313244", fg = "", bold = true })
-
+    vim.api.nvim_set_hl(0, "WinBar", { bg = "#202030", fg = "", bold = true, underline = true, sp = "#45475a" })
+    -- vim.api.nvim_set_hl(0, "WinBar", { bg = "#202030", fg = "", bold = true })
     -- vim.api.nvim_set_hl(0, "WinBarNC", { bg = "#202030", fg = "" })
   end,
 }

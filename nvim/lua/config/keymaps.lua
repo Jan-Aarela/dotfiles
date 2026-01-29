@@ -33,6 +33,11 @@ map("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 -- }}}
 
+-- Disabled Keybinds.{{{
+vim.keymap.del("n", "<leader>L")
+vim.keymap.del("n", "<leader>l")
+-- }}}
+
 -- Smart Comment {{{
 -- TODO: perfile configs. eg for css.
 -- double sided comments
@@ -149,12 +154,21 @@ end
 -- Which-key binds {{{
 local wk = require("which-key")
 
--- lps
 wk.add({
+  { "<leader>l", group = "LSP & Logs" },
   {
-    "<leader>l",
+    "<leader>lt",
     toggle_lsp,
     desc = "Toggle LSP On/Off",
+  },
+  {
+    "<leader>lp",
+    function()
+      require("snacks").picker.lsp_definitions({
+        layout = { preset = "vscode" },
+      })
+    end,
+    desc = "Goto Function Definition",
   },
 })
 

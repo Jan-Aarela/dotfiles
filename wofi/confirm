@@ -3,8 +3,9 @@ hide_search=true
 halign=center
 valign=center
 hide_scroll=true
-height=220
-width=690
+; height=200
+width=640
+lines=1
 cache_file=/dev/null
 close_on_focus_loss=true
 

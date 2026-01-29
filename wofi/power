@@ -2,10 +2,10 @@
 orientation=horizontal
 hide_search=true
 halign=center
-valign=center
+; valign=center
 hide_scroll=true
-height=220
-width=640
+; height=220
+width=532
+lines=1
 cache_file=/dev/null
 close_on_focus_loss=true
-
