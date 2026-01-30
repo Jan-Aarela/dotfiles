@@ -31,6 +31,10 @@ map("n", "<C-u>", "<cmd>UndotreeToggle<cr>", { desc = "Toggle Undotree" })
 -- Next and previous buffer
 map("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+
+-- Faster up/down movement
+map("n", "<C-up>", "8k", { desc = "Move up faster" })
+map("n", "<C-down>", "8j", { desc = "Move down faster" })
 -- }}}
 
 -- Disabled Keybinds.{{{
