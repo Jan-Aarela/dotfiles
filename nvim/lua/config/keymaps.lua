@@ -33,11 +33,11 @@ map("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 
 -- Faster up/down movement
-map("n", "<C-up>", "8k", { desc = "Move up faster" })
-map("n", "<C-down>", "8j", { desc = "Move down faster" })
+-- map("n", "<C-up>", "8k", { desc = "Move up faster" })
+-- map("n", "<C-down>", "8j", { desc = "Move down faster" })
 -- }}}
 
--- Disabled Keybinds.{{{
+-- Disabled Keybinds {{{
 vim.keymap.del("n", "<leader>L")
 vim.keymap.del("n", "<leader>l")
 -- }}}
@@ -47,110 +47,110 @@ vim.keymap.del("n", "<leader>l")
 -- double sided comments
 
 vim.keymap.set("i", "<S-CR>", function()
-  local line = vim.api.nvim_get_current_line()
-  local comment_leader = line:match("^%s*([/%*%-#]+%s*)")
+    local line = vim.api.nvim_get_current_line()
+    local comment_leader = line:match("^%s*([/%*%-#]+%s*)")
 
-  if comment_leader then
-    return "<CR>" .. comment_leader
-  else
-    return "<CR>"
-  end
+    if comment_leader then
+        return "<CR>" .. comment_leader
+    else
+        return "<CR>"
+    end
 end, { expr = true, desc = "Force comment line with Shift+Enter" })
 -- }}}
 
 -- LSP toggle {{{
 local function toggle_lsp()
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("a<Esc>", true, false, true), "n", false)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("a<Esc>", true, false, true), "n", false)
 
-  local bufnr = vim.api.nvim_get_current_buf()
-  local clients = vim.lsp.get_clients({ bufnr = bufnr })
+    local bufnr = vim.api.nvim_get_current_buf()
+    local clients = vim.lsp.get_clients({ bufnr = bufnr })
 
-  if not lsp_hidden then
-    for _, client in ipairs(clients) do
-      vim.lsp.buf_detach_client(bufnr, client.id)
+    if not lsp_hidden then
+        for _, client in ipairs(clients) do
+            vim.lsp.buf_detach_client(bufnr, client.id)
+        end
+        lsp_hidden = true
+        vim.notify("LSP killed.", vim.log.levels.WARN)
+    else
+        vim.cmd("LspRestart")
+        vim.api.nvim_exec_autocmds("FileType", { buffer = bufnr })
+        lsp_hidden = false
+        vim.notify("LSP Restarting...", vim.log.levels.INFO)
     end
-    lsp_hidden = true
-    vim.notify("LSP killed.", vim.log.levels.WARN)
-  else
-    vim.cmd("LspRestart")
-    vim.api.nvim_exec_autocmds("FileType", { buffer = bufnr })
-    lsp_hidden = false
-    vim.notify("LSP Restarting...", vim.log.levels.INFO)
-  end
 end
 -- }}}
 
 -- Boolean toggle {{{
 local function toggle_bool()
-  local mode = vim.api.nvim_get_mode().mode
-  local word
+    local mode = vim.api.nvim_get_mode().mode
+    local word
 
-  if mode:find("[vV\22]") then
-    vim.cmd('normal! "vy')
-    word = vim.fn.getreg("v")
-  else
-    word = vim.fn.expand("<cword>")
-  end
+    if mode:find("[vV\22]") then
+        vim.cmd('normal! "vy')
+        word = vim.fn.getreg("v")
+    else
+        word = vim.fn.expand("<cword>")
+    end
 
-  local toggles = {
-    -- Classic Booleans
-    ["true"] = "false",
-    ["false"] = "true",
-    ["True"] = "False",
-    ["False"] = "True",
-    ["TRUE"] = "FALSE",
-    ["FALSE"] = "TRUE",
+    local toggles = {
+        -- Classic Booleans
+        ["true"] = "false",
+        ["false"] = "true",
+        ["True"] = "False",
+        ["False"] = "True",
+        ["TRUE"] = "FALSE",
+        ["FALSE"] = "TRUE",
 
-    -- Binary/Bit
-    ["0"] = "1",
-    ["1"] = "0",
+        -- Binary/Bit
+        ["0"] = "1",
+        ["1"] = "0",
 
-    -- Logic/Status
-    ["yes"] = "no",
-    ["no"] = "yes",
-    ["YES"] = "NO",
-    ["NO"] = "YES",
-    ["Yes"] = "No",
-    ["No"] = "Yes",
+        -- Logic/Status
+        ["yes"] = "no",
+        ["no"] = "yes",
+        ["YES"] = "NO",
+        ["NO"] = "YES",
+        ["Yes"] = "No",
+        ["No"] = "Yes",
 
-    ["on"] = "off",
-    ["off"] = "on",
-    ["On"] = "Off",
-    ["Off"] = "On",
-    ["ON"] = "OFF",
-    ["OFF"] = "ON",
+        ["on"] = "off",
+        ["off"] = "on",
+        ["On"] = "Off",
+        ["Off"] = "On",
+        ["ON"] = "OFF",
+        ["OFF"] = "ON",
 
-    -- Features
-    ["enabled"] = "disabled",
-    ["disabled"] = "enabled",
-    ["Enabled"] = "Disabled",
-    ["ENABLED"] = "DISABLED",
-    ["DISABLED"] = "ENABLED",
-    ["Disabled"] = "Enabled",
+        -- Features
+        ["enabled"] = "disabled",
+        ["disabled"] = "enabled",
+        ["Enabled"] = "Disabled",
+        ["ENABLED"] = "DISABLED",
+        ["DISABLED"] = "ENABLED",
+        ["Disabled"] = "Enabled",
 
-    -- State
-    ["active"] = "inactive",
-    ["inactive"] = "active",
-    ["Active"] = "Inactive",
-    ["Inactive"] = "Active",
-    ["ACTIVE"] = "INACTIVE",
-    ["INACTIVE"] = "ACTIVE",
+        -- State
+        ["active"] = "inactive",
+        ["inactive"] = "active",
+        ["Active"] = "Inactive",
+        ["Inactive"] = "Active",
+        ["ACTIVE"] = "INACTIVE",
+        ["INACTIVE"] = "ACTIVE",
 
-    -- Null/Existence
-    -- ["nil"] = "not nil",
-    -- ["None"] = "Some",
-  }
+        -- Null/Existence
+        -- ["nil"] = "not nil",
+        -- ["None"] = "Some",
+    }
 
-  if toggles[word] then
-    vim.cmd("normal! ciw" .. toggles[word])
-    return
-  end
+    if toggles[word] then
+        vim.cmd("normal! ciw" .. toggles[word])
+        return
+    end
 
-  if word:match("^[01]+$") then
-    local flipped = word:gsub("0", "x"):gsub("1", "0"):gsub("x", "1")
-    vim.cmd("normal! gvdi" .. flipped)
-    return
-  end
+    if word:match("^[01]+$") then
+        local flipped = word:gsub("0", "x"):gsub("1", "0"):gsub("x", "1")
+        vim.cmd("normal! gvdi" .. flipped)
+        return
+    end
 end
 
 -- }}}
@@ -159,67 +159,67 @@ end
 local wk = require("which-key")
 
 wk.add({
-  { "<leader>l", group = "LSP & Logs" },
-  {
-    "<leader>lt",
-    toggle_lsp,
-    desc = "Toggle LSP On/Off",
-  },
-  {
-    "<leader>lp",
-    function()
-      require("snacks").picker.lsp_definitions({
-        layout = { preset = "vscode" },
-      })
-    end,
-    desc = "Goto Function Definition",
-  },
+    { "<leader>l", group = "LSP & Logs" },
+    {
+        "<leader>lt",
+        toggle_lsp,
+        desc = "Toggle LSP On/Off",
+    },
+    {
+        "<leader>lp",
+        function()
+            require("snacks").picker.lsp_definitions({
+                layout = { preset = "vscode" },
+            })
+        end,
+        desc = "Goto Function Definition",
+    },
 })
 
 -- relative number
 wk.add({
-  {
-    "<leader>r",
-    "<cmd>set rnu!<CR>",
-    desc = "Toggle Relativenumber",
-  },
+    {
+        "<leader>r",
+        "<cmd>set rnu!<CR>",
+        desc = "Toggle Relativenumber",
+    },
 })
 
 -- boolean toggle
 wk.add({
-  {
-    "<leader>T",
-    toggle_bool,
-    desc = "Toggle Boolean",
-    mode = { "n", "v" },
-  },
+    {
+        "<leader>T",
+        toggle_bool,
+        desc = "Toggle Boolean",
+        mode = { "n", "v" },
+    },
 })
 
 -- git
 wk.add({
-  {
-    "<leader>gP",
-    "<cmd>Gitsigns preview_hunk<CR>",
-    desc = "Preview hunk",
-  },
-  {
-    "<leader>gt",
-    "<cmd>Gitsigns toggle_current_line_blame<CR>",
-    desc = "Toggle line blame",
-  },
+    {
+        "<leader>gP",
+        "<cmd>Gitsigns preview_hunk<CR>",
+        desc = "Preview hunk",
+    },
+    {
+        "<leader>gt",
+        "<cmd>Gitsigns toggle_current_line_blame<CR>",
+        desc = "Toggle line blame",
+    },
 })
 
 -- terminal toggle
 wk.add({
-  {
-    "<leader>t",
-    function()
-      Snacks.terminal.toggle(nil, {
-        cwd = vim.fn.getcwd(),
-      })
-    end,
-    desc = "Toggle CWD Terminal",
-  },
+    {
+        "<leader>t",
+        function()
+            Snacks.terminal.toggle(nil, {
+                cwd = vim.fn.getcwd(),
+            })
+        end,
+        desc = "Toggle CWD Terminal",
+    },
 })
 
 -- }}}

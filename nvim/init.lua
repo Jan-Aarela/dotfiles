@@ -16,15 +16,15 @@ vim.api.nvim_create_user_command("SW", "SudaWrite", {})
 vim.api.nvim_create_user_command("SR", "SudaRead", {})
 
 vim.diagnostic.config({
-  virtual_text = true, -- This puts the error message right on the line
-  signs = true,
-  update_in_insert = false,
-  underline = true,
-  severity_sort = true,
-  float = {
-    border = "rounded",
-    source = "always",
-  },
+    virtual_text = true, -- This puts the error message right on the line
+    signs = true,
+    update_in_insert = false,
+    underline = true,
+    severity_sort = true,
+    float = {
+        border = "rounded",
+        source = "always",
+    },
 })
 
 vim.opt.termguicolors = true
