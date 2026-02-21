@@ -38,7 +38,7 @@ function fish_prompt
     set PWD_NEW (string replace --regex "^$HOME" "~" $PWD)
 
     if _is_git_repo
-        set_color red & echo -n "" $PWD_NEW
+        set_color "#fab387" & echo -n "" $PWD_NEW
     else
         set_color blue & echo -n "" $PWD_NEW
     end

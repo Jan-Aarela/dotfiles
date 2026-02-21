@@ -4,7 +4,6 @@
 
 -- Keybinds {{{
 local map = LazyVim.safe_keymap_set
-
 -- Window resize
 map("n", "<A-Left>", "<C-w>16<", { desc = "Reduce window width" })
 map("n", "<S-A-Left>", "<C-w>4<", { desc = "Increase window height" })

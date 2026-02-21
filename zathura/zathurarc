@@ -1,13 +1,9 @@
 include colorsrc
 
 # set font "JetBrainsMono NFM 30"
-set font "JetBrainsMono Nerd Font Mono 16"              # Use Hack as our font of choice
-
-
-
-
-
+set font "JetBrainsMono Nerd Font Mono 16"
 set selection-clipboard clipboard
-map p navigate previous
-map n navigate next
+
+map b navigate previous
+map w navigate next
 map t recolor
