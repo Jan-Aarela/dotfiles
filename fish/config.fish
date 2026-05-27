@@ -169,6 +169,10 @@ alias sm='sysmenu --app'
 
 alias lg='lazygit'
 
+alias novideo='SDL_VIDEODRIVER=x11 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
+
+alias xo="xdg-open"
+
 # alias joel='icat --place 0x0@-60x20 ~/.config/fish/joel.gif && echo -e "\n\n                                      I am just a fish\n"'
 
 set -x MANPAGER "nvim +Man!"

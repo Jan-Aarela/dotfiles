@@ -158,6 +158,7 @@ higher_cutoff_freq = 15000
 # 'sdl_glsl' uses SDL to create an OpenGL context. Write your own shaders or
 # use one of the predefined ones.
 method = noncurses
+; method = sdl_glsl
 
 # Orientation of the visualization. Can be 'bottom', 'top', 'left', 'right' or
 # 'horizontal'. Default is 'bottom'. 'left and 'right' are only supported on sdl
@@ -213,8 +214,8 @@ channels = mono
 ; synchronized_sync = 0
 
 # Shaders for sdl_glsl, located in $HOME/.config/cava/shaders
-; vertex_shader = pass_through.vert
-; fragment_shader = bar_spectrum.frag
+vertex_shader = pass_through.vert
+fragment_shader = test.frag
 
 ; for glsl output mode, keep rendering even if no audio
 ; continuous_rendering = 0

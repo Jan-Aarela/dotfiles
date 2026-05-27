@@ -184,6 +184,16 @@ wk.add({
     },
 })
 
+wk.add({
+    {
+        "<leader>Q",
+        function()
+            Snacks.dashboard()
+        end,
+        desc = "Show Dashboard",
+    },
+})
+
 -- boolean toggle
 wk.add({
     {

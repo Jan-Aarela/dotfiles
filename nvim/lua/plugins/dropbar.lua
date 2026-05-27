@@ -13,6 +13,7 @@ return {
                 sources = {
                     -- sources.path,
                     sources.treesitter,
+                    -- sources.lsp,
                 },
             },
         })
