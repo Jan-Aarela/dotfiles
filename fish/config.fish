@@ -142,8 +142,11 @@ alias cls='clear'
 alias CLS='clear'
 alias CLEAR='clear'
 
-alias rm="rm -i"
-alias rmd="rm -rf -I -v"
+# alias rm="rm -i"
+# alias rmd="rm -rf -I -v"
+
+alias rm="trash -i"
+alias rmr="trash-restore"
 
 alias tree="tree -C"
 alias kys="killall"

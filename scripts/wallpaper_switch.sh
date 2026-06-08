@@ -1,12 +1,16 @@
 #!/bin/bash
 
-IMAGE_DIR="$HOME/Pictures/wallpapers/"
+THEME=$(find "$HOME/Pictures/wallpapers/" -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | sort -f | wofi -dmenu -s ~/.config/wofi/default.css -c ~/.config/wofi/default -p "Wallpaper Themes:" -W 300 -H 400 --sort-order=alphabetical)
 
-IMG=$(nsxiv -to ~/Pictures/wallpapers/ -g 1400x1150 -s f | awk -F'/' '{print $NF}')
-echo $IMG
+if [ -z "$THEME" ]; then
+    exit 0
+fi
+
+IMG=$(nsxiv -to ~/Pictures/wallpapers/"$THEME" -g 1400x1150 -s f || notify-send "Empty dir!" | awk -F'/' '{print $NF}')
+echo "$IMG"
 
 if [[ -n $IMG ]]; then
-    swww img $IMAGE_DIR/$IMG -t wipe --transition-duration 0.5 --transition-fps 90
-    notify-send " $IMG" &
+    swww img "$IMG" -t wipe --transition-duration 0.5 --transition-fps 90
+    notify-send " $(basename "$IMG")" &
     aplay ~/.config/sounds/theme_switch.wav
 fi

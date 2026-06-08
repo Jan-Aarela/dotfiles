@@ -7,3 +7,5 @@ normal_window=true
 key_expand=Tab
 matching=contains
 insensitive=true
+cache_file=/dev/null
+
