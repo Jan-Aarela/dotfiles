@@ -1,8 +1,0 @@
-#default
-#monitor=eDP-1,2880x1800@90.0,2283x1200,1.25
-
-# Custom native res. Works.
-#monitor=eDP-1, modeline 513.75 2880 2928 2960 3040 1800 1803 1809 1878 -hsync +vsync, 0x0, 1.25
-
-# Custom 2304x1440 90hz. Worksn't.
-#monitor=eDP-1, modeline 309.909 2304 2312 2344 2384 1440 1489 1497 1503 -hsync +vsync, 0x0, 1

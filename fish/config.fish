@@ -176,6 +176,7 @@ alias novideo='SDL_VIDEODRIVER=x11 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBR
 
 alias xo="xdg-open"
 
+alias ltspice="env WINEPREFIX="/home/jan-aarela/.wine_test"  wine /usr/share/ltspice/LTspice.exe"
 # alias joel='icat --place 0x0@-60x20 ~/.config/fish/joel.gif && echo -e "\n\n                                      I am just a fish\n"'
 
 set -x MANPAGER "nvim +Man!"
@@ -185,4 +186,5 @@ set -x MANPAGER "nvim +Man!"
 export EDITOR="nvim"
 export SHELL="/bin/fish"
 export PF_INFO="ascii title kernel uptime pkgs shell palette"
+export XKB_DEFAULT_LAYOUT=fi
 # }}}

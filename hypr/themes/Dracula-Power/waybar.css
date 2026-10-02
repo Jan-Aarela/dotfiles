@@ -3,19 +3,34 @@
 
 /* Define colors */
 /* {{{ */
+/* @define-color background1 #282a36; */
+/* @define-color background2 #1E1F29; */
+/* @define-color sepepator #44475a; */
+/* @define-color warning #ff5555; */
+/* @define-color caution #44475a; */
+/* @define-color performance #ff79c6; */
+/* @define-color audio #bd93f9; */
+/* @define-color misc #f1fa8c; */
+/* @define-color date #50fa7b; */
+/* @define-color work #f8f8f2; */
+/* @define-color window #f8f8f2; */
+/* @define-color resize #ffb86c; */
+/* @define-color text #000000; */
+
 @define-color background1 #282a36;
 @define-color background2 #1E1F29;
 @define-color sepepator #44475a;
 @define-color warning #ff5555;
 @define-color caution #44475a;
-@define-color performance #ff79c6;
-@define-color audio #bd93f9;
-@define-color misc #f1fa8c;
+@define-color performance #50fa7b;
+@define-color audio #50fa7b;
+@define-color misc #50fa7b;
 @define-color date #50fa7b;
 @define-color work #f8f8f2;
-@define-color window #f8f8f2;
+@define-color window #bd93f9;
 @define-color resize #ffb86c;
 @define-color text #000000;
+
 /* }}} */
 
 /* Reset all styles */
@@ -40,13 +55,6 @@
 @keyframes blink-urgent-workspace {
     to {
         color: @warning;
-        /* background-image: linear-gradient( */
-        /*   -63.435deg, */
-        /*   transparent 25%, */
-        /*   @warning 25%, */
-        /*   @warning 75%, */
-        /*   transparent 75% */
-        /* ); */
     }
 }
 
@@ -64,8 +72,31 @@
 }
 
 @keyframes blink-special-workspace {
-    to {
-        color: @window;
+    20% {
+        background-image: linear-gradient(
+            -63.435deg,
+            transparent 24%,
+            @sepepator 24%,
+            @sepepator 28%,
+            @sepepator 28%,
+            @sepepator 72%,
+            @sepepator 72%,
+            @sepepator 76%,
+            transparent 76%
+        );
+    }
+    100% {
+        background-image: linear-gradient(
+            -63.435deg,
+            transparent 24%,
+            @sepepator 24%,
+            @sepepator 28%,
+            @window 28%,
+            @window 72%,
+            @sepepator 72%,
+            @sepepator 76%,
+            transparent 76%
+        );
     }
 }
 
@@ -76,7 +107,8 @@
 #waybar.main {
     background: @background2;
     font-family: "JetBrainsMono Nerd Font propo";
-    /* font-family: "VictorMono nerd font propo"; */
+    /* font-family: "martianmono nerd font propo"; */
+
     font-size: 12pt;
     font-weight: 600;
     color: @text;
@@ -155,7 +187,6 @@
 #waybar.main #custom-headsetbattery,
 #waybar.main #pulseaudio {
     color: @audio;
-    background: @background2;
 }
 
 #waybar.main #custom-battery,
@@ -170,7 +201,6 @@
 #waybar.main #clock,
 #custom-timer {
     color: @date;
-    background: @background2;
 }
 
 #waybar.main #clock {
@@ -204,7 +234,8 @@
 
 /* Submap */
 /* {{{ */
-#waybar.main #submap.󰲏 {
+
+#waybar.main #submap.Resize {
     color: @resize;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -212,9 +243,18 @@
     animation-duration: 1s;
     animation-timing-function: steps(15);
     box-shadow: none;
+
+    padding-right: 25px;
+    background-image: linear-gradient(
+        -63.435deg,
+        transparent 16px,
+        @sepepator 16px,
+        @sepepator 19px,
+        transparent 19px
+    );
 }
 
-#waybar.main #submap. {
+#waybar.main #submap.Screenshot {
     color: @date;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -222,6 +262,15 @@
     animation-duration: 1s;
     animation-timing-function: steps(15);
     box-shadow: none;
+
+    padding-right: 25px;
+    background-image: linear-gradient(
+        -63.435deg,
+        transparent 16px,
+        @sepepator 16px,
+        @sepepator 19px,
+        transparent 19px
+    );
 }
 
 /* }}} */
@@ -302,23 +351,21 @@
     margin-bottom: -6px;
     background-image: linear-gradient(
         -243.435deg,
-        @background2 17px,
-        @sepepator 17px,
-        @sepepator 21px,
-        transparent 21px,
-        transparent calc(100% -22px),
-        @sepepator calc(100% -22px),
+        transparent 17.5px,
+        @sepepator 17.5px,
+        @sepepator 20px,
+        @background2 20px,
+        @background2 calc(100% -21px),
+        @sepepator calc(100% -20px),
         @sepepator calc(100% - 18px),
-        transparent calc(100% - 18px)
+        transparent calc(100% -18px)
     );
 }
 
 #waybar.main #workspaces button {
-    color: #45475a;
+    color: @sepepator;
     background: transparent;
     border: 1.5px solid transparent;
-    padding-left: 4pt;
-    padding-right: 4pt;
     transition: all 0.25s ease;
     padding-right: 16px;
     padding-left: 16px;
@@ -326,13 +373,13 @@
     margin-left: -17px;
     padding-top: 6px;
     padding-bottom: 6px;
-    background-image: linear-gradient(
-        -63.435deg,
-        transparent 25%,
-        @background2 25%,
-        @background2 75%,
-        transparent 75%
-    );
+    /* background-image: linear-gradient( */
+    /*     -63.435deg, */
+    /*     transparent 30%, */
+    /*     @background2 30%, */
+    /*     @background2 75%, */
+    /*     transparent 75% */
+    /* ); */
 }
 
 /* Focused workspace */
@@ -349,15 +396,16 @@
 
 /* Focused workspace & monitor */
 #waybar.main #workspaces button.active {
-    color: @window;
+    color: @background2;
+    font-weight: 900;
     background-image: linear-gradient(
         -63.435deg,
         transparent 24%,
         @sepepator 24%,
         @sepepator 28%,
-        @background1 28%,
-        @background1 73%,
-        @sepepator 73%,
+        @window 28%,
+        @window 72%,
+        @sepepator 72%,
         @sepepator 76%,
         transparent 76%
     );
@@ -368,30 +416,41 @@
     color: @window;
 }
 
-/* #waybar.main #workspaces button.active:hover { */
-/*   color: @background2; */
-/*   background-image: linear-gradient( */
-/*     -63.435deg, */
-/*     transparent 24%, */
-/*     @sepepator 24%, */
-/*     @sepepator 28%, */
-/*     @window 28%, */
-/*     @window 73%, */
-/*     @sepepator 73%, */
-/*     @sepepator 76%, */
-/*     transparent 76% */
-/*   ); */
-/* } */
+#waybar.main #workspaces button.active:hover {
+    color: @background2;
+    background-image: linear-gradient(
+        -63.435deg,
+        transparent 24%,
+        @sepepator 24%,
+        @sepepator 28%,
+        @window 28%,
+        @window 73%,
+        @sepepator 73%,
+        @sepepator 76%,
+        transparent 76%
+    );
+}
 
 /* Special workplace animation */
 #waybar.main #workspaces button.special.active {
     transition: all 0s ease;
     border: 1.5px solid transparent;
-    color: @sepepator;
+    background-image: linear-gradient(
+        -63.435deg,
+        transparent 24%,
+        @sepepator 24%,
+        @sepepator 28%,
+        @sepepator 28%,
+        @sepepator 72%,
+        @sepepator 72%,
+        @sepepator 76%,
+        transparent 76%
+    );
+    color: black;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-name: blink-special-workspace;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-timing-function: steps(15);
 }
 
@@ -430,14 +489,14 @@
         @background1 47.5%,
         @sepepator 47.6%,
         @sepepator 52.4%,
-        @background2 52.5%
+        transparent 52.5%
     );
 }
 
 #waybar.main #custom-spacer3 {
     background-image: linear-gradient(
         63.435deg,
-        @background2 47.5%,
+        transparent 47.5%,
         @sepepator 47.6%,
         @sepepator 52.4%,
         @background1 52.5%
@@ -450,33 +509,33 @@
         @background1 47.5%,
         @sepepator 47.6%,
         @sepepator 52.4%,
-        @background2 52.5%
-    );
-}
-
-#waybar.main #custom-spacer5 {
-    background-image: linear-gradient(
-        -63.435deg,
-        @transparent 47.5%,
-        @sepepator 47.6%,
-        @sepepator 52.4%,
         transparent 52.5%
     );
 }
 
-#waybar.main #custom-spacer6 {
-    background-image: linear-gradient(
-        -63.435deg,
-        @transparent 47.5%,
-        @sepepator 47.6%,
-        @sepepator 52.4%,
-        transparent 52.5%
-    );
-}
+/* #waybar.main #custom-spacer5 { */
+/*     background-image: linear-gradient( */
+/*         -63.435deg, */
+/*         @transparent 47.5%, */
+/*         @sepepator 47.6%, */
+/*         @sepepator 52.4%, */
+/*         transparent 52.5% */
+/*     ); */
+/* } */
+/**/
+/* #waybar.main #custom-spacer6 { */
+/*     background-image: linear-gradient( */
+/*         -63.435deg, */
+/*         @transparent 47.5%, */
+/*         @sepepator 47.6%, */
+/*         @sepepator 52.4%, */
+/*         transparent 52.5% */
+/*     ); */
+/* } */
 
 /* }}} */
 
-/* Custom tray icon */
+/* Tray */
 /* {{{ */
 #waybar.main #custom-trayicon {
     font-size: 11pt;
@@ -485,31 +544,38 @@
     font-style: italic;
     background: transparent;
     padding-right: 0pt;
-    padding-left: 2pt;
-    background-size: 16px;
+    padding-left: 8pt;
+    background-size: 24px;
     background-position: 2px, 0px;
     background-repeat: no-repeat;
-    background-image: url("/home/jan-aarela/.config/hypr/themes/Mocha-Power/pacman.png");
-}
-
-/* }}} */
-
-/* Tooltip */
-/* {{{ */
-tooltip {
-    background: @background;
-    border: 3px solid @caution;
-    border-radius: 8px;
-    font-weight: 500;
-    font-family: "JetBrains Mono Nerd Font";
+    background-image: url("/home/jan-aarela/.config/hypr/themes/Dracula-Power/pacman.png");
 }
 
 #waybar.main #tray menu {
     background: @background;
     border: 3px solid @caution;
     border-radius: 8px;
+    margin-right: -100px;
+}
+/* }}} */
+
+/* Tooltip */
+/* {{{ */
+tooltip {
+    background: @background2;
+    border: 3px solid @caution;
+    font-weight: 500;
+    font-family: "JetBrains Mono Nerd Font";
 }
 
+tooltip label {
+    color: @date;
+    font-weight: 600;
+}
+
+tooltip box {
+    padding: 8px;
+}
 /* }}} */
 
 /* Indicator bar keyframes */
@@ -580,7 +646,7 @@ tooltip {
         inset 0px 4px 4px -5px rgba(0, 0, 0, 0.5),
         inset 0px -4px 4px -5px rgba(0, 0, 0, 0.5);
 
-    border-radius: 7px;
+    /* border-radius: 7px; */
     padding-left: 2502px;
     /* Use this for padding:  */
     /* (H_rez / scaling) - L_margin -R_margin - 2 * border - (font-size / 2)*/

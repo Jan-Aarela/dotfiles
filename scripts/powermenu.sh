@@ -26,7 +26,7 @@ if [[ $SELECTED == "󰐥" || $SELECTED == "󰜉" || $SELECTED == "󰍃" ]]; then
             "󰍃")
                 notify-send "Logging out!" &
                 # aplay ~/.config/sounds/shutdown.wav && hyprctl dispatch exit
-                paplay ~/.config/sounds/chimes.mp3 && hyprctl dispatch exit
+                paplay ~/.config/sounds/chimes.mp3 && hyprctl dispatch 'hl.dsp.exit()'
                 ;;
         esac
     fi

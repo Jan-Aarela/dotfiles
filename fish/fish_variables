@@ -1,4 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR LAST_DIR:/home/jan\x2daarela/\x2econfig/hypr
+SETUVAR --export --path GNUARMEMB_TOOLCHAIN_PATH:/usr
+SETUVAR LAST_DIR:/home/jan\x2daarela/\x2econfig/nvim/lua/config
+SETUVAR --export ZEPHYR_BASE:/home/jan\x2daarela/mini_projektit/nordic_hello/zephyr
+SETUVAR --export ZEPHYR_TOOLCHAIN_VARIANT:gnuarmemb
 SETUVAR __fish_initialized:4300

@@ -41,6 +41,13 @@ return {
                 },
             })
 
+            -- Rust
+            lspconfig.rust_analyzer.setup({
+                cmd = {
+                    "rust-analyzer",
+                },
+            })
+
             -- Python
             lspconfig.pyright.setup({
                 settings = {

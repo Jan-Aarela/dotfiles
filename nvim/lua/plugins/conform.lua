@@ -25,6 +25,7 @@ return {
             -- Rest
             python = { "black" },
             lua = { "stylua" },
+            asm = { "asmfmt" },
 
             -- ["yaml.ansible"] = { "yamlfmt" },
         },

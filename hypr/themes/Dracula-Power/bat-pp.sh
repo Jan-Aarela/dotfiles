@@ -19,7 +19,7 @@ refresh() {
     #     EOL="Full in: \n$(upower -i "$BATTERY" | awk '/time to full/ {for (i=4; i<=NF; i++) printf $i (i<NF?" ":"\n")}')"
     # fi
 
-    sleep 0.1
+    # sleep 0.1
 
     # Set class for styling.
     if [[ $STATE == "Charging" || $STATE == "pending-charge" ]]; then
@@ -72,6 +72,7 @@ if [[ $MODE == "toggle" ]]; then
             powerprofilesctl set balanced &
             ;;
     esac
+    refresh
 fi
 
 # Refreshes the whole module.

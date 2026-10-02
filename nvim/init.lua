@@ -1,5 +1,8 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+require("config.figlet")
+require("config.wcom")
+require("config.comment")
 
 vim.cmd([[
 function OpenMarkdownPreview (url)

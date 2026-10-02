@@ -5,8 +5,8 @@ return {
     -- other configuration like version, build, etc.
     opts = {
         completion = {
-            menu = { border = "rounded" },
-            documentation = { window = { border = "rounded" } },
+            menu = { border = "single" },
+            documentation = { window = { border = "single" } },
         },
 
         -- signature = { window = { border = "rounded" } },

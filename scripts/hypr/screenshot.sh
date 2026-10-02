@@ -31,15 +31,17 @@ case "$MODE" in
         wl-copy --type image/png <~/Pictures/Screenshots/"$FILENAME"
         ;;
     view)
-        FOLDER=$(find "$HOME/Pictures/Screenshots/" -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | sort -f | tac | wofi -dmenu -s ~/.config/wofi/default.css -c ~/.config/wofi/default -p "Screenshot months" -W 300 -H 400)
-
+        FOLDER=$(find "$HOME/Pictures/Screenshots/" -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | sort -f | tac | wofi -dmenu -s ~/.config/wofi/default.css -c ~/.config/wofi/ss -p "Screenshot months" -W 300 -H 400)
+        echo "$FOLDER"
         if [ -z "$FOLDER" ]; then
             exit 0
         fi
 
-        IMG=$(nsxiv -to $(ls -r ~/Pictures/Screenshots/"$FOLDER"/*) -g 1400x1150 || notify-send "No Screenshots!" | awk -F'/' '{print $NF}')
+        FOLDER=$(find "$HOME"/Pictures/Screenshots/ -maxdepth 1 -iname "*$FOLDER*" -type d)
+
+        IMG=$(nsxiv -to $(ls -r "$FOLDER"/*) -g 1400x1150 || notify-send "No Screenshots!" | awk -F'/' '{print $NF}')
         echo "$IMG"
 
-        wl-copy --type image/png <~/Pictures/Screenshots/"$IMG"
+        wl-copy --type image/png <"$IMG"
         ;;
 esac

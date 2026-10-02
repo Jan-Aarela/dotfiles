@@ -4,18 +4,18 @@
 
 # CONFIG SOURCING{{{
 
-source = keybindings.conf
-source = io.conf
-source = lookandfeel.conf
-source = windowrules.conf
-source = layerrules.conf
-source = monitors.conf
-source = plugins.conf
+source = conf/keybindings.conf
+source = conf/io.conf
+source = conf/lookandfeel.conf
+source = conf/windowrules.conf
+source = conf/layerrules.conf
+source = conf/monitors.conf
+source = conf/plugins.conf
 # }}}
 
 # AUTOSTART{{{
 exec-once = systemctl --user start hyprpolkitagent
-exec-once = swww-daemon
+exec-once = awww-daemon
 exec-once = ~/.config/scripts/hypr/theme_switcher.sh previous
 exec-once = blueman-applet
 exec-once = hypridle
@@ -46,13 +46,12 @@ env = XDG_SESSION_TYPE,wayland
 
 # Novideo bullshit
 # env = AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1
+# env = AQ_DRM_DEVICES,/dev/dri/card1
+env = GB_BACKEND,drm
 env = NVD_BACKEND,direct
 env = LIBVA_DRIVER_NAME,radeonsi
-env = __GLX_VENDOR_LIBRARY_NAME,nvidia
-# env = GBM_BACKEND,nvidia-drm
-#env = __GL_VRR_ALLOWED,1
-#env = WLR_DRM_NO_ATOMIC,1
-#env = ELECTRON_OZONE_PLATFORM_HINT,wayland    
-# env = __NV_PRIME_RENDER_OFFLOAD,1
+# env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+env = __GLX_VENDOR_LIBRARY_NAME,mesa
+
 
 # }}}
