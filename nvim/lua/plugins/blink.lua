@@ -1,3 +1,5 @@
+---@type LazySpec
+
 return {
     "saghen/blink.cmp",
     -- { "saghen/blink.cmp", enabled = false },
@@ -51,8 +53,14 @@ return {
             -- ['<C-y>'] = { 'accept', 'fallback' },
         },
         sources = {
-            default = { "lsp", "path", "snippets", "buffer" },
+            -- Added 'lazydev' to the default sources list
+            default = { "lazydev", "lsp", "path", "snippets", "buffer" },
             providers = {
+                lazydev = {
+                    name = "LazyDev",
+                    module = "lazydev.integrations.blink",
+                    score_offset = 100, -- Boost priority for Neovim config completions
+                },
                 lsp = {
                     name = "lsp",
                     enabled = true,

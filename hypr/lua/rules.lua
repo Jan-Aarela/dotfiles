@@ -22,6 +22,7 @@ hl.workspace_rule({
     workspace = "f[1]s[false]",
     gaps_out = 23,
 })
+
 -- }}}
 
 -- Windowrules {{{
@@ -49,6 +50,12 @@ hl.window_rule({
     match = { title = "iwgtk" },
     float = true,
     size = { 768, 768 },
+})
+
+hl.window_rule({
+    name = "center-kicad-windows",
+    match = { class = "kicad" },
+    center = true,
 })
 
 hl.window_rule({

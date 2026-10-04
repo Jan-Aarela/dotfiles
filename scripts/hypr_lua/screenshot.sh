@@ -10,6 +10,7 @@ OUTPUT="$HOME/Pictures/Screenshots/$CURRENT_MONTH"
 COUNT1=$(find ~/Pictures/Screenshots -type f | wc -l)
 
 confirmation() {
+    sleep 0.25
     COUNT2=$(find ~/Pictures/Screenshots -type f | wc -l)
 
     if [[ $COUNT2 -gt $COUNT1 ]]; then

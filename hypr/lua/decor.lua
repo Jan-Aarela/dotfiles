@@ -22,8 +22,6 @@ hl.config({
         resize_on_border = true,
 
         allow_tearing = true,
-
-        layout = "dwindle",
     }, -- }}}
 
     decoration = { -- {{{

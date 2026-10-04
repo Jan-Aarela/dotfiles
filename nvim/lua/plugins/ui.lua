@@ -1,3 +1,5 @@
+---@type LazySpec
+
 return {
     {
         "snacks.nvim",

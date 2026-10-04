@@ -1,4 +1,5 @@
-## *How to brick your OS*
+## _How to brick your OS_
+
 ```bash
 cd ~/.config
 git clone https://github.com/Jan-Aarela/dotfiles.git
@@ -9,5 +10,6 @@ yay -S $(cat package_list.txt)
 ```
 
 #
+
 ![alt_text](images/desktop5.png)
 ![alt_text](images/lockscreen5.png)

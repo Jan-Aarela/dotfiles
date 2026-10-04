@@ -4,7 +4,8 @@ gradient = 1
 ; gradient_color_1 = '#b4befe'
 ; gradient_color_2 = '#bac2de'
 ; gradient_color_3 = '#f38ba8'
-gradient_color_1 = '#8be9fd'
-gradient_color_2 = '#8be9fd'
-gradient_color_3 = '#ff79c6'
+gradient_color_1 = '#50fa7b'
+gradient_color_2 = '#50fa7b'
+gradient_color_3 = '#bd93f9'
+gradient_color_4 = '#bd93f9'
 

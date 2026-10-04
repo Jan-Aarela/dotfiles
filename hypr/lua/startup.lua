@@ -17,13 +17,12 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
     hl.exec_cmd("brightnessctl set 100%")
     hl.exec_cmd('xrdb -merge "$HOME/.Xresources"')
+    hl.exec_cmd("udiskie")
+    hl.exec_cmd("sleep 4 && paplay ~/.config/sounds/ice_cream.mp3")
 
     -- ??
     hl.exec_cmd("dbus-update-activation-environment")
     hl.exec_cmd("systemctl")
-    hl.exec_cmd(
-        "sleep 4 && paplay ~/.config/sounds/windows-31-startup-sound-classic-retro-computer-booting-audio-332124.mp3"
-    )
 
     -- Start apps
     hl.exec_cmd("kitty -e btop", { workspace = "special:magic silent" })

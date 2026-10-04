@@ -439,6 +439,16 @@
     appname = "some_volume_notifiers"
     set_stack_tag = "volume"
 
+[udiskie-mount]
+    appname = "udiskie"
+    summary = "*mounted*"
+    script = "~/.config/hypr/themes/Dracula-Power/dunst_disk_m.sh"
+
+[udiskie-remove]
+    appname = "udiskie"
+    summary = "*removed*"
+    script = "~/.config/hypr/themes/Dracula-Power/dunst_disk_r.sh"
+
 # vim: ft=cfg
 
 

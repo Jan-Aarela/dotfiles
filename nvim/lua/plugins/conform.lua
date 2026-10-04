@@ -10,6 +10,11 @@ return {
             html = { "prettier" },
             json = { "prettier" },
             jsonc = { "prettier" },
+            yaml = { "prettier" },
+            yml = { "prettier" },
+            markdown = { "prettier" },
+            toml = { "taplo" },
+            xml = { "xmlformatter" },
 
             -- c family
             c = { "clang-format" },
@@ -17,6 +22,9 @@ return {
             objc = { "clang-format" },
             objcpp = { "clang-format" },
             cuda = { "clang-format" },
+
+            -- Build
+            cmake = { "cmake_format" },
 
             -- Shell
             sh = { "shfmt" },
@@ -26,13 +34,11 @@ return {
             python = { "black" },
             lua = { "stylua" },
             asm = { "asmfmt" },
-
-            -- ["yaml.ansible"] = { "yamlfmt" },
         },
 
         formatters = {
             prettier = {
-                prepend_args = { "--tab-width", "4" },
+                prepend_args = { "--tab-width", "4", "--trailing-comma", "none" },
             },
 
             stylua = {
@@ -41,6 +47,11 @@ return {
 
             shfmt = {
                 prepend_args = { "-i", "4", "-ci" },
+            },
+
+            mbake = {
+                command = "mbake",
+                args = { "format", "$FILENAME" }, -- adjust args if your mbake version takes different flags
             },
 
             -- clang_format = {

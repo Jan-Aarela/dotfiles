@@ -19,7 +19,7 @@
             // "custom/spacer2",
             // "custom/spacer6",
             "hyprland/submap",
-            "hyprland/window",
+            "hyprland/window"
         ],
 
         "modules-right": [
@@ -45,7 +45,7 @@
             // "custom/weather",
             "custom/timer",
             "clock",
-            "custom/weather",
+            "custom/weather"
         ],
 
         // Modules
@@ -57,8 +57,8 @@
             "on-click": "qdirstat & aplay ~/.config/sounds/interact.wav",
             "states": {
                 "warning": 85,
-                "critical": 95,
-            },
+                "critical": 95
+            }
         },
 
         "custom/timer": {
@@ -72,7 +72,7 @@
             "on-scroll-down": "~/.config/hypr/themes/Mocha-Power/timer.sh up", // previously down
             "tooltip": true,
             "escape": true,
-            "scroll-step": 10,
+            "scroll-step": 10
         },
 
         "cava": {
@@ -96,7 +96,7 @@
             "input_delay": 2,
             "sleep_timer": 5,
             // "format-icons": ["▁","▁","▁","▁","▁","▁","▁","▁","▁","▁","▁","▁","▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-            "format-icons": ["⡀", "⡀", "⡄", "⡆", "⡇"],
+            "format-icons": ["⡀", "⡀", "⡄", "⡆", "⡇"]
         },
 
         "custom/headsetbattery": {
@@ -105,7 +105,7 @@
             "tooltip": true,
             "tooltip-format": "{alt}",
             "format": "{text}",
-            "exec": "~/.config/hypr/themes/Mocha-Power/headsetbattery.sh",
+            "exec": "~/.config/hypr/themes/Mocha-Power/headsetbattery.sh"
         },
 
         "custom/weather": {
@@ -113,13 +113,13 @@
             "tooltip": true,
             "interval": 60,
             "exec": "~/git/wttrbar/target/release/wttrbar --location Oulu --nerd --hide-conditions",
-            "return-type": "json",
+            "return-type": "json"
         },
 
         "group/traym": {
             "orientation": "horizontal",
             "drawer": {},
-            "modules": ["custom/trayicon", "tray"],
+            "modules": ["custom/trayicon", "tray"]
         },
 
         "group/storage": {
@@ -127,10 +127,10 @@
             "drawer": {
                 "transition-duration": "500",
                 "transition-left-to-right": "true",
-                "children-class": "drawer-child",
+                "children-class": "drawer-child"
                 //"click-to-reveal": "false"
             },
-            "modules": ["memory#ram", "memory#swap"],
+            "modules": ["memory#ram", "memory#swap"]
         },
 
         "group/power": {
@@ -138,10 +138,10 @@
             "drawer": {
                 "transition-duration": "500",
                 "transition-left-to-right": "true",
-                "children-class": "drawer-child",
+                "children-class": "drawer-child"
                 //"click-to-reveal": "false"
             },
-            "modules": ["custom/battery", "backlight"],
+            "modules": ["custom/battery", "backlight"]
         },
 
         "backlight": {
@@ -150,7 +150,7 @@
             "format-icons": ["󱩎", "󱩑", "󱩓", "󱩕", "󰛨"],
             "scroll-step": 1,
             "on-scroll-up": "brightnessctl set 2%-",
-            "on-scroll-down": "brightnessctl set +2%",
+            "on-scroll-down": "brightnessctl set +2%"
         },
 
         "custom/nvidia": {
@@ -159,7 +159,7 @@
             "exec": "~/.config/hypr/themes/Mocha-Power/nvidia.sh",
             "format": "<span size='x-large' rise='-2500'>󰢮</span>{text}",
             "tooltip": "true",
-            "tooltip-format": "{alt}",
+            "tooltip-format": "{alt}"
         },
 
         "custom/battery": {
@@ -170,7 +170,7 @@
             "format": "{text}%",
             "on-click": "~/.config/hypr/themes/Dracula-Power/bat-pp.sh toggle & aplay ~/.config/sounds/interact.wav",
             "tooltip": "true",
-            "tooltip-format": "{alt}",
+            "tooltip-format": "{alt}"
         },
 
         // "custom/battery": {
@@ -195,10 +195,10 @@
                     "days": "<span color='#cdd6f4'><b>{}</b></span>",
                     "weeks": "<span color='#94e2d5'> W{}</span>",
                     "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-                    "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>",
-                },
+                    "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>"
+                }
             },
-            "on-click": "chromium --app=https://calendar.google.com & aplay ~/.config/sounds/interact.wav",
+            "on-click": "chromium --app=https://calendar.google.com & aplay ~/.config/sounds/interact.wav"
         },
 
         "cpu": {
@@ -207,8 +207,8 @@
             "format": " {usage}%",
             "states": {
                 "warning": 80,
-                "critical": 95,
-            },
+                "critical": 95
+            }
         },
 
         "hyprland/language": {
@@ -218,7 +218,7 @@
             "min-length": 8,
             "on-click": "hyprctl switchxkblayout current next & aplay ~/.config/sounds/interact.wav",
             "tooltip": false,
-            "class": "language",
+            "class": "language"
         },
 
         "memory#ram": {
@@ -226,17 +226,17 @@
             "format": " {percentage}%",
             "states": {
                 "warning": 80,
-                "critical": 95,
+                "critical": 95
             },
             "tooltip": "{}",
-            "tooltip-format": "{used}/{total} GiB",
+            "tooltip-format": "{used}/{total} GiB"
         },
 
         "memory#swap": {
             "interval": 16,
             "format": "󰾵 {swapPercentage}%",
             "tooltip": "{}",
-            "tooltip-format": "{swapUsed}/{swapTotal}GiB",
+            "tooltip-format": "{swapUsed}/{swapTotal}GiB"
         },
 
         "network#info": {
@@ -251,8 +251,8 @@
             "on-click": "iwgtk& aplay ~/.config/sounds/interact.wav",
             "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
             "states": {
-                "normal": 25,
-            },
+                "normal": 25
+            }
         },
 
         "network#up": {
@@ -261,7 +261,7 @@
             "format-wifi": "󰕒 {bandwidthUpBits}",
             "format-ethernet": "󰕒 {bandwidthUpBits}",
             "format-disconnected": " ",
-            "min-length": 11,
+            "min-length": 11
         },
 
         "network#down": {
@@ -269,26 +269,26 @@
             "format": "󰇚 {bandwidthDownBits}",
             "format-wifi": "󰇚 {bandwidthDownBits}",
             "format-ethernet": "󰇚 {bandwidthDownBits}",
-            "min-length": 11,
+            "min-length": 11
         },
 
         "hyprland/submap": {
             "always-on": false,
             "default-submap": "",
             "format": " {}",
-            "tooltip": false,
+            "tooltip": false
         },
 
         "hyprland/window": {
             "format": "{class} {title}",
             "rewrite": {
-                "^([^ ]+) (.+)$": "$1: $2",
+                "^([^ ]+) (.+)$": "$1: $2"
             },
             "max-length": 64,
             "tooltip": false,
             "icon": false,
             "icon-size": 18,
-            "tooltip": true,
+            "tooltip": true
         },
 
         "hyprland/workspaces": {
@@ -303,8 +303,8 @@
                 "magic": "",
                 "zellij": "",
                 "10": "󰊴",
-                "lock": "",
-            },
+                "lock": ""
+            }
         },
 
         "pulseaudio#output": {
@@ -318,14 +318,14 @@
                 "phone": "",
                 "portable": "",
                 "car": "",
-                "default": ["", ""],
+                "default": ["", ""]
             },
             "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
             "on-click-right": "pwvucontrol & aplay ~/.config/sounds/interact.wav",
             "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 2%+ --limit 1.1",
             "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 2%-",
             "tooltip": true,
-            "scroll-step": 4,
+            "scroll-step": 4
         },
 
         "pulseaudio#input": {
@@ -338,7 +338,7 @@
             "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
             "on-click-right": "pwvucontrol & aplay ~/.config/sounds/interact.wav",
             "tooltip-format": "{source_desc}",
-            "scroll-step": 4,
+            "scroll-step": 4
         },
 
         "temperature": {
@@ -346,47 +346,47 @@
             "interval": 4,
             "format": "{icon} {temperatureC}°",
             "format-icons": ["", "", "", "", ""],
-            "tooltip": false,
+            "tooltip": false
         },
 
         "tray": {
             "icon-size": 18,
-            "spacing": 8,
+            "spacing": 8
         },
 
         "custom/spacer": {
             "format": " ",
-            "tooltip": false,
+            "tooltip": false
         },
 
         "custom/spacer1": {
             "format": "",
-            "tooltip": false,
+            "tooltip": false
         },
 
         "custom/spacer2": {
             "format": "",
-            "tooltip": false,
+            "tooltip": false
         },
 
         "custom/spacer3": {
             "format": "",
-            "tooltip": false,
+            "tooltip": false
         },
 
         "custom/spacer4": {
             "format": "",
-            "tooltip": false,
+            "tooltip": false
         },
 
         "custom/spacer5": {
             "format": "",
-            "tooltip": false,
+            "tooltip": false
         },
 
         "custom/spacer6": {
             "format": "",
-            "tooltip": false,
+            "tooltip": false
         },
 
         "custom/trayicon": {
@@ -398,8 +398,8 @@
             "tooltip": false,
             "on-click": " bash ~/.config/scripts/pacman.sh",
             "on-scroll-up": "",
-            "on-scroll-down": "",
-        },
+            "on-scroll-down": ""
+        }
     },
 
     {
@@ -424,7 +424,7 @@
             "return-type": "json",
             "tooltip": false,
             "format": " ",
-            "exec": "~/.config/hypr/themes/Mocha-Power/bat-pp.sh bar",
-        },
-    },
+            "exec": "~/.config/hypr/themes/Mocha-Power/bat-pp.sh bar"
+        }
+    }
 ]

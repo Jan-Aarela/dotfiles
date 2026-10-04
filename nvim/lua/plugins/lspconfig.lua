@@ -4,6 +4,7 @@ return {
         dependencies = {
             "folke/lazydev.nvim",
             "saghen/blink.cmp",
+            "b0o/SchemaStore.nvim",
             ft = "lua",
             opts = {},
         },
@@ -41,6 +42,17 @@ return {
                 },
             })
 
+            -- Json
+            lspconfig.jsonls.setup({
+                filetypes = { "json", "jsonc" },
+                settings = {
+                    json = {
+                        schemas = require("schemastore").json.schemas(),
+                        validate = { enable = true },
+                    },
+                },
+            })
+
             -- Rust
             lspconfig.rust_analyzer.setup({
                 cmd = {
@@ -73,7 +85,9 @@ return {
             })
 
             lspconfig.cssls.setup({
-                settings = {},
+                settings = { scss = {
+                    validate = false,
+                } },
             })
         end,
     },
