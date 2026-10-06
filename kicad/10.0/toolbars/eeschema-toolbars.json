@@ -1,0 +1,423 @@
+{
+  "meta": {
+    "version": 1
+  },
+  "toolbars": [
+    {
+      "contents": [
+        {
+          "name": "common.Control.toggleGrid",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.toggleGridOverrides",
+          "type": "TOOL"
+        },
+        {
+          "group_items": [
+            {
+              "name": "common.Control.imperialUnits",
+              "type": "TOOL"
+            },
+            {
+              "name": "common.Control.mils",
+              "type": "TOOL"
+            },
+            {
+              "name": "common.Control.metricUnits",
+              "type": "TOOL"
+            }
+          ],
+          "group_name": "Units",
+          "type": "TB_GROUP"
+        },
+        {
+          "group_items": [
+            {
+              "name": "common.Control.cursorSmallCrosshairs",
+              "type": "TOOL"
+            },
+            {
+              "name": "common.Control.cursorFullCrosshairs",
+              "type": "TOOL"
+            },
+            {
+              "name": "common.Control.cursor45Crosshairs",
+              "type": "TOOL"
+            }
+          ],
+          "group_name": "Crosshair modes",
+          "type": "TB_GROUP"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "eeschema.EditorControl.showHiddenPins",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "group_items": [
+            {
+              "name": "eeschema.EditorControl.lineModeFree",
+              "type": "TOOL"
+            },
+            {
+              "name": "eeschema.EditorControl.lineModeOrthonal",
+              "type": "TOOL"
+            },
+            {
+              "name": "eeschema.EditorControl.lineMode45",
+              "type": "TOOL"
+            }
+          ],
+          "group_name": "Line modes",
+          "type": "TB_GROUP"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "eeschema.EditorControl.annotateAutomatically",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "eeschema.EditorTool.showHierarchy",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.showProperties",
+          "type": "TOOL"
+        }
+      ],
+      "name": "LEFT"
+    },
+    {
+      "contents": [
+        {
+          "group_items": [
+            {
+              "name": "common.Interactive.selectSetRect",
+              "type": "TOOL"
+            },
+            {
+              "name": "common.Interactive.selectSetLasso",
+              "type": "TOOL"
+            }
+          ],
+          "group_name": "Selection modes",
+          "type": "TB_GROUP"
+        },
+        {
+          "name": "eeschema.EditorControl.highlightNetTool",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.placeSymbol",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.placePowerSymbol",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawingLineWireBus.drawWires",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawingLineWireBus.drawBuses",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.placeBusWireEntry",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.placeNoConnect",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.placeJunction",
+          "type": "TOOL"
+        },
+        {
+          "group_items": [
+            {
+              "name": "eeschema.InteractiveDrawing.placeLabel",
+              "type": "TOOL"
+            },
+            {
+              "name": "eeschema.InteractiveDrawing.placeClassLabel",
+              "type": "TOOL"
+            },
+            {
+              "name": "eeschema.InteractiveDrawing.placeGlobalLabel",
+              "type": "TOOL"
+            },
+            {
+              "name": "eeschema.InteractiveDrawing.placeHierarchicalLabel",
+              "type": "TOOL"
+            }
+          ],
+          "group_name": "Labels",
+          "type": "TB_GROUP"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.drawRuleArea",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.drawSheet",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.placeSheetPin",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.syncAllSheetsPins",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.placeSchematicText",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.drawTextBox",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.drawTable",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.drawRectangle",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.drawCircle",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.drawArc",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.drawBezier",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawingLineWireBus.drawLines",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveDrawing.placeImage",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Interactive.deleteTool",
+          "type": "TOOL"
+        }
+      ],
+      "name": "RIGHT"
+    },
+    {
+      "contents": [
+        {
+          "name": "common.Control.save",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "eeschema.EditorControl.schematicSetup",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "common.Control.pageSettings",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.print",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.plot",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "common.Interactive.paste",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "common.Interactive.undo",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Interactive.redo",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "common.Interactive.find",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Interactive.findAndReplace",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "common.Control.zoomRedraw",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.zoomInCenter",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.zoomOutCenter",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.zoomFitScreen",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.zoomFitObjects",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.zoomTool",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "eeschema.NavigateTool.back",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.NavigateTool.up",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.NavigateTool.forward",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "eeschema.InteractiveEdit.rotateCCW",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveEdit.rotateCW",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveEdit.mirrorV",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InteractiveEdit.mirrorH",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Interactive.group",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Interactive.ungroup",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "common.Control.showSymbolEditor",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.showSymbolBrowser",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.showFootprintEditor",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "eeschema.EditorControl.annotate",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.InspectionTool.runERC",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.EditorControl.showSimulator",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.EditorControl.assignFootprints",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.EditorControl.editSymbolFields",
+          "type": "TOOL"
+        },
+        {
+          "name": "eeschema.EditorControl.generateBOM",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "eeschema.EditorControl.showPcbNew",
+          "type": "TOOL"
+        },
+        {
+          "name": "control.currentVariant",
+          "type": "CONTROL"
+        },
+        {
+          "name": "control.IPCPlugin",
+          "type": "CONTROL"
+        }
+      ],
+      "name": "TOP_MAIN"
+    }
+  ]
+}

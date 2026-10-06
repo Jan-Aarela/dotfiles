@@ -1,0 +1,15 @@
+[Unit]
+Description=GNOME Polkit Authentication Agent
+Documentation=man:polkit(8)
+# Wait until the graphical session target is active
+After=graphical-session.target
+Wants=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+Restart=on-failure
+RestartSec=1s
+
+[Install]
+WantedBy=graphical-session.target

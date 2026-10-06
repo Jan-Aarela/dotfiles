@@ -8,7 +8,7 @@
 --      /___/_/
 -- ============================================================
 
--- Sourcing
+-- Common Config Sourcing
 require("lua/startup")
 require("lua/keys")
 require("lua/anims")
@@ -19,9 +19,24 @@ require("lua/layouts")
 require("lua/misc")
 require("lua/permissions")
 
--- Overrides and ENVs
--- require("lua/ORIDE_laptop")
-require("lua/ORIDE_desktop")
+-- Device Overrides and ENVs
+local function load_host_config()
+    local f = io.open("/etc/hostname", "r")
+    local hostname = f:read("*l")
+
+    if f then
+        f:close()
+    end
+
+    if hostname == "jan-latty-linux" then
+        -- hl.exec_cmd("notify-send 'LAPTOP - ORIDE'")
+        require("lua/ORIDE_laptop")
+    elseif hostname == "jan-mylly-linux" then
+        -- hl.exec_cmd("notify-send 'Desktop - ORIDE'")
+        require("lua/ORIDE_desktop")
+    end
+end
+load_host_config()
 
 --
 --

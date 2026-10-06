@@ -32,17 +32,35 @@ hl.window_rule({
     suppress_event = "maximize",
 })
 
--- "class": "steam_app_2334730",
-
 hl.window_rule({
-    name = "move-games-to-ws-gaming",
+    name = "game-prepping",
     match = { class = "steam_app.*" },
     workspace = "10 silent",
+    fullscreen = 1,
+    -- float = false,
 })
 
 hl.window_rule({
     name = "move-game-launcher-to-ws-gaming",
     match = { title = "Launching..." },
+    workspace = "10 silent",
+})
+
+hl.window_rule({
+    name = "move-steam-sing-in-ws-gaming",
+    match = { title = "Sign in to Steam" },
+    workspace = "10 silent",
+})
+
+hl.window_rule({
+    name = "move-steam1-to-ws-gaming",
+    match = { class = "steam" },
+    workspace = "10 silent",
+})
+
+hl.window_rule({
+    name = "move-steam2-to-ws-gaming",
+    match = { title = "Steam" },
     workspace = "10 silent",
 })
 
@@ -70,6 +88,14 @@ hl.window_rule({
     name = "center-kicad-windows",
     match = { class = "kicad" },
     center = true,
+})
+
+hl.window_rule({
+    name = "float_and_resize-copyq",
+    match = { class = "com.github.hluk.copyq" },
+    float = true,
+    center = true,
+    size = { 768, 1024 },
 })
 
 hl.window_rule({
@@ -183,6 +209,14 @@ hl.window_rule({
     no_anim = true,
     fullscreen_state = 2,
     workspace = "name:lock silent",
+})
+
+hl.window_rule({
+    name = "discord to special",
+    match = { class = "discord" },
+    workspace = "special:magic silent",
+    fullscreen = 1,
+    -- float = false,
 })
 
 -- }}}

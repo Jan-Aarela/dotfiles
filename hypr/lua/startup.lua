@@ -23,6 +23,7 @@ hl.on("hyprland.start", function()
     -- ??
     hl.exec_cmd("dbus-update-activation-environment")
     hl.exec_cmd("systemctl")
+    hl.exec_cmd("systemctl --user start polkit-gnome.service")
 
     -- Start apps
     hl.exec_cmd("kitty -e btop", { workspace = "special:magic silent" })

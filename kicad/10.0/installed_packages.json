@@ -1,0 +1,597 @@
+{
+    "packages": [
+        {
+            "current_version": "0.1",
+            "install_timestamp": 1774852695,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://2231puppy.tech"
+                    },
+                    "name": "2231puppy"
+                },
+                "description": "Purple KiCad theme. Forked from Dracula, it's dark. Try it out today!",
+                "description_full": "Vampires can't stand light. I've also heard rumors that they love pink and purple. Put those two things together, and you get a dark purple theme with pink highlights! This project is a fork of the official Dracula theme, with added PCM support. The icon used in this package is a modified version of an icon that uses the CC-BY-3.0 license. That license can be found here: https://creativecommons.org/licenses/by/3.0/ The original work can be found here: https://game-icons.net/1x1/delapouite/vampire-dracula.html",
+                "identifier": "com.github.2231puppy.kicad-vampire",
+                "license": "MIT",
+                "name": "Vampire",
+                "resources": {
+                    "homepage": "https://github.com/2231puppy/kicad-vampire"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "8f6ebfa20b7366eba46d751dbd696ddd394aa40be654e5e849ff9b5d04844767",
+                        "download_size": 7088,
+                        "download_url": "https://github.com/2231puppy/kicad-vampire/releases/download/0.1/kicad-vampire.zip",
+                        "install_size": 15093,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "0.1"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "0.4",
+            "install_timestamp": 1781392862,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://adamws.github.io"
+                    },
+                    "name": "adamws"
+                },
+                "description": "Add vias using various patterns",
+                "description_full": "Add vias using various patterns",
+                "identifier": "com.github.adamws.kicad-via-patterns",
+                "license": "MIT",
+                "name": "Via Patterns",
+                "resources": {
+                    "Bug Tracker": "https://github.com/adamws/kicad-via-patterns/issues",
+                    "Homepage": "https://github.com/adamws/kicad-via-patterns"
+                },
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "30cbc2d22803cd466fa2d2a75cb082dfe07b0b0a9a07fd23845807bc99765748",
+                        "download_size": 34092,
+                        "download_url": "https://github.com/adamws/kicad-via-patterns/releases/download/v0.5/kicad_via_patterns-0.5.zip",
+                        "install_size": 32512,
+                        "kicad_version": "9.0",
+                        "runtime": "ipc",
+                        "status": "stable",
+                        "version": "0.5"
+                    },
+                    {
+                        "download_sha256": "d076bda876e75134dea5a23e4cd770d831d1d4bea78cdbd0d83337bb3a02b69e",
+                        "download_size": 30807,
+                        "download_url": "https://github.com/adamws/kicad-via-patterns/releases/download/v0.4/kicad_via_patterns-0.4.zip",
+                        "install_size": 29765,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "0.4"
+                    },
+                    {
+                        "download_sha256": "2481bf1af471876d89388f62ed79362ce4f1c9d16cdb686a61872477193587c7",
+                        "download_size": 30841,
+                        "download_url": "https://github.com/adamws/kicad-via-patterns/releases/download/v0.3/kicad_via_patterns-0.3.zip",
+                        "install_size": 29799,
+                        "kicad_version": "7.0",
+                        "kicad_version_max": "9.0.8",
+                        "status": "stable",
+                        "version": "0.3"
+                    },
+                    {
+                        "download_sha256": "926407d5d1b9a7188f749cd06d37bc95725ca639ca20eee0767170bb8d075697",
+                        "download_size": 28249,
+                        "download_url": "https://github.com/adamws/kicad-via-patterns/releases/download/v0.2/kicad_via_patterns-0.2.zip",
+                        "install_size": 27207,
+                        "kicad_version": "7.0",
+                        "kicad_version_max": "9.0.8",
+                        "status": "stable",
+                        "version": "0.2"
+                    },
+                    {
+                        "download_sha256": "e2455b68bf279861c76314c72a30561e138e5254f7e6f83ae96be99da73dd3aa",
+                        "download_size": 22873,
+                        "download_url": "https://github.com/adamws/kicad-via-patterns/releases/download/v0.1/kicad_via_patterns-0.1.zip",
+                        "install_size": 21831,
+                        "kicad_version": "7.0",
+                        "kicad_version_max": "9.0.8",
+                        "status": "development",
+                        "version": "0.1"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "2026.04.15",
+            "install_timestamp": 1777768163,
+            "package": {
+                "author": {
+                    "contact": {
+                        "github": "hlord2000"
+                    },
+                    "name": "Helmut"
+                },
+                "description": "A Nordic Semiconductor Footprint, Symbol, and 3D Library",
+                "description_full": "This library includes footprints, symbols, and 3D files for all modern Nordic Semiconductor products.",
+                "identifier": "com.github.hlord2000.nordic-lib-kicad",
+                "license": "MIT",
+                "maintainer": {
+                    "contact": {
+                        "github": "hlord2000"
+                    },
+                    "name": "Helmut"
+                },
+                "name": "Nordic Semiconductor KiCAD Library",
+                "resources": {
+                    "homepage": "https://github.com/hlord2000/nordic-lib-kicad"
+                },
+                "type": "library",
+                "versions": [
+                    {
+                        "download_sha256": "524049ebe4b38bf32d1887425ad640994ff8308300c364c7cc153fec07bf7d20",
+                        "download_size": 619504,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2026.04.15/KiCAD-PCM-2026.04.15.zip",
+                        "install_size": 3638890,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2026.04.15"
+                    },
+                    {
+                        "download_sha256": "a8071a3cd202eecf660fd82cbe91963f5dcbeb7170630f0ff7e552e8737aeae0",
+                        "download_size": 618858,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2026.04.14/KiCAD-PCM-2026.04.14.zip",
+                        "install_size": 3637556,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2026.04.14"
+                    },
+                    {
+                        "download_sha256": "cd6079328880ccd15a5f737da42e6038fdaaa2acb92153bccb9ce00fba1f0efc",
+                        "download_size": 847408,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2025.12.04/KiCAD-PCM-2025.12.04.zip",
+                        "install_size": 5169955,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2025.12.04"
+                    },
+                    {
+                        "download_sha256": "e4c164442aac1fc556d80835e46bc6b52adc02351db9e7b6f9880b3b935c3c75",
+                        "download_size": 847374,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2025.12.03/KiCAD-PCM-2025.12.03.zip",
+                        "install_size": 5169914,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2025.12.03"
+                    },
+                    {
+                        "download_sha256": "9101fcdc39877c020b72d804ade2cec607c38516032343834be3968c886b064b",
+                        "download_size": 785522,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2025.05.01/KiCAD-PCM-2025.05.01.zip",
+                        "install_size": 4706518,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2025.05.01"
+                    },
+                    {
+                        "download_sha256": "ffba9648fcbf82e9f19a72199cbeb48d52e9348433985a4d14b0cfed356cd7c6",
+                        "download_size": 691174,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2025.03.31/KiCAD-PCM-2025.03.31.zip",
+                        "install_size": 4171742,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2025.03.31"
+                    },
+                    {
+                        "download_sha256": "d793a7fe35908f00ad12cb5df84fdfb935c2ce7fbd56f60278439410ae1aead9",
+                        "download_size": 638772,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2025.03.24/KiCAD-PCM-2025.03.24.zip",
+                        "install_size": 3900777,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2025.03.24"
+                    },
+                    {
+                        "download_sha256": "26752a26b9bbc96db320c4a4e12145de05522ec849a1b98729d33007c0f604ac",
+                        "download_size": 552465,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2024.11.14/KiCAD-PCM-2024.11.14.zip",
+                        "install_size": 3394664,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2024.11.14"
+                    },
+                    {
+                        "download_sha256": "0ec9e0c9595f207c5c59cca857f8a8e3a694fd54e5884cac83ae14ee04664d2a",
+                        "download_size": 501690,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2024.11.12/KiCAD-PCM-2024.11.12.zip",
+                        "install_size": 3114313,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2024.11.12"
+                    },
+                    {
+                        "download_sha256": "3f0ca7f392f6f097f91bb532d303a435b3bec8a7777867594d81f891b621c517",
+                        "download_size": 496038,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2024.10.31/KiCAD-PCM-2024.10.31.zip",
+                        "install_size": 3067110,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2024.10.31"
+                    },
+                    {
+                        "download_sha256": "c3df7a6dd49957d1d665e35bbc52601555280416091f86672b19018332f7b1e6",
+                        "download_size": 331147,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2024.09.02/KiCAD-PCM-2024.09.02.zip",
+                        "install_size": 2154647,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2024.09.02"
+                    },
+                    {
+                        "download_sha256": "047b6a32cebc13e2c07e72831c5c974a909a5fd0b97c8f833f7d8dc69f362bdc",
+                        "download_size": 326900,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2024.08.14/KiCAD-PCM-2024.08.14.zip",
+                        "install_size": 2121394,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2024.08.14"
+                    },
+                    {
+                        "download_sha256": "808a6cfc5587dd3c4e0b6a8ce5d6fd2e84c8e97aeaf780a5bffa1ca1c0d0cbc8",
+                        "download_size": 321570,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2024.07.13/KiCAD-PCM-2024.07.13.zip",
+                        "install_size": 2063839,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2024.07.13"
+                    },
+                    {
+                        "download_sha256": "523cf2a9174aabe7bcaabf471c03b2391849abd1ad9cb5671f99fa90a1a59722",
+                        "download_size": 338984,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2024.07.10/KiCAD-PCM-2024.07.10.zip",
+                        "install_size": 2136140,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2024.07.10"
+                    },
+                    {
+                        "download_sha256": "c06a5117e8f8aff3c5e2965dbd2a01e731109b794fd93386fee90ee715ca0af2",
+                        "download_size": 332766,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2024.05.23/KiCAD-PCM-2024.05.23.zip",
+                        "install_size": 2079160,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2024.05.23"
+                    },
+                    {
+                        "download_sha256": "0a56a7d3f146322ef6fa9c3ef4c17f670759e6cf7338fd4555e648441e6379a2",
+                        "download_size": 326912,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2024.03.10/KiCAD-PCM-2024.03.10.zip",
+                        "install_size": 2010029,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2024.03.10"
+                    },
+                    {
+                        "download_sha256": "428280e594f8d9690bd38b9791218028177ddd52dd19997b7f351da259844950",
+                        "download_size": 334188,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2024.01.19/KiCAD-PCM-2024.01.19.zip",
+                        "install_size": 2147096,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2024.01.19"
+                    },
+                    {
+                        "download_sha256": "719bb7df01f2b75204dc2bcf4998337ac972c480e4e62804ec10ca692fcb1317",
+                        "download_size": 320956,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2023.12.08/KiCAD-PCM-2023.12.08.zip",
+                        "install_size": 2061525,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2023.12.08"
+                    },
+                    {
+                        "download_sha256": "13a7ad568611f27221f9c74313a1a21fd535340568a99f4afa4f4d1b8ccdd7bf",
+                        "download_size": 333252,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2023.11.14/KiCAD-PCM-2023.11.14.zip",
+                        "install_size": 2274131,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2023.11.14"
+                    },
+                    {
+                        "download_sha256": "b0ad534967159a8659d8c5c2da80e76b8c9424e5e46b1b943a71f82d45ca3f84",
+                        "download_size": 333032,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2023.10.27/KiCAD-PCM-2023.10.27.zip",
+                        "install_size": 2263777,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2023.10.27"
+                    },
+                    {
+                        "download_sha256": "405d61e77bef96695b7fea51a9a6fc07cd4d37edd6d69002682df356cee2e790",
+                        "download_size": 332245,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2023.07.31/KiCAD-PCM-2023.07.31.zip",
+                        "install_size": 2263843,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2023.07.31"
+                    },
+                    {
+                        "download_sha256": "399c10586d9301a2da9382973d0dbf56b697f0a517a4c3ff48e024cfcdc8b1d9",
+                        "download_size": 90139,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2023.07.25/KiCAD-PCM-2023.07.25.zip",
+                        "install_size": 761439,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2023.07.25"
+                    },
+                    {
+                        "download_sha256": "dc10c91d598840122e45f0d20e68cf43d7c136239ae4288723708e3cc4ad62ba",
+                        "download_size": 94449,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2023.07.24/KiCAD-PCM-2023.07.24.zip",
+                        "install_size": 784572,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2023.07.24"
+                    },
+                    {
+                        "download_sha256": "067cf1fd21f307d2c05cb8134255d0e90fc33947c973737d462bcdd2167df28a",
+                        "download_size": 73487,
+                        "download_url": "https://github.com/hlord2000/nordic-lib-kicad/releases/download/2023.07.22/KiCAD-PCM-2023.07.22.zip",
+                        "install_size": 689420,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "2023.07.22"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "2741403354693cf6",
+            "repository_name": "hlord2000's KiCAD Repository"
+        },
+        {
+            "current_version": "1.6",
+            "install_timestamp": 1781776728,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://mitxela.com"
+                    },
+                    "name": "mitxela"
+                },
+                "description": "A subdivision- and/or native arc-based track rounding plugin.",
+                "description_full": "Algorithmically smooth tracks in a predictable manner. Useful for flex PCBs, or just because it looks cool.",
+                "identifier": "com.github.mitxela.kicad-round-tracks",
+                "license": "Apache-2.0",
+                "name": "Round Tracks",
+                "resources": {
+                    "homepage": "https://github.com/mitxela/kicad-round-tracks"
+                },
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "660242c52f248cb50a6c51c041f602a0150800ea4c9863e80f25534eea996d8f",
+                        "download_size": 17476,
+                        "download_url": "https://github.com/mitxela/kicad-round-tracks/releases/download/1.6/kicad-round-tracks-1.6.zip",
+                        "install_size": 41195,
+                        "kicad_version": "7.0.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.6"
+                    },
+                    {
+                        "download_sha256": "5f0e15a8e12db58b91c70154cbfcc4d293309af2f1aad503d1560e7b375800f3",
+                        "download_size": 15881,
+                        "download_url": "https://github.com/mitxela/kicad-round-tracks/releases/download/1.5/kicad-round-tracks-1.5.zip",
+                        "install_size": 33698,
+                        "kicad_version": "7.0.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.5"
+                    },
+                    {
+                        "download_sha256": "4466d0a379c25773c07bac3a76815745bbae40576eb3b3fb6eeec22812788547",
+                        "download_size": 15878,
+                        "download_url": "https://github.com/mitxela/kicad-round-tracks/releases/download/1.4/kicad-round-tracks-1.4.zip",
+                        "install_size": 33698,
+                        "kicad_version": "7.0.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.4"
+                    },
+                    {
+                        "download_sha256": "e4d1087cf726018840f5f75291aae55de8cece49e2bada30be1e19ab6b474c40",
+                        "download_size": 15433,
+                        "download_url": "https://github.com/mitxela/kicad-round-tracks/releases/download/1.2/kicad-round-tracks-1.2.zip",
+                        "install_size": 32694,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.2"
+                    },
+                    {
+                        "download_sha256": "3ac65b3be5f1acd3e56583846d49b19ff425ed0a03154c775f4d655cd30fbdcc",
+                        "download_size": 14742,
+                        "download_url": "https://github.com/mitxela/kicad-round-tracks/releases/download/1.1/kicad-round-tracks-1.1.zip",
+                        "install_size": 29430,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.1"
+                    },
+                    {
+                        "download_sha256": "0ee531e5f324e22af07df691d529848e36f9960c2e0cf9ce8d4da3c2bcf0cc21",
+                        "download_size": 14632,
+                        "download_url": "https://github.com/mitxela/kicad-round-tracks/releases/download/1.0/kicad-round-tracks-1.0.zip",
+                        "install_size": 29167,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "1.0.0",
+            "install_timestamp": 1781393033,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://github.com/sijah/kicad-silk-ref-center"
+                    },
+                    "name": "Sijah AK"
+                },
+                "description": "Moves every F/B.Silkscreen reference to its courtyard centroid with rotation, pad nudging and text scaling.",
+                "description_full": "KiCad 9.0 action plugin that moves every footprint's silkscreen reference designator to the centroid of its courtyard bounding box.\n\nFeatures: settings dialog, scope control (all or selected), side filter (front/back/both), rotation control (match footprint, always 0°, or keep existing), auto text scale-down to fit courtyard, pad collision nudging, back-side support (B.Courtyard / B.Silkscreen), single undo transaction, optional CSV export of skipped footprints.",
+                "identifier": "com.github.sijah.center-silk-ref",
+                "license": "MIT",
+                "name": "Center Silk Reference in Courtyard",
+                "resources": {
+                    "homepage": "https://github.com/sijah/kicad-silk-ref-center"
+                },
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "49b355b99c0f03d5de13288fb07ba3c2441e5970a181ac210daed4cc100b3719",
+                        "download_size": 7600,
+                        "download_url": "https://github.com/sijah/kicad-silk-ref-center/releases/download/v1.0.0/com.github.sijah.center-silk-ref-1.0.0.zip",
+                        "install_size": 22905,
+                        "kicad_version": "9.0",
+                        "runtime": "swig",
+                        "status": "stable",
+                        "version": "1.0.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "0.1.1",
+            "install_timestamp": 1778085157,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://github.com/waterlilly-lilly"
+                    },
+                    "name": "Mae Rosaline"
+                },
+                "description": "Soothing pastel theme for KiCad",
+                "description_full": "4 Catppuccin flavors for KiCad, for both eeschema and pcbnew.",
+                "identifier": "com.github.waterlilly-lilly.catppuccin-kicad",
+                "license": "MIT",
+                "name": "Catppuccin",
+                "resources": {
+                    "github": "https://github.com/waterlilly-lilly/catppuccin-kicad"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "kicad_version": "7.0",
+                        "status": "development",
+                        "version": "0.1.1"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "",
+            "repository_name": "Local file"
+        },
+        {
+            "current_version": "2024.02.25",
+            "install_timestamp": 1783830469,
+            "package": {
+                "author": {
+                    "contact": {
+                        "github": "https://github.com/lethalbit",
+                        "mastodon": "https://chaos.social/@lethalbit",
+                        "website": "https://lethalbit.net"
+                    },
+                    "name": "Aki Van Ness"
+                },
+                "description": "A dark and vibrant color scheme by @lethalbit",
+                "description_full": "A dark and vibrant color scheme by @lethalbit",
+                "identifier": "net.lethalbit.arcana",
+                "license": "CC-BY-NC-SA-4.0",
+                "maintainer": {
+                    "contact": {
+                        "github": "https://github.com/lethalbit",
+                        "mastodon": "https://chaos.social/@lethalbit",
+                        "website": "https://lethalbit.net"
+                    },
+                    "name": "Aki Van Ness"
+                },
+                "name": "Arcana",
+                "resources": {
+                    "github": "https://github.com/lethalbit/arcana-kicad"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "1a1b0030cc8f5b60d2b8a680d9dbc34b0ea697f12eed47744c93956f70a047fb",
+                        "download_size": 13283,
+                        "download_url": "https://github.com/lethalbit/arcana-kicad/releases/download/2024.02.25/kicad-arcana.zip",
+                        "install_size": 20337,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "2024.02.25"
+                    },
+                    {
+                        "download_sha256": "a1192841d2a273df686bf97bcea5fff38f1ee7eaa84269403d42b124b8caaa05",
+                        "download_size": 13029,
+                        "download_url": "https://github.com/lethalbit/arcana-kicad/releases/download/2023.11.21/kicad-arcana.zip",
+                        "install_size": 20206,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "2023.11.21"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        }
+    ]
+}

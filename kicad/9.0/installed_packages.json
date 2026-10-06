@@ -1,0 +1,474 @@
+{
+    "packages": [
+        {
+            "current_version": "2022.11.18",
+            "install_timestamp": 1745449825,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://thea.codes"
+                    },
+                    "name": "Alethea Katherine Flowers"
+                },
+                "description": "Dark theme designed by @theacodes",
+                "description_full": "Dark theme designed by @theacodes",
+                "identifier": "codes.thea.witchhazel",
+                "license": "Apache-2.0",
+                "maintainer": {
+                    "contact": {
+                        "web": "https://thea.codes"
+                    },
+                    "name": "Alethea Katherine Flowers"
+                },
+                "name": "Witch Hazel",
+                "resources": {
+                    "Github": "https://github.com/theacodes/witchhazel",
+                    "Website": "https://witchhazel.thea.codes"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "bac5022d0b7c83b865a446eeb77466dc34f7c0a47035bb653ef5dbe414105721",
+                        "download_size": 7281,
+                        "download_url": "https://github.com/theacodes/witchhazel/releases/download/2022.11.18/kicad-witchhazel.zip",
+                        "install_size": 13890,
+                        "kicad_version": "6.0",
+                        "status": "stable",
+                        "version": "2022.11.18"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "0.1",
+            "install_timestamp": 1745449827,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://2231puppy.tech"
+                    },
+                    "name": "2231puppy"
+                },
+                "description": "Purple KiCad theme. Forked from Dracula, it's dark. Try it out today!",
+                "description_full": "Vampires can't stand light. I've also heard rumors that they love pink and purple. Put those two things together, and you get a dark purple theme with pink highlights! This project is a fork of the official Dracula theme, with added PCM support. The icon used in this package is a modified version of an icon that uses the CC-BY-3.0 license. That license can be found here: https://creativecommons.org/licenses/by/3.0/ The original work can be found here: https://game-icons.net/1x1/delapouite/vampire-dracula.html",
+                "identifier": "com.github.2231puppy.kicad-vampire",
+                "license": "MIT",
+                "name": "Vampire",
+                "resources": {
+                    "homepage": "https://github.com/2231puppy/kicad-vampire"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "8f6ebfa20b7366eba46d751dbd696ddd394aa40be654e5e849ff9b5d04844767",
+                        "download_size": 7088,
+                        "download_url": "https://github.com/2231puppy/kicad-vampire/releases/download/0.1/kicad-vampire.zip",
+                        "install_size": 15093,
+                        "kicad_version": "7.0",
+                        "status": "testing",
+                        "version": "0.1"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "2.17.1",
+            "install_timestamp": 1771648364,
+            "package": {
+                "author": {
+                    "contact": {
+                        "discord": "30350n",
+                        "github": "https://github.com/30350n",
+                        "web": "https://30350n.de/"
+                    },
+                    "name": "Bobbe"
+                },
+                "description": "Export PCB 3D Models from KiCad to Blender",
+                "description_full": "The pcb2blender workflow lets you create professionally looking product renders of all your KiCad projects in minutes! Simply export your board as a .pcb3d file in KiCad, import it into Blender and start creating!\n(Note for Linux/macOS users: If you run into any issues, make sure you're running python 3.10).\nIf you want to support this project, you can do so at https://github.com/sponsors/30350n",
+                "identifier": "com.github.30350n.pcb2blender",
+                "license": "GPL-3.0",
+                "maintainer": {
+                    "contact": {
+                        "discord": "30350n",
+                        "github": "https://github.com/30350n",
+                        "web": "https://30350n.de/"
+                    },
+                    "name": "Bobbe"
+                },
+                "name": "pcb2blender",
+                "resources": {
+                    "homepage": "https://github.com/30350n/pcb2blender"
+                },
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "1600133bafa55fe422e830ca00003030e2a828ec5dc41cbcf77a4059d0f100c1",
+                        "download_size": 19685,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.17.1-k9.0-b4.2lts/pcb2blender_exporter_v2-17-1_k9-0.zip",
+                        "install_size": 40162,
+                        "kicad_version": "9.0",
+                        "kicad_version_max": "9.0",
+                        "status": "stable",
+                        "version": "2.17.1"
+                    },
+                    {
+                        "download_sha256": "cc4a8e1735f99c50eee67307153921d8cf683622f0e1f3e46abf2fa49821e257",
+                        "download_size": 19637,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.17-k9.0-b4.2lts/pcb2blender_exporter_v2-17_k9-0.zip",
+                        "install_size": 40072,
+                        "kicad_version": "9.0",
+                        "kicad_version_max": "9.0",
+                        "status": "stable",
+                        "version": "2.17"
+                    },
+                    {
+                        "download_sha256": "3fe3f6395bf2bd485b6eb7627190548c03c6dac53e16eb17811ba27fa8d1982e",
+                        "download_size": 16430,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.15-k8.0-b4.2/pcb2blender_exporter_v2-15_k8-0.zip",
+                        "install_size": 27943,
+                        "kicad_version": "8.0",
+                        "kicad_version_max": "8.0",
+                        "status": "stable",
+                        "version": "2.15"
+                    },
+                    {
+                        "download_sha256": "4b4cc92dde6d434861d2ecd76a76b22c20a8f69b6fa2ff6595fe7c10f2a0939a",
+                        "download_size": 16407,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.13-k8.0-b4.2/pcb2blender_exporter_v2-13_k8-0.zip",
+                        "install_size": 27870,
+                        "kicad_version": "8.0",
+                        "kicad_version_max": "8.0",
+                        "status": "stable",
+                        "version": "2.13"
+                    },
+                    {
+                        "download_sha256": "0499e61afa8828e6f07af326fb1f622491cf218820bc09970fd74df616ee5459",
+                        "download_size": 16461,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.12-k8.0-b4.1/pcb2blender_exporter_2-12.zip",
+                        "install_size": 28343,
+                        "kicad_version": "8.0",
+                        "kicad_version_max": "8.0",
+                        "status": "stable",
+                        "version": "2.12"
+                    },
+                    {
+                        "download_sha256": "ab316106da0cb6a1b17c5e176929f68a4407a60ed2866e88fe7f810b60114c75",
+                        "download_size": 16426,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.11-k8.0-b4.1/pcb2blender_exporter_2-11.zip",
+                        "install_size": 28234,
+                        "kicad_version": "8.0",
+                        "kicad_version_max": "8.0",
+                        "status": "stable",
+                        "version": "2.11"
+                    },
+                    {
+                        "download_sha256": "04de7595987df8e08a967e595effc8f912511023074f5df493937c58aac4d862",
+                        "download_size": 16389,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.10-k8.0-b4.1/pcb2blender_exporter_2-10.zip",
+                        "install_size": 28145,
+                        "kicad_version": "8.0",
+                        "kicad_version_max": "8.0",
+                        "status": "stable",
+                        "version": "2.10"
+                    },
+                    {
+                        "download_sha256": "58bd89250c49b3d95c112a68de14a773bfc9148ce72af72f5fe47757009e0d78",
+                        "download_size": 16387,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.9-k7.0-b4.0/pcb2blender_exporter_2-9.zip",
+                        "install_size": 28143,
+                        "kicad_version": "7.0",
+                        "kicad_version_max": "7.0",
+                        "status": "stable",
+                        "version": "2.9"
+                    },
+                    {
+                        "download_sha256": "e00c98bd55d18aade003dd9405a1b75291866867cdb9b71854e49e696c3c8989",
+                        "download_size": 16311,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.8-k7.0-b4.0/pcb2blender_exporter_2-8.zip",
+                        "install_size": 27910,
+                        "kicad_version": "7.0",
+                        "kicad_version_max": "7.0",
+                        "status": "stable",
+                        "version": "2.8"
+                    },
+                    {
+                        "download_sha256": "c4d8cd3528d5c38b5c071d4a3a8961e9d4aa09757173f7d9825995eefe46c453",
+                        "download_size": 16246,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.7-k7.0-b3.6/pcb2blender_exporter_2-7.zip",
+                        "install_size": 27668,
+                        "kicad_version": "7.0",
+                        "kicad_version_max": "7.0",
+                        "status": "stable",
+                        "version": "2.7"
+                    },
+                    {
+                        "download_sha256": "66186c4ee0970b991e52bd1cd6e98f1122a9e21b71aa72c0dac0201c78248ffe",
+                        "download_size": 15416,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.2-k7.0-b3.4/pcb2blender_exporter_2-2.zip",
+                        "install_size": 24763,
+                        "kicad_version": "7.0",
+                        "kicad_version_max": "7.0",
+                        "status": "stable",
+                        "version": "2.2"
+                    },
+                    {
+                        "download_sha256": "70a0c924c2362e33d72fc6094d06946faa0b9999af11525c40c39f83c774d635",
+                        "download_size": 15429,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.1-k6.0-b3.4/pcb2blender_exporter_2-1.zip",
+                        "install_size": 24746,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.0",
+                        "status": "stable",
+                        "version": "2.1"
+                    },
+                    {
+                        "download_sha256": "bdfb39c54ec056b3215d103d883d1d4590d96e0c8f7a841b2e9c25dc650cca02",
+                        "download_size": 15381,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v2.0-k6.0-b3.3/pcb2blender_exporter_2-0.zip",
+                        "install_size": 24579,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.0",
+                        "status": "stable",
+                        "version": "2.0"
+                    },
+                    {
+                        "download_sha256": "50107e70d2e72f6d4d079e87ea7f78e7566dfb0e58caacbe432fa5d5f8b3ad6e",
+                        "download_size": 15081,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v1.7-k6.0-b3.2/pcb2blender_exporter_1-7.zip",
+                        "install_size": 23498,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.0",
+                        "status": "stable",
+                        "version": "1.7"
+                    },
+                    {
+                        "download_sha256": "cb42107d3405fecfd50b85764ec3e6d12f95865a4ddb755149678b19f2e856e5",
+                        "download_size": 15008,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v1.4-k6.0-b3.2/pcb2blender_exporter_1-4.zip",
+                        "install_size": 23377,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.0",
+                        "status": "stable",
+                        "version": "1.4"
+                    },
+                    {
+                        "download_sha256": "067212710f51462a9c5a5696dc0bf59b7cbb68f58f03b0beca3488e58a021c13",
+                        "download_size": 14920,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v1.3-k6.0-b3.2/pcb2blender_exporter_1-3.zip",
+                        "install_size": 23162,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.0",
+                        "status": "stable",
+                        "version": "1.3"
+                    },
+                    {
+                        "download_sha256": "a8928d52b0f80f9ad147762c5febfe156358fd27f3b1760e96d3303b65c515fc",
+                        "download_size": 14921,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v1.2-k6.0-b3.1/pcb2blender_exporter_1-2.zip",
+                        "install_size": 23161,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.0",
+                        "status": "stable",
+                        "version": "1.2"
+                    },
+                    {
+                        "download_sha256": "68430a1d9f23ee62f512efa51881ce3260467926e54d536c351791367603ad51",
+                        "download_size": 14933,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v1.1-k6.0-b3.1/pcb2blender_exporter_1-1.zip",
+                        "install_size": 23204,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.0",
+                        "status": "stable",
+                        "version": "1.1"
+                    },
+                    {
+                        "download_sha256": "9673e2d3ed9e4e02490c4dbe9dc792dc921b92933d48fcd7227acf7af1826013",
+                        "download_size": 14917,
+                        "download_url": "https://github.com/30350n/pcb2blender/releases/download/v1.0-k6.0-b3.1/pcb2blender_exporter_1-0.zip",
+                        "install_size": 23173,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.0",
+                        "status": "stable",
+                        "version": "1.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "1.2",
+            "install_timestamp": 1745449769,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://github.com/pointhi/kicad-color-schemes/"
+                    },
+                    "name": "Thomas Pointhuber"
+                },
+                "description": "Based on Solarized colorscheme from Ethan Schoonover",
+                "description_full": "Based on Solarized colorscheme from Ethan Schoonover.\nSee https://ethanschoonover.com/solarized/ for more details.",
+                "identifier": "com.github.pointhi.kicad-color-schemes.solarized-dark",
+                "license": "CC0-1.0",
+                "maintainer": {
+                    "contact": {
+                        "web": "https://github.com/pointhi/kicad-color-schemes/"
+                    },
+                    "name": "Thomas Pointhuber"
+                },
+                "name": "Solarized Dark Theme",
+                "resources": {
+                    "Github": "https://github.com/pointhi/kicad-color-schemes"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "7870a3560e9ba112b3bad342d457730bc9c65e787af87d0c55f6fad544a0532c",
+                        "download_size": 4395,
+                        "download_url": "https://github.com/pointhi/kicad-color-schemes/releases/download/2021-12-05/com.github.pointhi.kicad-color-schemes.solarized-dark_v1.2_pcm.zip",
+                        "install_size": 5691,
+                        "kicad_version": "5.99",
+                        "status": "stable",
+                        "version": "1.2"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "1.0",
+            "install_timestamp": 1745449826,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://github.com/wykys"
+                    },
+                    "name": "Jan Vykydal"
+                },
+                "description": "Designed by wykys, Inspired by One Dark",
+                "description_full": "Designed by wykys, Inspired by One Dark",
+                "identifier": "com.github.pointhi.kicad-color-schemes.wdark",
+                "license": "CC0-1.0",
+                "maintainer": {
+                    "contact": {
+                        "web": "https://github.com/pointhi/kicad-color-schemes/"
+                    },
+                    "name": "Thomas Pointhuber"
+                },
+                "name": "wDark Theme",
+                "resources": {
+                    "Github": "https://github.com/pointhi/kicad-color-schemes"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "9e58f7e6032dd40221dc80817dc992f233eba1858d590104c3445d41abcc136a",
+                        "download_size": 4289,
+                        "download_url": "https://github.com/pointhi/kicad-color-schemes/releases/download/2021-12-05/com.github.pointhi.kicad-color-schemes.wdark_v1.0_pcm.zip",
+                        "install_size": 5490,
+                        "kicad_version": "5.99",
+                        "status": "stable",
+                        "version": "1.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "0.1.1",
+            "install_timestamp": 1758259716,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://github.com/waterlilly-lilly"
+                    },
+                    "name": "Mae Rosaline"
+                },
+                "description": "Soothing pastel theme for KiCad",
+                "description_full": "4 Catppuccin flavors for KiCad, for both eeschema and pcbnew.",
+                "identifier": "com.github.waterlilly-lilly.catppuccin-kicad",
+                "license": "MIT",
+                "name": "Catppuccin",
+                "resources": {
+                    "github": "https://github.com/waterlilly-lilly/catppuccin-kicad"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "kicad_version": "7.0",
+                        "status": "development",
+                        "version": "0.1.1"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "",
+            "repository_name": "Local file"
+        },
+        {
+            "current_version": "2024.02.25",
+            "install_timestamp": 1745449828,
+            "package": {
+                "author": {
+                    "contact": {
+                        "github": "https://github.com/lethalbit",
+                        "mastodon": "https://chaos.social/@lethalbit",
+                        "website": "https://lethalbit.net"
+                    },
+                    "name": "Aki Van Ness"
+                },
+                "description": "A dark and vibrant color scheme by @lethalbit",
+                "description_full": "A dark and vibrant color scheme by @lethalbit",
+                "identifier": "net.lethalbit.arcana",
+                "license": "CC-BY-NC-SA-4.0",
+                "maintainer": {
+                    "contact": {
+                        "github": "https://github.com/lethalbit",
+                        "mastodon": "https://chaos.social/@lethalbit",
+                        "website": "https://lethalbit.net"
+                    },
+                    "name": "Aki Van Ness"
+                },
+                "name": "Arcana",
+                "resources": {
+                    "github": "https://github.com/lethalbit/arcana-kicad"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "1a1b0030cc8f5b60d2b8a680d9dbc34b0ea697f12eed47744c93956f70a047fb",
+                        "download_size": 13283,
+                        "download_url": "https://github.com/lethalbit/arcana-kicad/releases/download/2024.02.25/kicad-arcana.zip",
+                        "install_size": 20337,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "2024.02.25"
+                    },
+                    {
+                        "download_sha256": "a1192841d2a273df686bf97bcea5fff38f1ee7eaa84269403d42b124b8caaa05",
+                        "download_size": 13029,
+                        "download_url": "https://github.com/lethalbit/arcana-kicad/releases/download/2023.11.21/kicad-arcana.zip",
+                        "install_size": 20206,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "2023.11.21"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        }
+    ]
+}

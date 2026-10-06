@@ -278,6 +278,34 @@ end)
 
 -- }}}
 
+-- Random submap {{{
+
+hl.bind(mainMod .. "+ SHIFT + R", function()
+    sound()
+    hl.dispatch(hl.dsp.submap("Random"))
+    hl.dispatch(hl.dsp.exec_cmd([[sh -c 'sleep 2 && hyprctl dispatch "hl.dsp.submap(\"reset\")"' &]]))
+end)
+
+-- Start a submap called "Random".
+hl.define_submap("Random", function()
+    -- Bindings
+    hl.bind("C", function()
+        hl.dispatch(hl.dsp.submap("reset"))
+        sound()
+        -- local success = os.execute("hyprpicker -a")
+        hl.exec_cmd("hyprpicker -a -n && aplay ~/.config/sounds/interact.wav")
+    end)
+
+    hl.bind("catchall", hl.dsp.submap("Random"))
+
+    hl.bind("escape", function()
+        sound()
+        hl.dispatch(hl.dsp.submap("reset"))
+    end)
+end)
+
+-- }}}
+
 -- Mouse / trackpad controls {{{
 
 hl.gesture({ fingers = 3, direction = "vertical", action = "workspace" })

@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "version": 1
+  },
+  "toolbars": [
+    {
+      "contents": [],
+      "name": "LEFT"
+    },
+    {
+      "contents": [
+        {
+          "name": "3DViewer.Control.reloadBoard",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "3DViewer.Control.copyToClipboard",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "3DViewer.Control.toggleRaytacing",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "common.Control.zoomRedraw",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.zoomInCenter",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.zoomOutCenter",
+          "type": "TOOL"
+        },
+        {
+          "name": "common.Control.zoomFitScreen",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "3DViewer.Control.rotateXclockwise",
+          "type": "TOOL"
+        },
+        {
+          "name": "3DViewer.Control.rotateXcounterclockwise",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "3DViewer.Control.rotateYclockwise",
+          "type": "TOOL"
+        },
+        {
+          "name": "3DViewer.Control.rotateYcounterclockwise",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "3DViewer.Control.rotateZclockwise",
+          "type": "TOOL"
+        },
+        {
+          "name": "3DViewer.Control.rotateZcounterclockwise",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "3DViewer.Control.flipView",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "3DViewer.Control.moveLeft",
+          "type": "TOOL"
+        },
+        {
+          "name": "3DViewer.Control.moveRight",
+          "type": "TOOL"
+        },
+        {
+          "name": "3DViewer.Control.moveUp",
+          "type": "TOOL"
+        },
+        {
+          "name": "3DViewer.Control.moveDown",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "3DViewer.Control.toggleOrtho",
+          "type": "TOOL"
+        },
+        {
+          "type": "SEPARATOR"
+        },
+        {
+          "name": "3DViewer.Control.showLayersManager",
+          "type": "TOOL"
+        }
+      ],
+      "name": "TOP_MAIN"
+    }
+  ]
+}

@@ -115,7 +115,9 @@
 /* {{{ */
 #cava,
 #waybar.main #custom-headsetbattery,
-#waybar.main #custom-nvidia,
+#waybar.main #custom-nvidia_u,
+#waybar.main #custom-nvidia_t,
+#waybar.main #custom-nvidia_v,
 #waybar.main #custom-weather,
 #waybar.main #custom-weather,
 #waybar.main #custom-battery,
@@ -129,6 +131,7 @@
 #waybar.main #submap,
 #waybar.main #pulseaudio,
 #waybar.main #temperature,
+#waybar.main #network,
 /* #waybar.main #traym, */
 #waybar.main #window,
 #waybar.main #disk,
@@ -138,20 +141,22 @@
     padding-right: 8pt;
 }
 
-#waybar.main #custom-weather {
-    padding-right: 8pt;
-}
+/* #waybar.main #custom-weather { */
+/*     padding-right: 8pt; */
+/* } */
 
-#waybar.main #custom-nvidia {
+#waybar.main #custom-nvidia_u {
     /* margin-top: -4px; */
-    /* margin-bottom: -4px; */
+    margin-bottom: -2px;
 }
 
 /* }}} */
 
 /* Module colors */
 /* {{{ */
-#waybar.main #custom-nvidia,
+#waybar.main #custom-nvidia_u,
+#waybar.main #custom-nvidia_t,
+#waybar.main #custom-nvidia_v,
 #waybar.main #cpu,
 #waybar.main #temperature,
 #waybar.main #network {
@@ -201,8 +206,8 @@
     color: @purple;
     box-shadow: none;
     font-style: italic;
-    min-width: 1055px;
-    /* padding-right: 200px; */
+    min-width: 772px;
+    padding-left: 16px;
 }
 
 #waybar.main #network.info {
@@ -226,6 +231,12 @@
 
 /* Submap */
 /* {{{ */
+
+#waybar.main #submap {
+    background: @background1;
+    color: @green;
+}
+
 #waybar.main #submap.Resize {
     color: @orange;
     animation-iteration-count: infinite;
@@ -246,11 +257,23 @@
     box-shadow: none;
 }
 
+#waybar.main #submap.Random {
+    color: @pink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-name: blink-modifier-text;
+    animation-duration: 1s;
+    animation-timing-function: steps(15);
+    box-shadow: none;
+}
+
 /* }}} */
 
 /* Main bar criticals */
 /* {{{ */
-#waybar.main #custom-nvidia.critical,
+#waybar.main #custom-nvidia_u.critical,
+#waybar.main #custom-nvidia_t.critical
+#waybar.main #custom-nvidia_v.critical,
 /* #waybar.main #custom-battery.critical, */
 #waybar.main #custom-headsetbattery.critical,
 #waybar.main #memory.swap.critical,
@@ -266,7 +289,9 @@
 }
 
 #waybar.main #workspaces button.urgent,
+#waybar.main #workspaces button.ws-10.urgent,
 #waybar.main #workspaces button.special.urgent {
+    color: @grey;
     transition: all 0s ease;
     background-image: linear-gradient(
         -63.435deg,
@@ -392,6 +417,10 @@
     color: @purple;
 }
 
+#waybar.main #workspaces button.active:hover {
+    color: @background2;
+}
+
 /* #waybar.main #workspaces button.active:hover { */
 /*   color: @background2; */
 /*   background-image: linear-gradient( */
@@ -406,6 +435,30 @@
 /*     transparent 76% */
 /*   ); */
 /* } */
+
+#waybar.main #workspaces button.ws-10 {
+    transition: all 0s ease;
+    border: 1.5px solid transparent;
+    color: @purple;
+}
+
+#waybar.main #workspaces button.ws-10.active {
+    transition: all 0s ease;
+    border: 1.5px solid transparent;
+    color: @background2;
+}
+
+#waybar.main #workspaces button.ws-10.empty {
+    transition: all 0s ease;
+    border: 1.5px solid transparent;
+    color: @grey;
+}
+
+#waybar.main #workspaces button.ws-10.empty.visible {
+    transition: all 0s ease;
+    border: 1.5px solid transparent;
+    color: @background2;
+}
 
 /* Special workplace animation */
 #waybar.main #workspaces button.special.active {
@@ -422,6 +475,7 @@
         @grey 76%,
         transparent 76%
     );
+
     color: black;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -503,7 +557,9 @@
 /* {{{ */
 #waybar.main #custom-trayicon {
     font-size: 20px;
-    padding-left: 8px;
+    padding-left: 12px;
+    /* padding-right: 8px; */
+
     color: @blue;
     /* color: transparent; */
     /* font-weight: bold; */
@@ -520,7 +576,7 @@
     /* border: 3px solid @grey; */
     /* border-radius: 8px; */
     /* margin-right: -100px; */
-    padding-right: 8px;
+    /* padding-right: 8px; */
 }
 /* }}} */
 

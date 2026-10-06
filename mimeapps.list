@@ -18,6 +18,7 @@ x-scheme-handler/terminal=kitty.desktop
 application/zip=org.gnome.FileRoller.desktop
 application/x-compressed-tar=org.gnome.FileRoller.desktop
 video/webm=mpv.desktop
+video/mpeg=mpv.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-ICXR41.desktop;

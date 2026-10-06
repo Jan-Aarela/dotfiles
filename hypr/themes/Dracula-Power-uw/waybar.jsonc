@@ -15,7 +15,9 @@
         "modules-left": [
             "cpu",
             "temperature",
-            "custom/nvidia",
+            "custom/nvidia_u",
+            "custom/nvidia_t",
+            "custom/nvidia_v",
             "custom/spacer2",
             // "group/storage",
             "memory#ram",
@@ -29,8 +31,8 @@
             "network#down",
             "network#info",
 
-            "custom/spacer2",
-            "hyprland/submap"
+            "custom/spacer2"
+            // "hyprland/submap"
         ],
 
         // "modules-center": [
@@ -51,6 +53,7 @@
 
             // "mpris",
             "custom/spacer1",
+            "hyprland/submap",
             "hyprland/language",
             "custom/spacer2",
             "pulseaudio#input",
@@ -68,8 +71,8 @@
             "interval": 16,
             "path": "/",
             "format": "/ {percentage_used}%",
-            "tooltip": "{}",
-            "tooltip-format": "Free {free}",
+            "unit": "GiB",
+            "tooltip-format": "Free {specific_free:0.2f} GiB",
             "on-click": "qdirstat & aplay ~/.config/sounds/interact.wav",
             "states": {
                 "warning": 85,
@@ -81,8 +84,8 @@
             "interval": 16,
             "path": "/media/nvme",
             "format": "NVMe {percentage_used}%",
-            "tooltip": "{}",
-            "tooltip-format": "Free {free}",
+            "unit": "GiB",
+            "tooltip-format": "Free {specific_free:0.2f} GiB",
             "on-click": "qdirstat & aplay ~/.config/sounds/interact.wav",
             "states": {
                 "warning": 85,
@@ -169,7 +172,10 @@
             "format": "{}°",
             "tooltip": true,
             "interval": 60,
-            "exec": "~/git/wttrbar/target/release/wttrbar --location ivalo --nerd --hide-conditions",
+            "min-length": 5,
+            // "exec": "~/git/wttrbar/target/release/wttrbar --location ivalo --nerd --hide-conditions",
+            "exec": "wttrbar --location Oulu --nerd --hide-conditions",
+
             "return-type": "json"
         },
 
@@ -210,13 +216,29 @@
             "on-scroll-down": "brightnessctl set +2%"
         },
 
-        "custom/nvidia": {
+        "custom/nvidia_u": {
             "interval": 4,
-            "min-length": 7,
+            "min-length": 6,
             "return-type": "json",
-            "exec": "~/.config/hypr/themes/Dracula-Power-uw/nvidia.sh",
+            "exec": "~/.config/hypr/themes/Dracula-Power-uw/nvidia.sh util",
             "format": "<span size='x-large' rise='-2500'>󰢮</span>{text}",
             "tooltip": "true",
+            "tooltip-format": "{alt}"
+        },
+
+        "custom/nvidia_t": {
+            "interval": 4,
+            "min-length": 6,
+            "return-type": "json",
+            "exec": "~/.config/hypr/themes/Dracula-Power-uw/nvidia.sh temp",
+            "tooltip": "false"
+        },
+        "custom/nvidia_v": {
+            "interval": 4,
+            "min-length": 6,
+            "return-type": "json",
+            "exec": "~/.config/hypr/themes/Dracula-Power-uw/nvidia.sh vram",
+            "tooltip": "false",
             "tooltip-format": "{alt}"
         },
 
@@ -243,7 +265,8 @@
 
         "clock": {
             "interval": 1,
-            "format": " {:%H:%M:%S    %a %d.%m}",
+            "min-length": 39,
+            "format": " {:%H:%M:%S    %A %d.%m  Week %W}",
             "tooltip-format": "{calendar}",
             "calendar": {
                 "weeks-pos": "right",
@@ -287,14 +310,14 @@
                 "critical": 95
             },
             "tooltip": "{}",
-            "tooltip-format": "{used}/{total} GiB"
+            "tooltip-format": "{used:0.1f}/{total:0.1f} GiB"
         },
 
         "memory#swap": {
             "interval": 16,
             "format": "󰾵 {swapPercentage}%",
             "tooltip": "{}",
-            "tooltip-format": "{swapUsed}/{swapTotal}GiB"
+            "tooltip-format": "{swapUsed}/{swapTotal} GiB"
         },
 
         "network#info": {
@@ -333,10 +356,10 @@
 
         "hyprland/submap": {
             "always-on": true,
-            "default-submap": "",
+            "default-submap": "Default",
+            "min-length": 12,
             "format": " {}",
-            "tooltip": false,
-            "min-length": 2
+            "tooltip": false
         },
 
         "hyprland/window": {
@@ -417,6 +440,7 @@
         "temperature": {
             "critical-threshold": 90,
             "interval": 4,
+            "min-length": 5,
             "format": "{icon} {temperatureC}°",
             "format-icons": ["", "", "", "", ""],
             "tooltip": false
