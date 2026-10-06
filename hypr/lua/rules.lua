@@ -32,6 +32,20 @@ hl.window_rule({
     suppress_event = "maximize",
 })
 
+-- "class": "steam_app_2334730",
+
+hl.window_rule({
+    name = "move-games-to-ws-gaming",
+    match = { class = "steam_app.*" },
+    workspace = "10 silent",
+})
+
+hl.window_rule({
+    name = "move-game-launcher-to-ws-gaming",
+    match = { title = "Launching..." },
+    workspace = "10 silent",
+})
+
 hl.window_rule({
     name = "suppress-fullscreen-events",
     match = { class = ".*" },

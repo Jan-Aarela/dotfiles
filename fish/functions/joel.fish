@@ -5,6 +5,6 @@ function joel
         icat --align left ~/.config/fish/joelxl.gif
     else
         icat --place 40x40@-60x20 ~/.config/fish/joel.gif &
-        echo -e "\n\n                                      \e[3mI am just a fish\n"
+        echo -e "\n\n                                      \e[3mI am just a fish\n\n\n"
     end
 end

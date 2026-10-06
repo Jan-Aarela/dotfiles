@@ -15,14 +15,13 @@ require("lua/anims")
 require("lua/decor")
 require("lua/rules")
 require("lua/input")
-require("lua/monitors")
 require("lua/layouts")
 require("lua/misc")
 require("lua/permissions")
 
 -- Overrides and ENVs
-require("lua/ORIDE_laptop")
--- require("lua/ORIDE_desktop")
+-- require("lua/ORIDE_laptop")
+require("lua/ORIDE_desktop")
 
 --
 --

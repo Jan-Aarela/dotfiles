@@ -31,7 +31,7 @@ end
 
 -- Launch apps and such {{{
 
-hl.bind(mainMod .. " + RETURN", exec("kitty --hold -e fish -c joel"))
+hl.bind(mainMod .. " + RETURN", exec("kitty"))
 hl.bind(mainMod .. " + SHIFT + RETURN", exec("kitty --title zellij_floating -o confirm_os_window_close=0 -e zellij"))
 hl.bind(mainMod .. " + Q", exec("~/.config/scripts/hypr_lua/close_window.sh"))
 hl.bind(mainMod .. " + SHIFT + Q", exec("~/.config/scripts/hypr_lua/close_window.sh force"))
@@ -68,7 +68,6 @@ hl.bind(mainMod .. " + X", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + J", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + F7", exec("hyprctl keyword monitor eDP-1,preferred,auto,1"))
 hl.bind(mainMod .. " + SHIFT + N", exec("~/.config/scripts/notes.sh"))
 hl.bind(mainMod .. " + SPACE", exec("hyprctl switchxkblayout all next"))
 hl.bind(mainMod .. " + SHIFT + BACKSPACE", exec("dunstctl history-pop"))
@@ -113,6 +112,9 @@ end)
 
 hl.bind(mainMod .. " + PERIOD", hl.dsp.focus({ last = true }))
 hl.bind(mainMod .. " + MINUS", hl.dsp.focus({ urgent_or_last = true }))
+
+hl.bind("" .. "ALT + TAB", hl.dsp.layout("cyclenext"))
+hl.bind("" .. "ALT + SHIFT + TAB", hl.dsp.layout("cycleprev"))
 
 -- }}}
 
@@ -190,6 +192,7 @@ hl.bind(mainMod .. " + R", function()
     sound()
     hl.dispatch(hl.dsp.submap("Resize"))
     hl.config({ general = { col = { active_border = "rgba(ffb86cFF)" } } })
+    hl.config({ group = { col = { border_active = "rgba(ffb86cFF)" } } })
 end)
 
 -- Start a submap called "resize".
@@ -222,6 +225,7 @@ hl.define_submap("Resize", function()
         sound()
         hl.dispatch(hl.dsp.submap("reset"))
         hl.config({ general = { col = { active_border = "rgba(BD93F9FF)" } } })
+        hl.config({ group = { col = { border_active = "rgba(BD93F9FF)" } } })
     end)
 end)
 

@@ -12,9 +12,51 @@
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+-- hl.env("WLR_NO_HARDWARE_CURSORS","1")
+hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 
 hl.config({
     layout = {
-        single_window_aspect_ratio = { 21, 18 },
+        single_window_aspect_ratio = { 48, 38 },
+    },
+
+    cursor = {
+        no_hardware_cursors = 1,
+    },
+})
+
+hl.monitor({
+    output = "",
+    mode = "3440x1440@200",
+    -- cm = "wide",
+    -- bitdepth = 10,
+    scale = "1",
+})
+
+hl.config({
+    decoration = {
+        blur = {
+            enabled = false,
+            size = 2,
+            passes = 1,
+            vibrancy = 0.1696,
+        },
+    },
+
+    group = {
+        col = {
+            border_active = "rgba(BD93F9FF)",
+            border_inactive = "rgba(44475aff)",
+        },
+
+        groupbar = {
+            font_size = 16,
+            font_family = "JetBrainsMonoNL Nerd Font Mono",
+            height = 20,
+        },
+    },
+
+    animations = {
+        enabled = true,
     },
 })

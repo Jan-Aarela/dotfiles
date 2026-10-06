@@ -1,14 +1,13 @@
 #!/bin/bash
 
 if pgrep -x hyprlock >/dev/null; then
-    exit 0
+  exit 0
 fi
 
 # kitty --title lock_bg -e pipes -p 32 -r 0 &
-# kitty --title lock_bg -e cmatrix -C green &
+# kitty --title lock_bg -e cmatrix -C yellow &
 # kitty --title lock_bg -e cbonsai --screensaver --wait 1 &
-# kitty --title lock_bg -e asciiquarium2 -t &
-kitty --title lock_bg -o font_size=10 -e solarust -t ansi -s day &
+kitty --title lock_bg -e asciiquarium2 -t &
 
 sleep 0.33
 
