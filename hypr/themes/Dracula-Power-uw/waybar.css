@@ -3,32 +3,17 @@
 
 /* Define colors */
 /* {{{ */
-/* @define-color background1 #282a36; */
-/* @define-color background2 #1E1F29; */
-/* @define-color sepepator #44475a; */
-/* @define-color warning #ff5555; */
-/* @define-color caution #44475a; */
-/* @define-color performance #ff79c6; */
-/* @define-color audio #bd93f9; */
-/* @define-color misc #f1fa8c; */
-/* @define-color date #50fa7b; */
-/* @define-color work #f8f8f2; */
-/* @define-color window #f8f8f2; */
-/* @define-color resize #ffb86c; */
-/* @define-color text #000000; */
-
 @define-color background1 #282a36;
 @define-color background2 #1E1F29;
-@define-color sepepator #44475a;
-@define-color warning #ff5555;
-@define-color caution #44475a;
-@define-color performance #50fa7b;
-@define-color audio #50fa7b;
-@define-color misc #50fa7b;
-@define-color date #50fa7b;
-@define-color work #f8f8f2;
-@define-color window #bd93f9;
-@define-color resize #ffb86c;
+@define-color red #ff5555;
+@define-color grey #44475a;
+@define-color green #50fa7b;
+@define-color orange #ffb86c;
+@define-color yellow #f1fa8c;
+@define-color white #f8f8f2;
+@define-color purple #bd93f9;
+@define-color pink #ff79c6;
+@define-color blue #8be9fd;
 @define-color text #000000;
 
 /* }}} */
@@ -52,20 +37,20 @@
 
 @keyframes blink-urgent-workspace {
     to {
-        color: @warning;
+        color: @red;
     }
 }
 
 @keyframes blink-critical-text {
     to {
-        color: @sepepator;
+        color: @grey;
     }
 }
 
 /* Keyframes for main bar modifiers */
 @keyframes blink-modifier-text {
     to {
-        color: @sepepator;
+        color: @grey;
     }
 }
 
@@ -74,12 +59,12 @@
         background-image: linear-gradient(
             -63.435deg,
             transparent 24%,
-            @sepepator 24%,
-            @sepepator 28%,
-            @sepepator 28%,
-            @sepepator 72%,
-            @sepepator 72%,
-            @sepepator 76%,
+            @grey 24%,
+            @grey 28%,
+            @grey 28%,
+            @grey 72%,
+            @grey 72%,
+            @grey 76%,
             transparent 76%
         );
     }
@@ -87,12 +72,12 @@
         background-image: linear-gradient(
             -63.435deg,
             transparent 24%,
-            @sepepator 24%,
-            @sepepator 28%,
-            @window 28%,
-            @window 72%,
-            @sepepator 72%,
-            @sepepator 76%,
+            @grey 24%,
+            @grey 28%,
+            @purple 28%,
+            @purple 72%,
+            @grey 72%,
+            @grey 76%,
             transparent 76%
         );
     }
@@ -107,10 +92,10 @@
     font-family: "JetBrainsMono Nerd Font propo";
     /* font-family: "martianmono nerd font propo"; */
 
-    font-size: 10pt;
+    font-size: 9pt;
     font-weight: 700;
     color: @text;
-    /* outline: @sepepator solid 1px; */
+    /* outline: @grey solid 1px; */
 
     /* box-shadow: */
     /*   inset 0px 5px 4px -5px rgba(170, 190, 255, 0.5), */
@@ -119,8 +104,8 @@
 
 #waybar.main button {
     font-family: "JetBrains Mono Nerd Font propo";
-    font-size: 12pt;
-    font-weight: 600;
+    font-size: 10pt;
+    font-weight: 700;
     color: @text;
 }
 
@@ -134,8 +119,6 @@
 #waybar.main #custom-weather,
 #waybar.main #custom-weather,
 #waybar.main #custom-battery,
-#waybar.main #keyboard-state,
-#waybar.main #network,
 #waybar.main #battery,
 #waybar.main #backlight,
 #waybar.main #clock,
@@ -146,7 +129,7 @@
 #waybar.main #submap,
 #waybar.main #pulseaudio,
 #waybar.main #temperature,
-#waybar.main #traym,
+/* #waybar.main #traym, */
 #waybar.main #window,
 #waybar.main #disk,
 #waybar.main #mpris,
@@ -172,14 +155,14 @@
 #waybar.main #cpu,
 #waybar.main #temperature,
 #waybar.main #network {
-    color: @performance;
+    color: @green;
     background: @background1;
 }
 
 #waybar.main #memory.ram,
 #waybar.main #memory.swap,
 #waybar.main #disk {
-    color: @performance;
+    color: @green;
     background: @background0;
 }
 
@@ -191,7 +174,7 @@
 #waybar.main #mpris,
 #waybar.main #custom-headsetbattery,
 #waybar.main #pulseaudio {
-    color: @audio;
+    color: @green;
     background: @background2;
 }
 
@@ -199,14 +182,14 @@
 #waybar.main #language,
 #waybar.main #backlight,
 #waybar.main #battery {
-    color: @misc;
+    color: @green;
     background: @background1;
 }
 
 #waybar.main #custom-weather,
 #waybar.main #clock,
 #custom-timer {
-    color: @date;
+    color: @green;
     background: @background1;
 }
 
@@ -215,27 +198,27 @@
 }
 
 #waybar.main #window {
-    color: @window;
+    color: @purple;
     box-shadow: none;
     font-style: italic;
-    min-width: 1250px;
+    min-width: 1055px;
     /* padding-right: 200px; */
 }
 
 #waybar.main #network.info {
     padding-right: 10px;
     padding-left: 10px;
-    color: @caution;
+    color: @grey;
 }
 
 #waybar.main #network.info.wifi.normal,
 #waybar.main #network.info.ethernet {
-    color: @performance;
+    color: @green;
     padding-right: 15px;
 }
 
 #waybar.main #network.info.wifi {
-    color: @warning;
+    color: @red;
     padding-right: 15px;
 }
 
@@ -244,7 +227,7 @@
 /* Submap */
 /* {{{ */
 #waybar.main #submap.Resize {
-    color: @resize;
+    color: @orange;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-name: blink-modifier-text;
@@ -254,7 +237,7 @@
 }
 
 #waybar.main #submap.Screenshot {
-    color: @date;
+    color: @yellow;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-name: blink-modifier-text;
@@ -274,7 +257,7 @@
 #waybar.main #memory.ram.critical,
 #waybar.main #cpu.critical,
 #waybar.main #temperature.critical {
-    color: @warning;
+    color: @red;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-name: blink-critical-text;
@@ -306,12 +289,12 @@
 #waybar.main #custom-headsetbattery.off,
 #waybar.main #pulseaudio.output.muted,
 #waybar.main #pulseaudio.input.source-muted {
-    color: @sepepator;
+    color: @grey;
 }
 #waybar.main #custom-headsetbattery.low,
 #waybar.main #custom-battery.warning,
 #waybar.main #custom-battery.critical {
-    color: @warning;
+    color: @red;
 }
 
 /* }}} */
@@ -319,7 +302,7 @@
 /* Battery chargin */
 /* {{{ */
 #waybar.main #custom-battery.charging {
-    color: @misc;
+    color: @green;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-name: blink-modifier-text;
@@ -334,7 +317,7 @@
 /* Default workspace settings */
 
 #waybar.main #workspaces {
-    /* background: @warning; */
+    /* background: @red; */
     /* min-width: 362px; */
     /* text-align: right; */
     padding-left: 20px;
@@ -342,21 +325,21 @@
     padding-right: 4px;
     /* margin-top: 2px; */
     /* margin-bottom: 2px; */
-    background-image: linear-gradient(
-        -243.435deg,
-        transparent 17.5px,
-        @sepepator 17.5px,
-        @sepepator 20px,
-        @background2 20px,
-        @background2 calc(100% -21px),
-        @sepepator calc(100% -20px),
-        @sepepator calc(100% - 18px),
-        transparent calc(100% -18px)
-    );
+    /* background-image: linear-gradient( */
+    /*     -243.435deg, */
+    /*     transparent 17px, */
+    /*     @grey 17px, */
+    /*     @grey 19px, */
+    /*     @background2 20px, */
+    /*     @background2 calc(100% -20px), */
+    /*     @grey calc(100% -19px), */
+    /*     @grey calc(100% - 17px), */
+    /*     transparent calc(100% -17px) */
+    /* ); */
 }
 
 #waybar.main #workspaces button {
-    color: @sepepator;
+    color: @grey;
     background: transparent;
     border: 1.5px solid transparent;
     transition: all 0.25s ease;
@@ -381,8 +364,8 @@
     background-image: linear-gradient(
         -63.435deg,
         transparent 25%,
-        @caution 25%,
-        @caution 75%,
+        @grey 25%,
+        @grey 75%,
         transparent 75%
     );
 }
@@ -394,19 +377,19 @@
     background-image: linear-gradient(
         -63.435deg,
         transparent 24%,
-        @sepepator 24%,
-        @sepepator 29%,
-        @window 29%,
-        @window 71%,
-        @sepepator 71%,
-        @sepepator 76%,
+        @grey 24%,
+        @grey 29%,
+        @purple 29%,
+        @purple 71%,
+        @grey 71%,
+        @grey 76%,
         transparent 76%
     );
 }
 
 /* Style when cursor is on the button */
 #waybar.main #workspaces button:hover {
-    color: @window;
+    color: @purple;
 }
 
 /* #waybar.main #workspaces button.active:hover { */
@@ -414,12 +397,12 @@
 /*   background-image: linear-gradient( */
 /*     -63.435deg, */
 /*     transparent 24%, */
-/*     @sepepator 24%, */
-/*     @sepepator 28%, */
-/*     @window 28%, */
-/*     @window 73%, */
-/*     @sepepator 73%, */
-/*     @sepepator 76%, */
+/*     @grey 24%, */
+/*     @grey 28%, */
+/*     @purple 28%, */
+/*     @purple 73%, */
+/*     @grey 73%, */
+/*     @grey 76%, */
 /*     transparent 76% */
 /*   ); */
 /* } */
@@ -431,12 +414,12 @@
     background-image: linear-gradient(
         -63.435deg,
         transparent 24%,
-        @sepepator 24%,
-        @sepepator 28%,
-        @sepepator 28%,
-        @sepepator 72%,
-        @sepepator 72%,
-        @sepepator 76%,
+        @grey 24%,
+        @grey 28%,
+        @grey 28%,
+        @grey 72%,
+        @grey 72%,
+        @grey 76%,
         transparent 76%
     );
     color: black;
@@ -454,9 +437,7 @@
 #waybar.main #custom-spacer1,
 #waybar.main #custom-spacer2,
 #waybar.main #custom-spacer3,
-#waybar.main #custom-spacer4,
-#waybar.main #custom-spacer5,
-#waybar.main #custom-spacer6 {
+#waybar.main #custom-spacer4 {
     font-size: 16pt;
     font-weight: bold;
     color: transparent;
@@ -470,8 +451,8 @@
     background-image: linear-gradient(
         116.656deg,
         @transparent 47.5%,
-        @sepepator 47.6%,
-        @sepepator 54.4%,
+        @grey 47.6%,
+        @grey 54.4%,
         @background1 54.5%
     );
 }
@@ -480,48 +461,38 @@
     background-image: linear-gradient(
         116.656deg,
         @background1 47.5%,
-        @sepepator 47.6%,
-        @sepepator 54.4%,
+        @grey 47.6%,
+        @grey 54.4%,
         transparent 54.5%
     );
 }
 
 #waybar.main #custom-spacer3 {
     background-image: linear-gradient(
-        116.656deg,
+        -63.435deg,
         transparent 47.5%,
-        @sepepator 47.6%,
-        @sepepator 54.4%,
-        @background1 54.5%
+        @grey 47.6%,
+        @grey 54.4%,
+        transparent 54.5%
     );
 }
 
 #waybar.main #custom-spacer4 {
     background-image: linear-gradient(
-        116.656deg,
-        @background1 47.5%,
-        @sepepator 47.6%,
-        @sepepator 54.4%,
+        -63.435deg,
+        transparent 47.5%,
+        @grey 47.6%,
+        @grey 54.4%,
         transparent 54.5%
     );
 }
-
-/* #waybar.main #custom-spacer5 { */
-/*     background-image: linear-gradient( */
-/*         -63.435deg, */
-/*         @transparent 47.5%, */
-/*         @sepepator 47.6%, */
-/*         @sepepator 52.4%, */
-/*         transparent 52.5% */
-/*     ); */
-/* } */
 /**/
 /* #waybar.main #custom-spacer6 { */
 /*     background-image: linear-gradient( */
 /*         -63.435deg, */
 /*         @transparent 47.5%, */
-/*         @sepepator 47.6%, */
-/*         @sepepator 52.4%, */
+/*         @grey 47.6%, */
+/*         @grey 52.4%, */
 /*         transparent 52.5% */
 /*     ); */
 /* } */
@@ -531,23 +502,25 @@
 /* Tray */
 /* {{{ */
 #waybar.main #custom-trayicon {
-    font-size: 14pt;
-    color: @performance;
+    font-size: 20px;
+    padding-left: 8px;
+    color: @blue;
     /* color: transparent; */
     /* font-weight: bold; */
     /* font-style: italic; */
-    /* background: transparent; */
+    background: @background1;
     /* background-size: 24px; */
     /* background-position: 2px, 0px; */
     /* background-repeat: no-repeat; */
     /* background-image: url("/home/jan-aarela/.config/hypr/themes/Dracula-Power/pacman.png"); */
 }
 
-#waybar.main #tray menu {
-    background: @background;
-    border: 3px solid @caution;
-    border-radius: 8px;
-    margin-right: -100px;
+#waybar.main #tray {
+    background: @background1;
+    /* border: 3px solid @grey; */
+    /* border-radius: 8px; */
+    /* margin-right: -100px; */
+    padding-right: 8px;
 }
 /* }}} */
 
@@ -555,13 +528,13 @@
 /* {{{ */
 tooltip {
     background: @background2;
-    border: 3px solid @caution;
+    border: 3px solid @grey;
     font-weight: 500;
     font-family: "JetBrains Mono Nerd Font";
 }
 
 tooltip label {
-    color: @date;
+    color: @green;
     font-weight: 600;
 }
 
@@ -578,8 +551,8 @@ tooltip box {
     font-size: 10pt;
     font-weight: 700;
     color: @text;
-    border: 2px solid @sepepator;
-    /* outline: @sepepator solid 1px; */
+    border: 2px solid @grey;
+    /* outline: @grey solid 1px; */
 
     box-shadow:
         inset 0px 5px 5px -5px rgba(0, 0, 0, 0.5),

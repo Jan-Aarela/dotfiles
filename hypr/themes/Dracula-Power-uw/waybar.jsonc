@@ -4,7 +4,7 @@
         "layer": "top",
         "position": "top",
         "name": "main",
-        "height": 20,
+        "height": 10,
         "reload_style_on_change": true,
         // "output": "eDP-1",
 
@@ -23,7 +23,7 @@
             "disk#root",
             "disk#nvme",
             // "disk#usb",
-            "custom/spacer3",
+            "custom/spacer1",
             // "network#info",
             "network#up",
             "network#down",
@@ -40,10 +40,15 @@
         // ],
 
         "modules-right": [
+            // "custom/spacer3",
             "hyprland/workspaces",
-            // "group/traym",
-            // "custom/spacer2",
+            "custom/spacer1",
+            "group/traym",
+            // "custom/trayicon",
+            "custom/spacer2",
             "hyprland/window",
+            // "custom/spacer4",
+
             // "mpris",
             "custom/spacer1",
             "hyprland/language",
@@ -52,7 +57,7 @@
             "pulseaudio#output",
             // "cava",
             "custom/headsetbattery",
-            "custom/spacer3",
+            "custom/spacer1",
             "custom/timer",
             "clock",
             "custom/weather"
@@ -115,14 +120,14 @@
         },
 
         "custom/timer": {
-            "exec": "~/.config/hypr/themes/Mocha-Power/timer.sh",
+            "exec": "~/.config/hypr/themes/Dracula-Power-uw/timer.sh",
             "return-type": "json",
             "format": "{}",
-            "on-click": "~/.config/hypr/themes/Mocha-Power/timer.sh click",
-            "on-click-right": "~/.config/hypr/themes/Mocha-Power/timer.sh right",
-            "on-click-middle": "~/.config/hypr/themes/Mocha-Power/timer.sh middle",
-            "on-scroll-up": "~/.config/hypr/themes/Mocha-Power/timer.sh down", // previously up
-            "on-scroll-down": "~/.config/hypr/themes/Mocha-Power/timer.sh up", // previously down
+            "on-click": "~/.config/hypr/themes/Dracula-Power-uw/timer.sh click",
+            "on-click-right": "~/.config/hypr/themes/Dracula-Power-uw/timer.sh right",
+            "on-click-middle": "~/.config/hypr/themes/Dracula-Power-uw/timer.sh middle",
+            "on-scroll-up": "~/.config/hypr/themes/Dracula-Power-uw/timer.sh down", // previously up
+            "on-scroll-down": "~/.config/hypr/themes/Dracula-Power-uw/timer.sh up", // previously down
             "tooltip": true,
             "escape": true,
             "scroll-step": 10
@@ -157,7 +162,7 @@
             "tooltip": true,
             "tooltip-format": "{alt}",
             "format": "{text}",
-            "exec": "~/.config/hypr/themes/Mocha-Power/headsetbattery.sh"
+            "exec": "~/.config/hypr/themes/Dracula-Power-uw/headsetbattery.sh"
         },
 
         "custom/weather": {
@@ -209,7 +214,7 @@
             "interval": 4,
             "min-length": 7,
             "return-type": "json",
-            "exec": "~/.config/hypr/themes/Mocha-Power/nvidia.sh",
+            "exec": "~/.config/hypr/themes/Dracula-Power-uw/nvidia.sh",
             "format": "<span size='x-large' rise='-2500'>󰢮</span>{text}",
             "tooltip": "true",
             "tooltip-format": "{alt}"
@@ -218,20 +223,20 @@
         "custom/battery": {
             "interval": 8,
             "return-type": "json",
-            "exec": "~/.config/hypr/themes/Mocha-Power/bat-pp.sh refresh",
+            "exec": "~/.config/hypr/themes/Dracula-Power-uw/bat-pp.sh refresh",
             "exec-on-event": true,
             "format": "{text}%",
-            "on-click": "~/.config/hypr/themes/Mocha-Power/bat-pp.sh toggle & aplay ~/.config/sounds/interact.wav",
+            "on-click": "~/.config/hypr/themes/Dracula-Power-uw/bat-pp.sh toggle & aplay ~/.config/sounds/interact.wav",
             "tooltip": "true",
             "tooltip-format": "{alt}"
         },
 
         // "custom/battery": {
         //   "return-type": "json",
-        //   "exec": "~/.config/hypr/themes/Mocha-Power/bat-pp2.sh refresh",
+        //   "exec": "~/.config/hypr/themes/Dracula-Power-uw/bat-pp2.sh refresh",
         //   "exec-on-event": true,
         //   "format": "{text}%",
-        //   "on-click": "~/.config/hypr/themes/Mocha-Power/bat-pp2.sh toggle & aplay ~/.config/sounds/interact.wav",
+        //   "on-click": "~/.config/hypr/themes/Dracula-Power-uw/bat-pp2.sh toggle & aplay ~/.config/sounds/interact.wav",
         //   "tooltip": "true",
         //   "tooltip-format": "{alt}"
         // },
@@ -339,30 +344,37 @@
             "rewrite": {
                 "^([^ ]+) (.+)$": "$1: $2"
             },
-            "justify": "center",
-            "max-length": 54,
+            "max-length": 84,
             "tooltip": false,
             "icon": false,
-            "icon-size": 18,
-            "tooltip": true
+            "fallback": "Idling on Desktop..."
         },
 
         "hyprland/workspaces": {
-            "disable-scroll-wraparound": true,
+            // "disable-scroll-wraparound": true,
             "smooth-scrolling-threshold": 4,
             "enable-bar-scroll": true,
             "format": "{icon}",
-            "show-special": true,
-            "special-visible-only": false,
-            // "persistent-workspaces": {
-            //     "*": 10, // This forces workspaces 1-10 to always show on every monitor
-            // },
+            // "special-visible-only": false,
+            "persistent-workspaces": {
+                "DP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                "special:magic": "magic"
+            },
+
             "format-icons": {
                 "magic": "",
-                "zellij": "",
                 "10": "󰊴",
-                "lock": ""
-                // "empty": "·",
+                "lock": "",
+                "empty": "·",
+                "active:1": "1",
+                "active:2": "2",
+                "active:3": "3",
+                "active:4": "4",
+                "active:5": "5",
+                "active:6": "6",
+                "active:7": "7",
+                "active:8": "8",
+                "active:9": "9"
             }
         },
 
@@ -411,42 +423,27 @@
         },
 
         "tray": {
-            "icon-size": 18,
+            "icon-size": 14,
             "spacing": 8
         },
 
-        "custom/spacer": {
+        "custom/spacer1": {
             "format": " ",
             "tooltip": false
         },
 
-        "custom/spacer1": {
-            "format": "",
-            "tooltip": false
-        },
-
         "custom/spacer2": {
-            "format": "",
+            "format": " ",
             "tooltip": false
         },
 
         "custom/spacer3": {
-            "format": "",
+            "format": " ",
             "tooltip": false
         },
 
         "custom/spacer4": {
-            "format": "",
-            "tooltip": false
-        },
-
-        "custom/spacer5": {
-            "format": "",
-            "tooltip": false
-        },
-
-        "custom/spacer6": {
-            "format": "",
+            "format": " ",
             "tooltip": false
         },
 

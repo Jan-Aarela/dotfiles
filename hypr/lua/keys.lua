@@ -129,9 +129,19 @@ for i = 1, 9 do
 end
 
 hl.bind(mainMod .. " + SECTION", hl.dsp.workspace.toggle_special("magic"), { description = "Workspace: Toggle magic" })
-hl.bind(mainMod .. " + ESCAPE", hl.dsp.focus({ workspace = 10 }))
+-- hl.bind(mainMod .. " + ESCAPE", hl.dsp.focus({ workspace = 10 }))
 
-hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.window.move({ workspace = "10", follow = false }))
+hl.bind(mainMod .. " + ESCAPE", function()
+    local active_ws = hl.get_active_workspace().id
+
+    if active_ws == 10 then
+        hl.dispatch(hl.dsp.focus({ workspace = "previous" }))
+    else
+        hl.dispatch(hl.dsp.focus({ workspace = 10 }))
+    end
+end)
+
+hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.window.move({ workspace = "10", follow = false, action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + SECTION", hl.dsp.window.move({ workspace = "special:magic", follow = false }))
 
 -- }}}
